@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS genre;
 DROP TABLE IF EXISTS artist;
 DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS status;
 
 ------------------------------- 
 --     CUSTOMER
@@ -122,18 +123,31 @@ INSERT INTO product (name, price, description, last_update, category_id, genre_i
 ('Kind of Blue', 15.99, 'Álbum de jazz', TIMESTAMP('2020-10-06 09:00:00'), 3, 3, 3, 500),
 ('Symphony No.9', 9.99, 'Obra maestra', TIMESTAMP('2020-10-06 09:00:00'), 1, 4, 4, 500);
 
-------------------------------- 
---     ORDERED_PRODUCT
--------------------------------
-CREATE TABLE ordered_product
-(
+-- Tabla para los estados permitidos
+CREATE TABLE status (
+  id INT NOT NULL GENERATED ALWAYS AS IDENTITY 
+    (START WITH 1, INCREMENT BY 1) 
+    PRIMARY KEY,
+  name VARCHAR(15) NOT NULL UNIQUE
+);
+
+-- Inserción de valores permitidos
+INSERT INTO status (name) VALUES 
+('PENDIENTE'), 
+('ACEPTADO'), 
+('RECHAZADO');
+
+-- Tabla ordered_product con FK a la tabla status
+CREATE TABLE ordered_product (
   customer_order_id INT NOT NULL,
   product_id INT NOT NULL,
   quantity SMALLINT NOT NULL DEFAULT 1,
-  status ENUM('pendiente', 'aceptado', 'cancelado') NOT NULL,
+  status_id INT NOT NULL, -- FK a la tabla status
   PRIMARY KEY (customer_order_id, product_id),
-  CONSTRAINT fk_ordered_product_customer_order FOREIGN KEY (customer_order_id) REFERENCES customer_order (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT fk_ordered_product_customer_order FOREIGN KEY (customer_order_id) REFERENCES customer_order (id),
+  CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id),
+  CONSTRAINT fk_ordered_product_status FOREIGN KEY (status_id) REFERENCES status (id)
 );
+
 
 disconnect;
