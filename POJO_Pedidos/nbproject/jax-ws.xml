@@ -2,10 +2,10 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
-    <client name="WSPedido">
-      <wsdl-url>http://localhost:8080/WS_Proyecto_Pedidos/WSPedido?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/WS_Proyecto_Pedidos/WSPedido.wsdl</local-wsdl-file>
-      <package-name>wspedido</package-name>
+    <client name="WSMusicaPedidos">
+      <wsdl-url>http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">wspedido</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -22,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WS_Proyecto_Pedidos/WSPedido?WSDL</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -31,6 +31,10 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>wspedido</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

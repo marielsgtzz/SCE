@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/WS_Proyecto_Pedidos/WSPedido?WSDL" uri="wsdl/localhost_8080/WS_Proyecto_Pedidos/WSPedido.wsdl"/>
-    <system systemId="http://localhost:8080/WS_Proyecto_Pedidos/WSPedido?xsd=1" uri="wsdl/localhost_8080/WS_Proyecto_Pedidos/WSPedido.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WS_Proyecto_Pedidos/WSPedido?WSDL" uri="xml-resources/web-service-references/WSPedido/wsdl/localhost_8080/WS_Proyecto_Pedidos/WSPedido.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Proyecto_Pedidos/WSPedido?xsd=1" uri="xml-resources/web-service-references/WSPedido/wsdl/localhost_8080/WS_Proyecto_Pedidos/WSPedido.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" uri="wsdl/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl"/>
+    <system systemId="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?xsd=1" uri="wsdl/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.xsd_1.xsd"/>
 </catalog>

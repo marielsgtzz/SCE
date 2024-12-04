@@ -122,29 +122,25 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
         objServ.cierra();
         
     }
-    // =========================================================================
-    //                    Utilerías del WS 
-    // =========================================================================
+
     private static int altaPedido(int idClte, java.util.List<wspedido.ClsItem> listaIt) {
-        wspedido.WSPedido_Service service = new wspedido.WSPedido_Service();
-        wspedido.WSPedido port = service.getWSPedidoPort();
+        wspedido.WSMusicaPedidos_Service service = new wspedido.WSMusicaPedidos_Service();
+        wspedido.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.altaPedido(idClte, listaIt);
     }
 
     private static java.util.List<wspedido.Customer> catalogoCltes() {
-        wspedido.WSPedido_Service service = new wspedido.WSPedido_Service();
-        wspedido.WSPedido port = service.getWSPedidoPort();
+        wspedido.WSMusicaPedidos_Service service = new wspedido.WSMusicaPedidos_Service();
+        wspedido.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.catalogoCltes();
     }
 
     private static java.util.List<wspedido.Product> catalogoProds() {
-        wspedido.WSPedido_Service service = new wspedido.WSPedido_Service();
-        wspedido.WSPedido port = service.getWSPedidoPort();
+        wspedido.WSMusicaPedidos_Service service = new wspedido.WSMusicaPedidos_Service();
+        wspedido.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.catalogoProds();
     }
     
-    // =========================================================================
-    //                  Fin de las Utilerías del WS
-    // =========================================================================
+    
 }
 

@@ -133,6 +133,9 @@ public class WSMusicaPedidos {
           customer_order.setConfirmationNumber(num_conf);
           customerOrderFacade.create(customer_order);
           num_pedido = customer_order.getId();
+          Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,
+                "Custormer Order:" + num_pedido);
+          
           //
           // Van los items
           //
@@ -144,6 +147,7 @@ public class WSMusicaPedidos {
             oppk.setProductId(op.getProduct().getId());
             op.setOrderedProductPK(oppk);
             op.setCustomerOrder(customer_order);
+            op.setStatusId("P");
             orderedProductFacade.create(op);
           }
         }
