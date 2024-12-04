@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class GenreFacade extends AbstractFacade<Genre> {
 
-    @PersistenceContext(unitName = "WS_Proyecto_PedidosPU")
+    @PersistenceContext(unitName = "WS_Musica_PedidosPU")
     private EntityManager em;
 
     @Override

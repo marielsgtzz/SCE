@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="WS_Proyecto_Pedidos" default="default" basedir=".">
-    <description>Builds, tests, and runs the project WS_Proyecto_Pedidos.</description>
+<project name="WS_Musica_Pedidos" default="default" basedir=".">
+    <description>Builds, tests, and runs the project WS_Musica_Pedidos.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

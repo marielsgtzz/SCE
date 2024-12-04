@@ -1,37 +1,33 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package wspedido;
+package wsmusicapedidos;
 
 import entidades.Customer;
-import entidades.Product;
 import fachadas.CustomerFacade;
 import fachadas.CustomerOrderFacade;
 import fachadas.OrderedProductFacade;
 import fachadas.ProductFacade;
 import java.math.BigDecimal;
-import java.math.MathContext;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-import java.util.logging.Logger;
-import java.util.List;
-import java.util.ArrayList;
-
-import javax.persistence.EntityManager;
-import javax.persistence.LockModeType;
 
 /**
  *
- * @author Alejandro Uribe
+ * @author sdist
  */
-@WebService(serviceName = "WSPedido")
-public class WSPedido {
-
+@WebService(serviceName = "WSMusicaPedidos")
+public class WSMusicaPedidos {
+    
+    
     @EJB
     private OrderedProductFacade orderedProductFacade;
     @EJB
@@ -212,6 +208,4 @@ public class WSPedido {
     // Fin de Nuevos servicio
     // =============================================================================    
 
-
-    
 }

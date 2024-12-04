@@ -1,13 +1,13 @@
 connect 'jdbc:derby://localhost:1527/bd_Musica_Pedidos;user=app;password=app';
 
 -- Eliminación de tablas existentes
-DROP TABLE IF EXISTS ordered_product;
-DROP TABLE IF EXISTS customer_order;
-DROP TABLE IF EXISTS product;
-DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS genre;
-DROP TABLE IF EXISTS artist;
-DROP TABLE IF EXISTS customer;
+DROP TABLE ordered_product;
+DROP TABLE customer_order;
+DROP TABLE product;
+DROP TABLE category;
+DROP TABLE genre;
+DROP TABLE artist;
+DROP TABLE customer;
 
 ------------------------------- 
 --     CUSTOMER
@@ -131,8 +131,7 @@ CREATE TABLE ordered_product (
   status_id VARCHAR(1) NOT NULL DEFAULT 'P', -- FK a la tabla status
   PRIMARY KEY (customer_order_id, product_id),
   CONSTRAINT fk_ordered_product_customer_order FOREIGN KEY (customer_order_id) REFERENCES customer_order (id),
-  CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id),
-  CONSTRAINT fk_ordered_product_status FOREIGN KEY (status_id) REFERENCES status (id)
+  CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id)
 );
 
 

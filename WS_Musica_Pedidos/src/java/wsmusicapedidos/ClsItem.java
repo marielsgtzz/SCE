@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package wspedido;
+package wsmusicapedidos;
 
 /**
  *
- * @author Alejandro Uribe
+ * @author sdist
  */
-public class ClsItem 
-{
+public class ClsItem {
     int id_prod;
     int cantidad;    
 
@@ -29,4 +28,5 @@ public class ClsItem
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    
 }

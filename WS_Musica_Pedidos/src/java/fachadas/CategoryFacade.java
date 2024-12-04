@@ -6,8 +6,6 @@
 package fachadas;
 
 import entidades.Category;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class CategoryFacade extends AbstractFacade<Category> {
 
-    @PersistenceContext(unitName = "WS_Proyecto_PedidosPU")
+    @PersistenceContext(unitName = "WS_Musica_PedidosPU")
     private EntityManager em;
 
     @Override
@@ -30,19 +28,5 @@ public class CategoryFacade extends AbstractFacade<Category> {
     public CategoryFacade() {
         super(Category.class);
     }
-    
-        ///
-    public int next_id_pedidos()
-    {
-        EntityManager em = getEntityManager();
-       
-        int intRes = (int) em.createNativeQuery("VALUES (NEXT VALUE FOR pedidos_id)").getSingleResult();       
-        
-        Logger.getAnonymousLogger().log(Level.SEVERE,"El valor del folio de pedidos es:" + intRes);
-        
-        return intRes;
-    }
-    
-    //////////
     
 }

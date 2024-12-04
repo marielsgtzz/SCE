@@ -5,7 +5,7 @@
  */
 package fachadas;
 
-import entidades.Artist;
+import entidades.OrderedProduct;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,9 +15,9 @@ import javax.persistence.PersistenceContext;
  * @author sdist
  */
 @Stateless
-public class ArtistFacade extends AbstractFacade<Artist> {
+public class OrderedProductFacade extends AbstractFacade<OrderedProduct> {
 
-    @PersistenceContext(unitName = "WS_Proyecto_PedidosPU")
+    @PersistenceContext(unitName = "WS_Musica_PedidosPU")
     private EntityManager em;
 
     @Override
@@ -25,8 +25,8 @@ public class ArtistFacade extends AbstractFacade<Artist> {
         return em;
     }
 
-    public ArtistFacade() {
-        super(Artist.class);
+    public OrderedProductFacade() {
+        super(OrderedProduct.class);
     }
     
 }
