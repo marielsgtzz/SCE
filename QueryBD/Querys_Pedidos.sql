@@ -1,13 +1,13 @@
 connect 'jdbc:derby://localhost:1527/bd_Musica_Pedidos;user=app;password=app';
 
 -- Eliminación de tablas existentes
-DROP TABLE IF EXISTS ordered_product;
-DROP TABLE IF EXISTS customer_order;
-DROP TABLE IF EXISTS product;
-DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS genre;
-DROP TABLE IF EXISTS artist;
-DROP TABLE IF EXISTS customer;
+DROP TABLE ordered_product;
+DROP TABLE customer_order;
+DROP TABLE product;
+DROP TABLE category;
+DROP TABLE genre;
+DROP TABLE artist;
+DROP TABLE customer;
 
 ------------------------------- 
 --     CUSTOMER
@@ -122,18 +122,20 @@ INSERT INTO product (name, price, description, last_update, category_id, genre_i
 ('Kind of Blue', 15.99, 'Álbum de jazz', TIMESTAMP('2020-10-06 09:00:00'), 3, 3, 3, 500),
 ('Symphony No.9', 9.99, 'Obra maestra', TIMESTAMP('2020-10-06 09:00:00'), 1, 4, 4, 500);
 
-------------------------------- 
---     ORDERED_PRODUCT
--------------------------------
-CREATE TABLE ordered_product
-(
+
+-- Tabla ordered_product con FK a la tabla status
+CREATE TABLE ordered_product (
   customer_order_id INT NOT NULL,
   product_id INT NOT NULL,
   quantity SMALLINT NOT NULL DEFAULT 1,
-  status ENUM('pendiente', 'aceptado', 'cancelado') NOT NULL,
+  status_id VARCHAR(1) NOT NULL DEFAULT 'P', -- FK a la tabla status
   PRIMARY KEY (customer_order_id, product_id),
-  CONSTRAINT fk_ordered_product_customer_order FOREIGN KEY (customer_order_id) REFERENCES customer_order (id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT fk_ordered_product_customer_order FOREIGN KEY (customer_order_id) REFERENCES customer_order (id),
+  CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id)
 );
+
+CREATE SEQUENCE APP.NUM_CONF
+START WITH 1
+INCREMENT BY 1;
 
 disconnect;
