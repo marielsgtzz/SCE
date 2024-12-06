@@ -1,8 +1,5 @@
 # SCE
 
-Descripción de los proyectos: `DocumentacionProyectos.md`
-Instrucciones para correr los proyectos: `Instrucciones.md`
-
 ## WS_Musica_Pedidos
 
 ### WSMusicaPedidos.java
