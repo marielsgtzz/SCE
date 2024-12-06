@@ -134,5 +134,8 @@ CREATE TABLE ordered_product (
   CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id)
 );
 
+CREATE SEQUENCE APP.NUM_CONF
+START WITH 1
+INCREMENT BY 1;
 
 disconnect;
