@@ -13,8 +13,8 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
     long quienSoy;
     String host = null;
     
-    java.util.List<wspedido.Customer> listaCltes = new java.util.ArrayList<>();
-    java.util.List<wspedido.Product>  listaProds = new java.util.ArrayList<>();
+    java.util.List<wsmusicapedidos.Customer> listaCltes = new java.util.ArrayList<>();
+    java.util.List<wsmusicapedidos.Product>  listaProds = new java.util.ArrayList<>();
     
     int num_cltes;
     int num_prods;
@@ -35,7 +35,7 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
     public void solicitaServicio(int vez) 
     {
     
-        java.util.List<wspedido.ClsItem>  listaIt    = new java.util.ArrayList<>();
+        java.util.List<wsmusicapedidos.ClsItem>  listaIt    = new java.util.ArrayList<>();
         
         int num_pedido;
         int id_clte;
@@ -44,7 +44,7 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
 
         int queClte,queProd = 0;
        
-        wspedido.ClsItem item;
+        wsmusicapedidos.ClsItem item;
         
         queClte = (int) ( num_cltes * Math.random());
         id_clte = listaCltes.get(queClte).getId();
@@ -79,7 +79,7 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
             
             id_prod  = listaProds.get(queProd).getId();
             cantidad = (int)( 5.0 + 100 * Math.random() );
-            item = new wspedido.ClsItem();
+            item = new wsmusicapedidos.ClsItem();
             item.setIdProd(id_prod);
             item.setCantidad(cantidad);
             listaIt.add(item);
@@ -87,7 +87,7 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
         System.out.println("-----------------------------------------------");
         System.out.println("Estresador:" + this.quienSoy + ", vez:" + vez + ", Clte:" + id_clte);
         System.out.println("-----------------------------------------------");
-        for(wspedido.ClsItem it : listaIt)
+        for(wsmusicapedidos.ClsItem it : listaIt)
             System.out.println("Prod_id:" + it.getIdProd() + ", cantidad:" + it.getCantidad() );
         System.out.println("-----------------------------------------------");
         //
@@ -123,24 +123,24 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
         
     }
 
-    private static int altaPedido(int idClte, java.util.List<wspedido.ClsItem> listaIt) {
-        wspedido.WSMusicaPedidos_Service service = new wspedido.WSMusicaPedidos_Service();
-        wspedido.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
+    private static int altaPedido(int idClte, java.util.List<wsmusicapedidos.ClsItem> listaIt) {
+        wsmusicapedidos.WSMusicaPedidos_Service service = new wsmusicapedidos.WSMusicaPedidos_Service();
+        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.altaPedido(idClte, listaIt);
     }
 
-    private static java.util.List<wspedido.Customer> catalogoCltes() {
-        wspedido.WSMusicaPedidos_Service service = new wspedido.WSMusicaPedidos_Service();
-        wspedido.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
+    private static java.util.List<wsmusicapedidos.Customer> catalogoCltes() {
+        wsmusicapedidos.WSMusicaPedidos_Service service = new wsmusicapedidos.WSMusicaPedidos_Service();
+        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.catalogoCltes();
     }
 
-    private static java.util.List<wspedido.Product> catalogoProds() {
-        wspedido.WSMusicaPedidos_Service service = new wspedido.WSMusicaPedidos_Service();
-        wspedido.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
+    private static java.util.List<wsmusicapedidos.Product> catalogoProds() {
+        wsmusicapedidos.WSMusicaPedidos_Service service = new wsmusicapedidos.WSMusicaPedidos_Service();
+        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.catalogoProds();
     }
-    
+
     
 }
 

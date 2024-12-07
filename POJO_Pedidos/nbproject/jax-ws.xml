@@ -5,7 +5,7 @@
     <client name="WSMusicaPedidos">
       <wsdl-url>http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">wspedido</package-name>
+      <package-name>wsmusicapedidos</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -31,10 +31,6 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>wspedido</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>
