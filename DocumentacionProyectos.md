@@ -4,8 +4,7 @@ En este documento se pueden ver los detalles de los 3 web services principales d
 
 Los web services utilizan entendidades y fachadas. Las **entidades** son las representaciones de los datos persistentes en las bases de datos.
 
-- [SCE](#sce)
-  - [Indice](#indice)
+- [Vinilos Vintach](#vinilos-vintach)
   - [WS_Musica_Pedidos](#ws_musica_pedidos)
     - [WSMusicaPedidos.java](#wsmusicapedidosjava)
       - [`altaPedido`](#altapedido)
@@ -18,6 +17,7 @@ Los web services utilizan entendidades y fachadas. Las **entidades** son las rep
     - [WSMusicaCredito.java](#wsmusicacreditojava)
       - [`autoriza`](#autoriza)
       - [`autoriza_double`](#autoriza_double)
+      - [`getClienteDetalles`](#getclientedetalles)
       - [Métodos CRUD](#métodos-crud)
     - [Entidades](#entidades)
       - [**ExcepNoCredito**](#excepnocredito)
@@ -78,9 +78,15 @@ Este método verifica si el cliente tiene suficiente crédito para cubrir el mon
 
 #### `autoriza_double`
 
-**Input**: `int` ID del cliente, `double` monto solicitado
-**Salida**: `boolean` Indica si el crédito fue autorizado.
+**Input**: `int` ID del cliente, `double` monto solicitado. <br>
+**Salida**: `boolean` Indica si el crédito fue autorizado. <br>
 **Descripción**: Es una variante del método `autoriza`, pero recibe el monto como un valor de tipo `double`, convirtiéndolo internamente a `BigDecimal`.
+
+#### `getClienteDetalles`
+
+**Input**: `int` ID del cliente <br>
+**Salida**: `String[]` Arreglo con los datos del cliente. <br>
+**Descripción**: Regresa los atributos de un cliente en forma de string para poder usar los datos en el WS de envío.
 
 #### Métodos CRUD
 
