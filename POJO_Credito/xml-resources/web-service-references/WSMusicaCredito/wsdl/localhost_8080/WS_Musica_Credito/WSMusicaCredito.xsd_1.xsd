@@ -34,6 +34,10 @@
 
 <xs:element name="findResponse" type="tns:findResponse"/>
 
+<xs:element name="getClienteDetalles" type="tns:getClienteDetalles"/>
+
+<xs:element name="getClienteDetallesResponse" type="tns:getClienteDetallesResponse"/>
+
 <xs:element name="remove" type="tns:remove"/>
 
 <xs:complexType name="edit">
@@ -124,6 +128,18 @@
 <xs:complexType name="findAllResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:credito" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getClienteDetalles">
+<xs:sequence>
+<xs:element name="id_clte" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getClienteDetallesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
