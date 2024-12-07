@@ -19,7 +19,7 @@
     <target name="wsimport-client-WSMusicaPedidos" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos"/>
         <property name="wsdl-WSMusicaPedidos" location="xml-resources/web-service-references/WSMusicaPedidos/wsdl/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos" destdir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos" wsdl="${wsdl-WSMusicaPedidos}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" xnocompile="true" xendorsed="true" package="wspedido">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos" destdir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos" wsdl="${wsdl-WSMusicaPedidos}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-WSMusicaPedidos}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos"/>
         </wsimport>
@@ -31,7 +31,7 @@
     </target>
     <target name="wsimport-client-clean-WSMusicaPedidos" depends="-init-project">
         <delete dir="${build.generated.dir}/jax-wsCache/WSMusicaPedidos"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/wspedido"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/wsmusicapedidos"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-WSMusicaPedidos"/>
 </project>

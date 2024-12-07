@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="vinilesWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/VinilesVintach/Integrador/vinilesWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintach/Integrador/vinilesWSDL" xmlns:ns="http://xml.netbeans.org/schema/vinilesSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/VinilesVintach/Integrador/vinilesWSDL">
+            <xsd:import namespace="http://xml.netbeans.org/schema/vinilesSchema" schemaLocation="../vinilesSchema.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="vinilesWSDLOperationRequest">
+        <part name="idclte" type="xsd:int"/>
+        <part name="listait" type="ns:item"/>
+    </message>
+    <message name="vinilesWSDLOperationResponse">
+        <part name="confenv" type="xsd:boolean"/>
+    </message>
+    <message name="vinilesWSDLOperationFault">
+        <part name="exalm" type="ns:exAlmacen"/>
+        <part name="exclte" type="ns:exCliente"/>
+        <part name="part3" type="ns:exFondos"/>
+    </message>
+    <portType name="vinilesWSDLPortType">
+        <operation name="vinilesWSDLOperation">
+            <input name="input1" message="tns:vinilesWSDLOperationRequest"/>
+            <output name="output1" message="tns:vinilesWSDLOperationResponse"/>
+            <fault name="fault1" message="tns:vinilesWSDLOperationFault"/>
+        </operation>
+    </portType>
+    <binding name="vinilesWSDLBinding" type="tns:vinilesWSDLPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="vinilesWSDLOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/VinilesVintach/Integrador/vinilesWSDL"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/VinilesVintach/Integrador/vinilesWSDL"/>
+            </output>
+            <fault name="fault1">
+                <soap:fault name="fault1" use="literal" namespace="http://j2ee.netbeans.org/wsdl/VinilesVintach/Integrador/vinilesWSDL"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="vinilesWSDLService">
+        <port name="vinilesWSDLPort" binding="tns:vinilesWSDLBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/vinilesWSDLService/vinilesWSDLPort"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="vinilesWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="vinilesWSDLPortTypeRole" portType="tns:vinilesWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>
