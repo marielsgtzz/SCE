@@ -1,6 +1,6 @@
 # Vinilos Vintach
 
-En este documento se pueden ver los detalles de los 3 web services principales de este proyecto: [WS_Musica_Pedidos](#ws_musica_pedidos), [WS_Musica_Creditos](#ws_musica_credito) y [WS_Musica_Envio](#WS_Musica_Envio).
+En este documento se pueden ver los detalles de los 3 web services principales de este proyecto: [WS_Musica_Pedidos](#ws_musica_pedidos), [WS_Musica_Creditos](#ws_musica_credito) y [WS_Musica_Envios](#WS_Musica_Envios).
 
 Los web services utilizan entendidades y fachadas. Las **entidades** son las representaciones de los datos persistentes en las bases de datos.
 
@@ -24,7 +24,15 @@ Los web services utilizan entendidades y fachadas. Las **entidades** son las rep
       - [**ExcepNoExisteClte**](#excepnoexisteclte)
     - [Fachadas](#fachadas)
       - [CreditoFacade](#creditofacade)
-  - [WS_Musica_Envio](#ws_musica_envio)
+  - [WS_Musica_Envios](#ws_musica_envios)
+    - [WSMusicaEnvios.java](#wsmusicaenviosjava)
+    - [Métodos CRUD](#métodos-crud-1)
+    - [`solicitudEnvio`](#solicitudenvio)
+    - [Message-Driven Bean (MDB_Musica_Envios.java)](#message-driven-bean-mdb_musica_enviosjava)
+    - [Entidades](#entidades-1)
+      - [Envios](#envios)
+    - [Fachadas](#fachadas-1)
+      - [EnviosFacade](#enviosfacade)
 
 ## WS_Musica_Pedidos
 
@@ -180,4 +188,102 @@ Actúa como intermediario entre el Web Service y la base de datos para realizar 
     - **Salida**: `boolean` indicando si la actualización fue exitosa.
     - **Descripción**: Verifica si el cliente tiene suficiente crédito y actualiza el monto disponible en caso de autorización.
 
-## WS_Musica_Envio
+## WS_Musica_Envios
+
+El servicio web **WS_Musica_Envios** está diseñado para gestionar el proceso de envío de productos comprados en la tienda de vinilos. Este sistema no solo permite registrar envíos en la base de datos, sino también gestionar solicitudes de envío utilizando una cola de mensajes JMS, implementada con **GlassFish** y **Java EE**.
+
+### WSMusicaEnvios.java
+
+Este archivo representa la capa de exposición de los servicios web relacionados con los envíos. Provee métodos CRUD para gestionar la entidad `Envios` y un método especializado para manejar las solicitudes de envío utilizando colas JMS.
+
+### Métodos CRUD
+
+Los métodos CRUD básicos gestionan las operaciones sobre la entidad `Envios`:
+
+- **`create`**: Crea un nuevo registro en la base de datos para un envío.
+- **`edit`**: Actualiza los detalles de un envío existente.
+- **`remove`**: Elimina un registro de la base de datos.
+- **`find`**: Busca un registro específico de envío por su ID.
+- **`findAll`**: Recupera todos los registros de envíos existentes.
+- **`findRange`**: Devuelve una lista de envíos dentro de un rango especificado.
+- **`count`**: Devuelve el número total de envíos registrados.
+
+### `solicitudEnvio`
+
+Este método permite gestionar solicitudes de envío a través de una cola de mensajes JMS.
+
+**Input**:
+
+- `id_Tda`: Identificador único de la tienda.
+- `id_pedido`: Identificador del pedido asociado al envío.
+- `name`: Nombre del cliente.
+- `email`: Email del cliente.
+- `phone`: Teléfono del cliente.
+- `address`: Dirección del cliente.
+- `city_region`: Región o ciudad del cliente.
+
+**Output**:
+
+- `boolean`: Indica si la solicitud fue exitosa.
+
+**Descripción**:
+Este método crea una nueva instancia de la entidad `Envios` con los datos proporcionados y la envía a una cola de mensajes **JMS** para ser procesada. La operación es encolada mediante un productor de mensajes, asegurando que el proceso sea asincrónico y escalable. Si ocurre algún error, el método retorna `false`.
+
+### Message-Driven Bean (MDB_Musica_Envios.java)
+
+El Message-Driven Bean (MDB) asociado a este servicio escucha mensajes en la cola **SolicitudEnvios** y procesa las solicitudes de envío.
+
+**Responsabilidades**:
+
+- Escuchar la cola **java:app/jms/SolicitudEnvios** configurada en JMS.
+- Recibir y deserializar los mensajes de tipo `ObjectMessage` que contienen instancias de `Envios`.
+- Persistir la información de los envíos en la base de datos utilizando un `EntityManager`.
+
+**Estructura**:
+
+- **`onMessage`**: Método principal que procesa los mensajes. Verifica si el mensaje recibido es de tipo `ObjectMessage` y lo persiste en la base de datos utilizando el método `save`.
+
+### Entidades
+
+#### Envios
+
+Esta entidad representa un registro en la tabla `ENVIOS` de la base de datos.
+
+**Atributos**:
+
+- `id`: Identificador único del envío.
+- `idTda`: Identificador de la tienda.
+- `idCustomerOrder`: Identificador del pedido asociado.
+- `name`: Nombre del cliente.
+- `email`: Correo electrónico del cliente.
+- `phone`: Teléfono del cliente.
+- `address`: Dirección del cliente.
+- `cityRegion`: Región o ciudad del cliente.
+
+**Named Queries**:
+
+- `Envios.findAll`: Recupera todos los registros de la tabla `ENVIOS`.
+- `Envios.findById`: Busca un envío por su ID.
+- `Envios.findByIdTda`: Busca envíos por el identificador de tienda.
+- `Envios.findByIdCustomerOrder`: Busca envíos por el identificador del pedido.
+- `Envios.findByName`: Busca envíos por el nombre del cliente.
+- `Envios.findByPhone`: Busca envíos por el teléfono del cliente.
+- `Envios.findByAddress`: Busca envíos por la dirección del cliente.
+- `Envios.findByCityRegion`: Busca envíos por región o ciudad.
+
+### Fachadas
+
+#### EnviosFacade
+
+Esta fachada actúa como intermediario entre el Web Service y la base de datos para realizar operaciones sobre la entidad `Envios`.
+
+**Funciones**:
+
+- **CRUD**:
+  - `create`: Crea un nuevo registro en la tabla `ENVIOS`.
+  - `edit`: Modifica un registro existente.
+  - `remove`: Elimina un registro de la tabla.
+  - `find`: Recupera un registro específico por su ID.
+  - `findAll`: Recupera todos los registros.
+  - `findRange`: Obtiene un subconjunto de registros basado en un rango.
+  - `count`: Devuelve el número total de registros.
