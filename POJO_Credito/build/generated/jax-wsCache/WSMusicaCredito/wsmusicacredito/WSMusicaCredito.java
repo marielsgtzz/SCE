@@ -124,8 +124,8 @@ public interface WSMusicaCredito {
      * @param dblMonto
      * @return
      *     returns boolean
-     * @throws ExcepNoCredito_Exception
      * @throws ExcepNoExisteClte_Exception
+     * @throws ExcepNoCredito_Exception
      */
     @WebMethod(operationName = "autoriza_double")
     @WebResult(targetNamespace = "")
@@ -149,8 +149,8 @@ public interface WSMusicaCredito {
      * @param idClte
      * @return
      *     returns boolean
-     * @throws ExcepNoCredito_Exception
      * @throws ExcepNoExisteClte_Exception
+     * @throws ExcepNoCredito_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")

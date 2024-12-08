@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for edit complex type.
+ * <p>Clase Java para edit complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="edit">
@@ -34,7 +34,7 @@ public class Edit {
     protected Envios entity;
 
     /**
-     * Gets the value of the entity property.
+     * Obtiene el valor de la propiedad entity.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class Edit {
     }
 
     /**
-     * Sets the value of the entity property.
+     * Define el valor de la propiedad entity.
      * 
      * @param value
      *     allowed object is

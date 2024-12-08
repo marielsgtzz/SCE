@@ -1,7 +1,7 @@
 connect 'jdbc:derby://localhost:1527/bd_Musica_Credito;user=app;password=app';
 
 -- Eliminación de tablas existentes
-DROP TABLE IF EXISTS credito;
+DROP TABLE credito;
 
 ------------------------------- 
 --     CREDITO

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for envios complex type.
+ * <p>Clase Java para envios complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="envios">
@@ -55,7 +55,7 @@ public class Envios {
     protected String phone;
 
     /**
-     * Gets the value of the address property.
+     * Obtiene el valor de la propiedad address.
      * 
      * @return
      *     possible object is
@@ -67,7 +67,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the address property.
+     * Define el valor de la propiedad address.
      * 
      * @param value
      *     allowed object is
@@ -79,7 +79,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the cityRegion property.
+     * Obtiene el valor de la propiedad cityRegion.
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the cityRegion property.
+     * Define el valor de la propiedad cityRegion.
      * 
      * @param value
      *     allowed object is
@@ -103,7 +103,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the email property.
+     * Obtiene el valor de la propiedad email.
      * 
      * @return
      *     possible object is
@@ -115,7 +115,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the email property.
+     * Define el valor de la propiedad email.
      * 
      * @param value
      *     allowed object is
@@ -127,7 +127,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      * @return
      *     possible object is
@@ -139,7 +139,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      * @param value
      *     allowed object is
@@ -151,7 +151,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the idCustomerOrder property.
+     * Obtiene el valor de la propiedad idCustomerOrder.
      * 
      */
     public int getIdCustomerOrder() {
@@ -159,7 +159,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the idCustomerOrder property.
+     * Define el valor de la propiedad idCustomerOrder.
      * 
      */
     public void setIdCustomerOrder(int value) {
@@ -167,7 +167,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the idTda property.
+     * Obtiene el valor de la propiedad idTda.
      * 
      */
     public int getIdTda() {
@@ -175,7 +175,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the idTda property.
+     * Define el valor de la propiedad idTda.
      * 
      */
     public void setIdTda(int value) {
@@ -183,7 +183,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the name property.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
@@ -195,7 +195,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the name property.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
@@ -207,7 +207,7 @@ public class Envios {
     }
 
     /**
-     * Gets the value of the phone property.
+     * Obtiene el valor de la propiedad phone.
      * 
      * @return
      *     possible object is
@@ -219,7 +219,7 @@ public class Envios {
     }
 
     /**
-     * Sets the value of the phone property.
+     * Define el valor de la propiedad phone.
      * 
      * @param value
      *     allowed object is

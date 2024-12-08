@@ -13,6 +13,10 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
     long quienSoy;
     String host = null;
     
+    /* 
+    * Si marca error con wsmusicapedidos, abrir carpeta Web Service References,
+    * click derecho en el web server WSMusicaPedidos y seleccionar Refresh...
+    */ 
     java.util.List<wsmusicapedidos.Customer> listaCltes = new java.util.ArrayList<>();
     java.util.List<wsmusicapedidos.Product>  listaProds = new java.util.ArrayList<>();
     

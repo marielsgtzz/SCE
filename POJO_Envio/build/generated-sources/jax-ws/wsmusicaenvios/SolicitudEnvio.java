@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for solicitudEnvio complex type.
+ * <p>Clase Java para solicitudEnvio complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="solicitudEnvio">
@@ -56,7 +56,7 @@ public class SolicitudEnvio {
     protected String cityRegion;
 
     /**
-     * Gets the value of the idTda property.
+     * Obtiene el valor de la propiedad idTda.
      * 
      */
     public int getIdTda() {
@@ -64,7 +64,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the idTda property.
+     * Define el valor de la propiedad idTda.
      * 
      */
     public void setIdTda(int value) {
@@ -72,7 +72,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Gets the value of the idPedido property.
+     * Obtiene el valor de la propiedad idPedido.
      * 
      */
     public int getIdPedido() {
@@ -80,7 +80,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the idPedido property.
+     * Define el valor de la propiedad idPedido.
      * 
      */
     public void setIdPedido(int value) {
@@ -88,7 +88,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Gets the value of the name property.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the name property.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Gets the value of the email property.
+     * Obtiene el valor de la propiedad email.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the email property.
+     * Define el valor de la propiedad email.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +136,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Gets the value of the phone property.
+     * Obtiene el valor de la propiedad phone.
      * 
      * @return
      *     possible object is
@@ -148,7 +148,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the phone property.
+     * Define el valor de la propiedad phone.
      * 
      * @param value
      *     allowed object is
@@ -160,7 +160,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Gets the value of the address property.
+     * Obtiene el valor de la propiedad address.
      * 
      * @return
      *     possible object is
@@ -172,7 +172,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the address property.
+     * Define el valor de la propiedad address.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +184,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Gets the value of the cityRegion property.
+     * Obtiene el valor de la propiedad cityRegion.
      * 
      * @return
      *     possible object is
@@ -196,7 +196,7 @@ public class SolicitudEnvio {
     }
 
     /**
-     * Sets the value of the cityRegion property.
+     * Define el valor de la propiedad cityRegion.
      * 
      * @param value
      *     allowed object is
