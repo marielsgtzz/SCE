@@ -49,7 +49,7 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
         queClte = (int) ( num_cltes * Math.random());
         id_clte = catCltes.get(queClte).getId();
 
-        num_it = (int) (1.0 + 10.0 * Math.random());
+        num_it = (int) (1.0 + 4.0 * Math.random());
         num_it = num_it <= num_prods ? num_it : num_prods;
         
         //
