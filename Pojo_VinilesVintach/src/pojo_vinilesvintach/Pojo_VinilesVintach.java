@@ -78,7 +78,7 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
             arr_id_prod[k] = queProd;
             
             id_prod  = catProds.get(queProd).getId();
-            cantidad = (int)( 5.0 + 100 * Math.random() );
+            cantidad = (int)( 1.0 + 49.0 * Math.random() );
             item = new wsmusicapedidos.ClsItem();
             item.setIdProd(id_prod);
             item.setCantidad(cantidad);
