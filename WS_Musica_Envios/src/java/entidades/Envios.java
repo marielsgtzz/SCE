@@ -32,15 +32,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Envios.findByIdTda", query = "SELECT e FROM Envios e WHERE e.idTda = :idTda")
     , @NamedQuery(name = "Envios.findByIdCustomerOrder", query = "SELECT e FROM Envios e WHERE e.idCustomerOrder = :idCustomerOrder")
     , @NamedQuery(name = "Envios.findByName", query = "SELECT e FROM Envios e WHERE e.name = :name")
+    , @NamedQuery(name = "Envios.findByEmail", query = "SELECT e FROM Envios e WHERE e.email = :email")
     , @NamedQuery(name = "Envios.findByPhone", query = "SELECT e FROM Envios e WHERE e.phone = :phone")
     , @NamedQuery(name = "Envios.findByAddress", query = "SELECT e FROM Envios e WHERE e.address = :address")
     , @NamedQuery(name = "Envios.findByCityRegion", query = "SELECT e FROM Envios e WHERE e.cityRegion = :cityRegion")})
 public class Envios implements Serializable {
-
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 45)
-    @Column(name = "EMAIL")
-    private String email;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -61,6 +57,12 @@ public class Envios implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "NAME")
     private String name;
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "EMAIL")
+    private String email;
     // @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Invalid phone/fax format, should be as xxx-xxx-xxxx")//if the field contains phone or fax number consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
@@ -85,11 +87,12 @@ public class Envios implements Serializable {
         this.id = id;
     }
 
-    public Envios(Integer id, int idTda, int idCustomerOrder, String name, String phone, String address, String cityRegion) {
+    public Envios(Integer id, int idTda, int idCustomerOrder, String name, String email, String phone, String address, String cityRegion) {
         this.id = id;
         this.idTda = idTda;
         this.idCustomerOrder = idCustomerOrder;
         this.name = name;
+        this.email = email;
         this.phone = phone;
         this.address = address;
         this.cityRegion = cityRegion;
@@ -125,6 +128,14 @@ public class Envios implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhone() {
@@ -174,14 +185,6 @@ public class Envios implements Serializable {
     @Override
     public String toString() {
         return "entidades.Envios[ id=" + id + " ]";
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
     
 }

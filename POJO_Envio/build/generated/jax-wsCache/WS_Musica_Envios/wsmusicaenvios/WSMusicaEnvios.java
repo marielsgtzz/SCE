@@ -79,18 +79,6 @@ public interface WSMusicaEnvios {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<wsmusicaenvios.Envios>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAll")
-    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAllResponse")
-    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/findAllRequest", output = "http://wsmusicaenvios/WS_Musica_Envios/findAllResponse")
-    public List<Envios> findAll();
-
-    /**
-     * 
      * @param entity
      */
     @WebMethod
@@ -148,5 +136,17 @@ public interface WSMusicaEnvios {
         String address,
         @WebParam(name = "city_region", targetNamespace = "")
         String cityRegion);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<wsmusicaenvios.Envios>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAll")
+    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAllResponse")
+    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/findAllRequest", output = "http://wsmusicaenvios/WS_Musica_Envios/findAllResponse")
+    public List<Envios> findAll();
 
 }

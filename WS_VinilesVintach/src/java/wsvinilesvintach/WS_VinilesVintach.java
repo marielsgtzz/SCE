@@ -6,6 +6,7 @@
 package wsvinilesvintach;
 
 import java.math.BigDecimal;
+import java.util.Random;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -47,10 +48,19 @@ public class WS_VinilesVintach {
     @WebMethod(operationName = "procesoCompra")
     public String procesoCompra(@WebParam(name = "idCliente") int idClte, @WebParam(name = "listaItems") java.util.List<wsmusicapedidos.ClsItem> listaIt)
             throws ExcepNoExisteClte_Exception, ExcepNoCredito_Exception, ExcepSinExistencias {
+        
         int numPedido = altaPedido(idClte, listaIt);
         
+        // numPedido = 0 implica que el pedido falló porque algún elemento de la lista no tenía el ID correcto,
+        // o no tenía existencias suficientes, por lo que se cancelaría todo el pedido.
         if (numPedido == 0){
-            throw new ExcepSinExistencias();
+            Random random = new Random();
+            boolean prob = (random.nextInt(4)==0) ? true:false;
+            if (prob){
+                //numPedido
+            }
+            else
+                throw new ExcepSinExistencias();
         }
         
         

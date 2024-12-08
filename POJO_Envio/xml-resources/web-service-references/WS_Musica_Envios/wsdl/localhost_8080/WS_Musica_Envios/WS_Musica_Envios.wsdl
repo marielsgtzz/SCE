@@ -22,12 +22,6 @@
 <message name="create">
 <part name="parameters" element="tns:create"/>
 </message>
-<message name="findAll">
-<part name="parameters" element="tns:findAll"/>
-</message>
-<message name="findAllResponse">
-<part name="parameters" element="tns:findAllResponse"/>
-</message>
 <message name="edit">
 <part name="parameters" element="tns:edit"/>
 </message>
@@ -42,6 +36,12 @@
 </message>
 <message name="solicitudEnvioResponse">
 <part name="parameters" element="tns:solicitudEnvioResponse"/>
+</message>
+<message name="findAll">
+<part name="parameters" element="tns:findAll"/>
+</message>
+<message name="findAllResponse">
+<part name="parameters" element="tns:findAllResponse"/>
 </message>
 <portType name="WS_Musica_Envios">
 <operation name="remove">
@@ -58,10 +58,6 @@
 <operation name="create">
 <input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/create" message="tns:create"/>
 </operation>
-<operation name="findAll">
-<input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findAllRequest" message="tns:findAll"/>
-<output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findAllResponse" message="tns:findAllResponse"/>
-</operation>
 <operation name="edit">
 <input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/edit" message="tns:edit"/>
 </operation>
@@ -72,6 +68,10 @@
 <operation name="solicitudEnvio">
 <input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/solicitudEnvioRequest" message="tns:solicitudEnvio"/>
 <output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/solicitudEnvioResponse" message="tns:solicitudEnvioResponse"/>
+</operation>
+<operation name="findAll">
+<input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findAllRequest" message="tns:findAll"/>
+<output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findAllResponse" message="tns:findAllResponse"/>
 </operation>
 </portType>
 <binding name="WS_Musica_EnviosPortBinding" type="tns:WS_Musica_Envios">
@@ -106,15 +106,6 @@
 <soap:body use="literal"/>
 </input>
 </operation>
-<operation name="findAll">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="edit">
 <soap:operation soapAction=""/>
 <input>
@@ -131,6 +122,15 @@
 </output>
 </operation>
 <operation name="solicitudEnvio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findAll">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
