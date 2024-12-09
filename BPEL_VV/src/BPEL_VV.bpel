@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="BPEL_VV"
+    targetNamespace="http://enterprise.netbeans.org/bpel/BPEL_VV/BPEL_VV"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/BPEL_VV/BPEL_VV"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://xml.netbeans.org/schema/VVXmlSchema" xmlns:ns1="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" xmlns:ns2="http://wsmusicacredito/" xmlns:sxxf="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/XPathFunctions">
+    <import namespace="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" location="WS_VV/my_VV.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaCreditoWrapper" location="WSMusicaCreditoWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicacredito/" location="http://localhost:8080/WS_Musica_Credito/WSMusicaCredito?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" location="WS_Musica_EnviosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicaenvios/" location="http://localhost:8080/WS_Musica_Envios/WS_Musica_Envios?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" location="WSMusicaPedidosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicapedidos/" location="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="WS_Credito" xmlns:tns="http://enterprise.netbeans.org/bpel/WSMusicaCreditoWrapper" partnerLinkType="tns:WSMusicaCreditoLinkType" partnerRole="WSMusicaCreditoRole"/>
+        <partnerLink name="WS_Envios" xmlns:tns="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" partnerLinkType="tns:WS_Musica_EnviosLinkType" partnerRole="WS_Musica_EnviosRole"/>
+        <partnerLink name="WS_Pedidos" xmlns:tns="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" partnerLinkType="tns:WSMusicaPedidosLinkType" partnerRole="WSMusicaPedidosRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" partnerLinkType="tns:my_VV" myRole="my_VVPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="Fault1FaultVar" messageType="ns1:my_VVOperationFault"/>
+        <variable name="SolicitudEnvioOut" xmlns:tns="http://wsmusicaenvios/" messageType="tns:solicitudEnvioResponse"/>
+        <variable name="SolicitudEnvioIn" xmlns:tns="http://wsmusicaenvios/" messageType="tns:solicitudEnvio"/>
+        <variable name="ClteDelPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:clteDelPedidoResponse"/>
+        <variable name="ClteDelPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:clteDelPedido"/>
+        <variable name="AltaPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedidoResponse"/>
+        <variable name="AltaPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedido"/>
+        <variable name="AutorizaOut" xmlns:tns="http://wsmusicacredito/" messageType="tns:autorizaResponse"/>
+        <variable name="AutorizaIn" xmlns:tns="http://wsmusicacredito/" messageType="tns:autoriza"/>
+        <variable name="MontoPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedidoResponse"/>
+        <variable name="MontoPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedido"/>
+        <variable name="My_VVOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" messageType="tns:my_VVOperationResponse"/>
+        <variable name="ProcesoDeCompraIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:procesoDeCompra"/>
+        <variable name="My_VVOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" messageType="tns:my_VVOperationRequest">
+            <sxed:editor>
+                <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
+            </sxed:editor>
+        </variable>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="PartnerLink1" operation="my_VVOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" portType="tns:my_VVPortType" variable="My_VVOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from>$My_VVOperationIn.altaPedido/ns0:id_clte</from>
+                <to>$AltaPedidoIn.parameters/id_clte</to>
+            </copy>
+            <copy>
+                <from>$My_VVOperationIn.altaPedido/ns0:listaItems</from>
+                <to>$AltaPedidoIn.parameters/lista_it</to>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="WS_Pedidos" operation="altaPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="AltaPedidoIn" outputVariable="AltaPedidoOut"/>
+        <if name="If1">
+            <condition>$AltaPedidoOut.parameters/return &gt; 0</condition>
+            <sequence name="Sequence1">
+                <scope name="Scope1">
+                    <variables>
+                        <variable name="My_VVOperationOut1" messageType="ns1:my_VVOperationResponse"/>
+                        <variable name="Fault1FaultVar2" messageType="ns1:my_VVOperationFault"/>
+                        <variable name="Fault1FaultVar1" messageType="ns1:my_VVOperationFault"/>
+                    </variables>
+                    <faultHandlers>
+                        <catch faultName="ns2:ExcepNoCredito" faultVariable="noCred" faultMessageType="ns2:ExcepNoCredito">
+                            <sequence name="Sequence4">
+                                <forEach name="ForEach1" parallel="no" counterName="ForEach1Counter">
+                                    <startCounterValue/>
+                                    <scope name="Scope2">
+                                        <variables>
+                                            <variable name="UpdateOrderedProductStatusOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateOrderedProductStatusResponse"/>
+                                            <variable name="UpdateOrderedProductStatusIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateOrderedProductStatus"/>
+                                            <variable name="RestockProductOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockProductResponse"/>
+                                            <variable name="RestockProductIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockProduct"/>
+                                        </variables>
+                                        <sequence name="Sequence8">
+                                            <assign name="Assign13">
+                                                <copy>
+                                                    <from>$My_VVOperationIn.altaPedido/ns0:listaItems[.]/ns0:id_prod
+                                                        <sxed:editor>
+                                                            <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
+                                                        </sxed:editor>
+                                                    </from>
+                                                    <to>$RestockProductIn.parameters/productId</to>
+                                                </copy>
+                                                <copy>
+                                                    <from>$My_VVOperationIn.altaPedido/ns0:listaItems[.]/ns0:cant_prod
+                                                        <sxed:editor>
+                                                            <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
+                                                        </sxed:editor>
+                                                    </from>
+                                                    <to>$RestockProductIn.parameters/cantidad</to>
+                                                </copy>
+                                            </assign>
+                                            <invoke name="Invoke7" partnerLink="WS_Pedidos" operation="restockProduct" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="RestockProductIn" outputVariable="RestockProductOut"/>
+                                            <assign name="Assign14">
+                                                <copy>
+                                                    <from>$My_VVOperationIn.altaPedido/ns0:listaItems[.]/ns0:id_prod
+                                                        <sxed:editor>
+                                                            <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
+                                                        </sxed:editor>
+                                                    </from>
+                                                    <to>$UpdateOrderedProductStatusIn.parameters/productId</to>
+                                                </copy>
+                                                <copy>
+                                                    <from>$AltaPedidoOut.parameters/return</from>
+                                                    <to>$UpdateOrderedProductStatusIn.parameters/numPedido</to>
+                                                </copy>
+                                                <copy>
+                                                    <from>'C'</from>
+                                                    <to>$UpdateOrderedProductStatusIn.parameters/status</to>
+                                                </copy>
+                                            </assign>
+                                            <invoke name="Invoke8" partnerLink="WS_Pedidos" operation="updateOrderedProductStatus" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="UpdateOrderedProductStatusIn" outputVariable="UpdateOrderedProductStatusOut"/>
+                                        </sequence>
+                                    </scope>
+                                </forEach>
+                                <assign name="Assign15">
+                                    <copy>
+                                        <from>;'Fallo de envio'</from>
+                                        <to variable="My_VVOperationOut" part="confEnvio"/>
+                                    </copy>
+                                </assign>
+                                <reply name="Reply4"/>
+                            </sequence>
+                        </catch>
+                        <catch faultName="ns2:ExcepNoExisteClte" faultVariable="noClte" faultMessageType="ns2:ExcepNoExisteClte">
+                            <sequence name="Sequence5"></sequence>
+                        </catch>
+                    </faultHandlers>
+                    <sequence name="Sequence3">
+                        <assign name="Assign2">
+                            <copy>
+                                <from>$AltaPedidoOut.parameters/return</from>
+                                    <to>$MontoPedidoIn.parameters/num_pedido</to>
+                            </copy>
+                        </assign>
+                        <invoke name="Invoke2" partnerLink="WS_Pedidos" operation="montoPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="MontoPedidoIn" outputVariable="MontoPedidoOut"/>
+                        <assign name="Assign3">
+                            <copy>
+                                    <from>$MontoPedidoOut.parameters/return</from>
+                                        <to>$AutorizaIn.parameters/monto</to>
+                                </copy>
+                                <copy>
+                                    <from>$My_VVOperationIn.altaPedido/ns0:id_clte</from>
+                                        <to>$AutorizaIn.parameters/id_clte</to>
+                                </copy>
+                        </assign>
+                        <invoke name="Invoke3" partnerLink="WS_Credito" operation="autoriza" xmlns:tns="http://wsmusicacredito/" portType="tns:WSMusicaCredito" inputVariable="AutorizaIn" outputVariable="AutorizaOut"/>
+                        <assign name="Assign4">
+                            <copy>
+                                    <from>$AltaPedidoOut.parameters/return</from>
+                                        <to>$ClteDelPedidoIn.parameters/num_pedido</to>
+                                </copy>
+                        </assign>
+                        <invoke name="Invoke4" partnerLink="WS_Pedidos" operation="clteDelPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="ClteDelPedidoIn" outputVariable="ClteDelPedidoOut"/>
+                        <assign name="Assign5">
+                            <copy>
+                                    <from>1</from>
+                                        <to>$SolicitudEnvioIn.parameters/id_Tda</to>
+                                </copy>
+                                <copy>
+                                    <from>$AltaPedidoOut.parameters/return</from>
+                                        <to>$SolicitudEnvioIn.parameters/id_pedido</to>
+                                </copy>
+                                <copy>
+                                    <from>$ClteDelPedidoOut.parameters/return/address</from>
+                                        <to>$SolicitudEnvioIn.parameters/address</to>
+                                </copy>
+                                <copy>
+                                    <from>$ClteDelPedidoOut.parameters/return/cityRegion</from>
+                                        <to>$SolicitudEnvioIn.parameters/city_region</to>
+                                </copy>
+                                <copy>
+                                    <from>$ClteDelPedidoOut.parameters/return/email</from>
+                                        <to>$SolicitudEnvioIn.parameters/email</to>
+                                </copy>
+                                <copy>
+                                    <from>$ClteDelPedidoOut.parameters/return/phone</from>
+                                        <to>$SolicitudEnvioIn.parameters/phone</to>
+                                </copy>
+                                <copy>
+                                    <from>$ClteDelPedidoOut.parameters/return/name</from>
+                                        <to>$SolicitudEnvioIn.parameters/name</to>
+                                </copy>
+                        </assign>
+                        <invoke name="Invoke5" partnerLink="WS_Envios" operation="solicitudEnvio" xmlns:tns="http://wsmusicaenvios/" portType="tns:WS_Musica_Envios" inputVariable="SolicitudEnvioIn" outputVariable="SolicitudEnvioOut"/>
+                        <if name="If2">
+                            <condition>$SolicitudEnvioOut.parameters/return = true()</condition>
+                            <sequence name="Sequence6">
+                                <assign name="Assign9"/>
+                                <invoke name="Invoke6"/>
+                            </sequence>
+                            <else>
+                                <sequence name="Sequence7">
+                                    <assign name="Assign12"/>
+                                    <reply name="Reply3" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" variable="My_VVOperationOut1"/>
+                                </sequence>
+                            </else>
+                        </if>
+                    </sequence>
+                </scope>
+            </sequence>
+            <else>
+                <sequence name="Sequence2">
+                    <assign name="Assign6">
+                        <copy>
+                            <from>;'No hay suficiente mercancía'</from>
+                            <to>$Fault1FaultVar.excepAlmacen/ns0:msg</to>
+                        </copy>
+                    </assign>
+                    <reply name="Reply2" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" faultName="ns1:fault1" variable="Fault1FaultVar"/>
+                </sequence>
+            </else>
+        </if>
+        <reply name="Reply1" partnerLink="PartnerLink1" operation="my_VVOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" portType="tns:my_VVPortType" variable="My_VVOperationOut"/>
+    </sequence>
+</process>

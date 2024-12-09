@@ -19,3 +19,5 @@
 /InterfazVinilesVintachEstres/build/
 /Pojo_VinilesVintach/dist/
 /VinilesVintage/nbproject/private/
+/BPEL_VV/nbproject/private/
+WS_VinilesVintach/src/conf/xml-resources/web-service-references/WSMusicaPedidos/wsdl/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl

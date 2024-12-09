@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://xml.netbeans.org/schema/VVXmlSchema"
+    xmlns:tns="http://xml.netbeans.org/schema/VVXmlSchema"
+    elementFormDefault="qualified">
+    <xsd:complexType name="clsItem">
+        <xsd:sequence>
+            <xsd:element name="id_prod" type="xsd:int"></xsd:element>
+            <xsd:element name="cant_prod" type="xsd:int"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="altaPedido">
+        <xsd:sequence>
+            <xsd:element name="id_clte" type="xsd:int"></xsd:element>
+            <xsd:element name="listaItems" type="tns:clsItem" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="excepAlmacen">
+        <xsd:sequence>
+            <xsd:element name="msg" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="excepClte">
+        <xsd:sequence>
+            <xsd:element name="msg" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="excepCredito">
+        <xsd:sequence>
+            <xsd:element name="msg" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="numPedido">
+        <xsd:sequence>
+            <xsd:element name="numPedido" type="xsd:int"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="monto">
+        <xsd:sequence>
+            <xsd:element name="monto" type="xsd:decimal"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="outAutoriza">
+        <xsd:sequence>
+            <xsd:element name="confirmacion" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="infoClte">
+        <xsd:sequence>
+            <xsd:element name="id_Tda" type="xsd:int"></xsd:element>
+            <xsd:element name="id_pedido" type="tns:numPedido"></xsd:element>
+            <xsd:element name="name" type="xsd:string"></xsd:element>
+            <xsd:element name="email" type="xsd:string"></xsd:element>
+            <xsd:element name="phone" type="xsd:string"></xsd:element>
+            <xsd:element name="address" type="xsd:string"></xsd:element>
+            <xsd:element name="city_region" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="confEnvio">
+        <xsd:sequence>
+            <xsd:element name="confEnvio" type="xsd:boolean"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="myAltaPedido" type="tns:altaPedido"></xsd:element>
+    <xsd:element name="myClsItem" type="tns:clsItem"></xsd:element>
+    <xsd:element name="myConfEnvio" type="tns:confEnvio"></xsd:element>
+    <xsd:element name="myExcepAlmacen" type="tns:excepAlmacen"></xsd:element>
+    <xsd:element name="myExcepClte" type="tns:excepClte"></xsd:element>
+    <xsd:element name="myExcepCredito" type="tns:excepCredito"></xsd:element>
+    <xsd:element name="myInfoClte" type="tns:infoClte"></xsd:element>
+    <xsd:element name="myMonto" type="tns:monto"></xsd:element>
+    <xsd:element name="myNumPedido" type="tns:numPedido"></xsd:element>
+    <xsd:element name="myOutAutoriza" type="tns:outAutoriza"></xsd:element>
+</xsd:schema>
