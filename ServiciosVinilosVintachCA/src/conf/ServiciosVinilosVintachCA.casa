@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://enterprise.netbeans.org/bpel/ServiciosVinilosVintage/serviciosVinilosVintage" xmlns:ns2="http://j2ee.netbeans.org/wsdl/ServiciosVinilosVintage/src/ServicioVinilosVintach" xmlns:ns3="http://wsmusicapedidos/" xmlns:ns4="http://wsmusicacredito/" xmlns:ns5="http://wsmusicaenvios/" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint display-name="ServicioVinilosVintach" endpoint-name="ServicioVinilosVintachPortTypeRole_myRole" file-path="serviciosVinilosVintage.bpel" interface-name="ns2:ServicioVinilosVintachPortType" name="endpoint1" process-name="serviciosVinilosVintage" service-name="ns1:ServicioVinilosVintach"/>
+        <endpoint display-name="WSPedidos" endpoint-name="WSMusicaPedidosRole_partnerRole" file-path="serviciosVinilosVintage.bpel" interface-name="ns3:WSMusicaPedidos" name="endpoint2" process-name="serviciosVinilosVintage" service-name="ns1:WSPedidos"/>
+        <endpoint display-name="WSCredito" endpoint-name="WSMusicaCreditoRole_partnerRole" file-path="serviciosVinilosVintage.bpel" interface-name="ns4:WSMusicaCredito" name="endpoint3" process-name="serviciosVinilosVintage" service-name="ns1:WSCredito"/>
+        <endpoint display-name="WSEnvios" endpoint-name="WS_Musica_EnviosRole_partnerRole" file-path="serviciosVinilosVintage.bpel" interface-name="ns5:WS_Musica_Envios" name="endpoint4" process-name="serviciosVinilosVintage" service-name="ns1:WSEnvios"/>
+        <endpoint endpoint-name="WSMusicaCreditoPort" interface-name="ns4:WSMusicaCredito" name="endpoint5" service-name="ns4:WSMusicaCredito"/>
+        <endpoint endpoint-name="WS_Musica_EnviosPort" interface-name="ns5:WS_Musica_Envios" name="endpoint6" service-name="ns5:WS_Musica_Envios"/>
+        <endpoint endpoint-name="WSMusicaPedidosPort" interface-name="ns3:WSMusicaPedidos" name="endpoint7" service-name="ns3:WSMusicaPedidos"/>
+        <endpoint endpoint-name="ServicioVinilosVintachPort" interface-name="ns2:ServicioVinilosVintachPortType" name="endpoint8" service-name="ns2:ServicioVinilosVintachService"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="ServiciosVinilosVintage.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ServiciosVinilosVintachCA-ServiciosVinilosVintage" unit-name="ServiciosVinilosVintage" unknown="false" x="-1" y="-1">
+            <provides endpoint="endpoint1"/>
+            <consumes endpoint="endpoint2"/>
+            <consumes endpoint="endpoint3"/>
+            <consumes endpoint="endpoint4"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="ServiciosVinilosVintachCA-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/DescriptorBPEL/ServicioVinilosVintach.wsdl#xpointer(/definitions/service[@name='ServicioVinilosVintachService']/port[@name='ServicioVinilosVintachPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint8"/>
+                    <provides endpoint="endpoint8"/>
+                </port>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioAlmacen/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos']/port[@name='WSMusicaPedidosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint7"/>
+                    <provides endpoint="endpoint7"/>
+                </port>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioEnvio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/service[@name='WS_Musica_Envios']/port[@name='WS_Musica_EnviosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint6"/>
+                    <provides endpoint="endpoint6"/>
+                </port>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioPago/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito']/port[@name='WSMusicaCreditoPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint8" provider="endpoint1" state="unchanged"/>
+        <connection consumer="endpoint3" provider="endpoint5" state="unchanged"/>
+        <connection consumer="endpoint4" provider="endpoint6" state="unchanged"/>
+        <connection consumer="endpoint2" provider="endpoint7" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/DescriptorBPEL/ServicioVinilosVintach.wsdl#xpointer(/definitions/portType[@name='ServicioVinilosVintachPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioAlmacen/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/portType[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioEnvio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/portType[@name='WS_Musica_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioPago/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/portType[@name='WSMusicaCredito'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/DescriptorBPEL/ServicioVinilosVintach.wsdl#xpointer(/definitions/binding[@name='ServicioVinilosVintachBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioAlmacen/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/binding[@name='WSMusicaPedidosPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioEnvio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/binding[@name='WS_Musica_EnviosPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioPago/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/binding[@name='WSMusicaCreditoPortBinding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/DescriptorBPEL/ServicioVinilosVintach.wsdl#xpointer(/definitions/service[@name='ServicioVinilosVintachService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioAlmacen/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioEnvio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/service[@name='WS_Musica_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ServiciosVinilosVintage/ServicioPago/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>
