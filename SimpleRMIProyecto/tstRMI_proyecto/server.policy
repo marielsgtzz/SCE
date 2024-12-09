@@ -1,0 +1,3 @@
+grant codeBase "file:C:/user/materias/SCE/tstRMI/build/classes/" {
+    permission java.security.AllPermission;
+};

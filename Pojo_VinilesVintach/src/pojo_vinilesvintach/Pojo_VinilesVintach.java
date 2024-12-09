@@ -20,15 +20,17 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
     String host = null;
     
     @Override
-    public void prepara(long quienSoy, String host) 
+    public boolean prepara(long quienSoy, String host) 
     {
         this.quienSoy = quienSoy;
         this.host     = host;        // NOTA: no se utiliza
+        return true;
     }
 
     @Override
-    public void solicitaServicio(int vez)
+    public long solicitaServicio(int vez)
     {
+        long t0, t1 = 0, dt;
         java.util.List<wsmusicapedidos.ClsItem>  listaIt    = new java.util.ArrayList<>();
         java.util.List<wsmusicapedidos.Customer> catCltes = catalogoCltes();
         java.util.List<wsmusicapedidos.Product> catProds = catalogoProds();
@@ -92,6 +94,7 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
         //
         //   Se solicita registrar el pedido en el WS
         //
+        t0 =System.currentTimeMillis();
         try {
             num_pedido = procesoCompra(id_clte,listaIt);
             System.out.println("El número de pedido es:" + num_pedido);
@@ -99,6 +102,9 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
         } catch (Exception e){
             System.out.println("Error: " + e.toString());
         }
+        t1 = System.currentTimeMillis();
+        dt = t1-t0;
+        return dt;
     }
 
     @Override

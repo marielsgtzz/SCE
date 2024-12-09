@@ -11,7 +11,7 @@ package interfazvinilesvintachestres;
  */
 public interface InterfazVinilesVintachEstres {
 
-    void prepara (long quienSoy, String host);
-    void solicitaServicio(int vez) throws Exception;
+    boolean prepara (long quienSoy, String host);
+    long solicitaServicio(int vez) throws Exception;
     void cierra ();
 }

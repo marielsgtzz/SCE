@@ -22,6 +22,12 @@
 <message name="create">
 <part name="parameters" element="tns:create"/>
 </message>
+<message name="solicitudEnvio">
+<part name="parameters" element="tns:solicitudEnvio"/>
+</message>
+<message name="solicitudEnvioResponse">
+<part name="parameters" element="tns:solicitudEnvioResponse"/>
+</message>
 <message name="findAll">
 <part name="parameters" element="tns:findAll"/>
 </message>
@@ -36,12 +42,6 @@
 </message>
 <message name="findRangeResponse">
 <part name="parameters" element="tns:findRangeResponse"/>
-</message>
-<message name="solicitudEnvio">
-<part name="parameters" element="tns:solicitudEnvio"/>
-</message>
-<message name="solicitudEnvioResponse">
-<part name="parameters" element="tns:solicitudEnvioResponse"/>
 </message>
 <portType name="WS_Musica_Envios">
 <operation name="remove">
@@ -58,6 +58,10 @@
 <operation name="create">
 <input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/create" message="tns:create"/>
 </operation>
+<operation name="solicitudEnvio">
+<input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/solicitudEnvioRequest" message="tns:solicitudEnvio"/>
+<output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/solicitudEnvioResponse" message="tns:solicitudEnvioResponse"/>
+</operation>
 <operation name="findAll">
 <input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findAllRequest" message="tns:findAll"/>
 <output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findAllResponse" message="tns:findAllResponse"/>
@@ -68,10 +72,6 @@
 <operation name="findRange">
 <input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findRangeRequest" message="tns:findRange"/>
 <output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/findRangeResponse" message="tns:findRangeResponse"/>
-</operation>
-<operation name="solicitudEnvio">
-<input wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/solicitudEnvioRequest" message="tns:solicitudEnvio"/>
-<output wsam:Action="http://wsmusicaenvios/WS_Musica_Envios/solicitudEnvioResponse" message="tns:solicitudEnvioResponse"/>
 </operation>
 </portType>
 <binding name="WS_Musica_EnviosPortBinding" type="tns:WS_Musica_Envios">
@@ -106,6 +106,15 @@
 <soap:body use="literal"/>
 </input>
 </operation>
+<operation name="solicitudEnvio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="findAll">
 <soap:operation soapAction=""/>
 <input>
@@ -122,15 +131,6 @@
 </input>
 </operation>
 <operation name="findRange">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="solicitudEnvio">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

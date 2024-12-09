@@ -1,0 +1,1 @@
+-Djava.rmi.server.codebase=file:tstRMI_desacoplado.jar -cp ClienteEstresador.jar;InterfazServicioEstres.jar;tstRMI_desacoplado.jar example.hello.Distribuidor Clt_des 
