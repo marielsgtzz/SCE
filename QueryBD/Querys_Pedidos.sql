@@ -141,7 +141,7 @@ CREATE TABLE ordered_product (
   customer_order_id INT NOT NULL,
   product_id INT NOT NULL,
   quantity SMALLINT NOT NULL DEFAULT 1,
-  status_id VARCHAR(1) NOT NULL DEFAULT 'P', -- FK a la tabla status
+  status_id VARCHAR(1) NOT NULL, -- FK a la tabla status
   PRIMARY KEY (customer_order_id, product_id),
   CONSTRAINT fk_ordered_product_customer_order FOREIGN KEY (customer_order_id) REFERENCES customer_order (id),
   CONSTRAINT fk_ordered_product_product FOREIGN KEY (product_id) REFERENCES product (id)

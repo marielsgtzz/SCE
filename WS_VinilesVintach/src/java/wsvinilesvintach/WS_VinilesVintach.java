@@ -46,40 +46,75 @@ public class WS_VinilesVintach {
      * @throws wsvinilesvintach.ExcepSinExistencias
      */
     @WebMethod(operationName = "procesoCompra")
-    public String procesoCompra(@WebParam(name = "idCliente") int idClte, @WebParam(name = "listaItems") java.util.List<wsmusicapedidos.ClsItem> listaIt)
-            throws ExcepNoExisteClte_Exception, ExcepNoCredito_Exception, ExcepSinExistencias {
-        
+    public String procesoCompra(@WebParam(name = "idCliente") int idClte, 
+                                @WebParam(name = "listaItems") java.util.List<wsmusicapedidos.ClsItem> listaIt)
+            throws ExcepSinExistencias {
+        if (listaIt == null || listaIt.isEmpty()) {
+            return "Error: La lista de productos está vacía.";
+        }
+
         int numPedido = altaPedido(idClte, listaIt);
-        
-        // numPedido = 0 implica que el pedido falló porque algún elemento de la lista no tenía el ID correcto,
-        // o no tenía existencias suficientes, por lo que se cancelaría todo el pedido.
-        if (numPedido == 0){
-            Random random = new Random();
-            boolean prob = (random.nextInt(4)==0) ? true:false;
-            if (prob){
-                //numPedido
+
+        if (numPedido == 0) {
+            throw new ExcepSinExistencias();
+        }
+
+        try {
+            int idTda = 1;
+            BigDecimal monto = montoPedido(numPedido);
+            Customer clte = clteDelPedido(numPedido);
+
+            boolean hayFondos = autoriza(idClte, monto);
+            boolean haySolicitud = false;
+
+            if (hayFondos) {
+                haySolicitud = solicitudEnvio(idTda, numPedido, clte.getName(), clte.getEmail(), clte.getPhone(), clte.getAddress(), clte.getCityRegion());
+            } else {
+                throw new ExcepNoCredito_Exception("Fondos insuficientes.", null);
             }
-            else
-                throw new ExcepSinExistencias();
-        }
-        
-        
-        int idTda = 1;
-        BigDecimal monto = montoPedido(numPedido);
-        Customer clte = clteDelPedido(numPedido);
 
-        boolean hayfondos = autoriza(idClte, monto);
-        boolean hayprod = true; //TODO: Validación de existencias
-        boolean haysolicitud = false;
-
-        if (hayfondos && hayprod) {
-            haysolicitud = solicitudEnvio(idTda, numPedido, clte.getName(), clte.getEmail(), clte.getPhone(), clte.getAddress(), clte.getCityRegion());
+            if (haySolicitud) {
+                aceptar(numPedido, listaIt);
+                return "Pedido Confirmado. Num Pedido: " + numPedido;
+            } else {
+                return "Error en la generación del pedido: Fallo en la solicitud de envío.";
+            }
+        } catch (ExcepNoExisteClte_Exception | ExcepNoCredito_Exception ex) {
+            // Realizar restock si ocurre una de estas excepciones
+            restock(numPedido, listaIt);
+            return "Pedido Cancelado: " + ex.toString() +" restock completado";
         }
-        if (haysolicitud) {
-            return "Pedido Confirmado. Num Pedido: " + numPedido;
-        }
-        return "Error en la generacion del pedido";
     }
+
+    
+    private void restock(int numPedido, java.util.List<wsmusicapedidos.ClsItem> listaItems) {
+        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
+
+        for (wsmusicapedidos.ClsItem item : listaItems) {
+            int productId = item.getIdProd();
+            int cantidad = item.getCantidad();
+
+            // Regresar la cantidad al inventario
+            port.restockProduct(productId, cantidad);
+
+            // Actualizar el estado del producto en el pedido a "C" (Cancelado)
+            port.updateOrderedProductStatus(numPedido, productId, "C");
+        }
+    }
+    
+    private void aceptar(int numPedido, java.util.List<wsmusicapedidos.ClsItem> listaItems) {
+        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
+
+        for (wsmusicapedidos.ClsItem item : listaItems) {
+            int productId = item.getIdProd();
+            int cantidad = item.getCantidad();
+
+            // Actualizar el estado del producto en el pedido a "A" (Aplicado)
+            port.updateOrderedProductStatus(numPedido, productId, "A");
+        }
+    }
+
+
 
     // =========================================================================
     // Servicios para apoyar la creación del Pojo

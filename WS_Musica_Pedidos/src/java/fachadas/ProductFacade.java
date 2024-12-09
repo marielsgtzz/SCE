@@ -53,4 +53,14 @@ public class ProductFacade extends AbstractFacade<Product> {
        return cant_posible;
     }
     
+    public void restockProduct(int productId, int cantidad) {
+        Product producto = em.find(Product.class, productId, LockModeType.PESSIMISTIC_WRITE);
+        if (producto != null) {
+            int nuevaExistencia = producto.getExistencia() + cantidad;
+            producto.setExistencia(nuevaExistencia);
+            this.edit(producto); // Usa el método edit para persistir el cambio
+        }
+    }
+
+    
 }

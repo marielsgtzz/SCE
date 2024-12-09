@@ -6,6 +6,8 @@
 package wsmusicapedidos;
 
 import entidades.Customer;
+import entidades.OrderedProduct;
+import entidades.Product;
 import fachadas.CustomerFacade;
 import fachadas.CustomerOrderFacade;
 import fachadas.OrderedProductFacade;
@@ -207,6 +209,27 @@ public class WSMusicaPedidos {
     {
         return customerOrderFacade.find(num_pedido).getCustomerId();
     }
+    
+    @WebMethod(operationName = "restockProduct")
+    public void restockProduct(@WebParam(name = "productId") int productId, 
+                               @WebParam(name = "cantidad") int cantidad) {
+        productFacade.restockProduct(productId, cantidad);
+    }
+    
+    @WebMethod(operationName = "updateOrderedProductStatus")
+    public void updateOrderedProductStatus(@WebParam(name = "numPedido") int numPedido,
+                                           @WebParam(name = "productId") int productId,
+                                           @WebParam(name = "status") String status) {
+        orderedProductFacade.updateOrderedProductStatus(numPedido, productId, status);
+    }
+    
+    @WebMethod(operationName = "getOrderedProductsByOrder")
+    public java.util.List<OrderedProduct> getOrderedProductsByOrder(@WebParam(name = "numPedido") int numPedido) {
+        return orderedProductFacade.getOrderedProductsByOrder(numPedido);
+    }
+
+
+
 
     // =============================================================================
     // Fin de Nuevos servicio

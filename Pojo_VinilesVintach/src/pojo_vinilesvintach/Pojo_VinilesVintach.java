@@ -6,8 +6,6 @@
 package pojo_vinilesvintach;
 
 import interfazvinilesvintachestres.InterfazVinilesVintachEstres;
-import wsvinilesvintach.ExcepNoCreditoException;
-import wsvinilesvintach.ExcepNoExisteClteException;
 import wsvinilesvintach.ExcepSinExistencias_Exception;
 
 
@@ -29,7 +27,7 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
     }
 
     @Override
-    public void solicitaServicio(int vez) throws ExcepNoCreditoException, ExcepNoExisteClteException 
+    public void solicitaServicio(int vez)
     {
         java.util.List<wsmusicapedidos.ClsItem>  listaIt    = new java.util.ArrayList<>();
         java.util.List<wsmusicapedidos.Customer> catCltes = catalogoCltes();
@@ -47,7 +45,8 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
         wsmusicapedidos.ClsItem item;
         
         queClte = (int) ( num_cltes * Math.random());
-        id_clte = catCltes.get(queClte).getId();
+        //id_clte = catCltes.get(queClte).getId();
+        id_clte = 1;
 
         num_it = (int) (1.0 + 4.0 * Math.random());
         num_it = num_it <= num_prods ? num_it : num_prods;
@@ -115,7 +114,7 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ExcepNoCreditoException, ExcepNoExisteClteException 
+    public static void main(String[] args)
     {
         Pojo_VinilesVintach objServ = new Pojo_VinilesVintach();
         
@@ -130,7 +129,7 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
     //                    Utilerías del WS 
     // =========================================================================
     private static String procesoCompra(int idClte, java.util.List<wsmusicapedidos.ClsItem> listaIt)
-        throws ExcepNoCreditoException, ExcepNoExisteClteException, ExcepSinExistencias_Exception{
+        throws ExcepSinExistencias_Exception{
         wsvinilesvintach.WSVinilesVintach_Service service = new wsvinilesvintach.WSVinilesVintach_Service();
         wsvinilesvintach.WSVinilesVintach port = service.getWSVinilesVintachPort();
         return port.procesoCompra(idClte, listaIt);

@@ -6,21 +6,18 @@
 <xsd:schema>
 <xsd:import namespace="http://wsmusicapedidos/" schemaLocation="http://localhost:8080/WS_VinilesVintach/WS_VinilesVintach?xsd=2"/>
 </xsd:schema>
-<xsd:schema>
-<xsd:import namespace="http://wsmusicacredito/" schemaLocation="http://localhost:8080/WS_VinilesVintach/WS_VinilesVintach?xsd=3"/>
-</xsd:schema>
 </types>
+<message name="catalogoProductos">
+<part name="parameters" element="tns:catalogoProductos"/>
+</message>
+<message name="catalogoProductosResponse">
+<part name="parameters" element="tns:catalogoProductosResponse"/>
+</message>
 <message name="procesoCompra">
 <part name="parameters" element="tns:procesoCompra"/>
 </message>
 <message name="procesoCompraResponse">
 <part name="parameters" element="tns:procesoCompraResponse"/>
-</message>
-<message name="ExcepNoExisteClte_Exception">
-<part xmlns:ns1="http://wsmusicacredito/" name="fault" element="ns1:ExcepNoExisteClte"/>
-</message>
-<message name="ExcepNoCredito_Exception">
-<part xmlns:ns2="http://wsmusicacredito/" name="fault" element="ns2:ExcepNoCredito"/>
 </message>
 <message name="ExcepSinExistencias">
 <part name="fault" element="tns:ExcepSinExistencias"/>
@@ -31,31 +28,32 @@
 <message name="catalogoClientesResponse">
 <part name="parameters" element="tns:catalogoClientesResponse"/>
 </message>
-<message name="catalogoProductos">
-<part name="parameters" element="tns:catalogoProductos"/>
-</message>
-<message name="catalogoProductosResponse">
-<part name="parameters" element="tns:catalogoProductosResponse"/>
-</message>
 <portType name="WS_VinilesVintach">
+<operation name="catalogoProductos">
+<input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoProductosRequest" message="tns:catalogoProductos"/>
+<output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoProductosResponse" message="tns:catalogoProductosResponse"/>
+</operation>
 <operation name="procesoCompra">
 <input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompraRequest" message="tns:procesoCompra"/>
 <output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompraResponse" message="tns:procesoCompraResponse"/>
-<fault message="tns:ExcepNoExisteClte_Exception" name="ExcepNoExisteClte_Exception" wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompra/Fault/ExcepNoExisteClte_Exception"/>
-<fault message="tns:ExcepNoCredito_Exception" name="ExcepNoCredito_Exception" wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompra/Fault/ExcepNoCredito_Exception"/>
 <fault message="tns:ExcepSinExistencias" name="ExcepSinExistencias" wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompra/Fault/ExcepSinExistencias"/>
 </operation>
 <operation name="catalogoClientes">
 <input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoClientesRequest" message="tns:catalogoClientes"/>
 <output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoClientesResponse" message="tns:catalogoClientesResponse"/>
 </operation>
-<operation name="catalogoProductos">
-<input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoProductosRequest" message="tns:catalogoProductos"/>
-<output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoProductosResponse" message="tns:catalogoProductosResponse"/>
-</operation>
 </portType>
 <binding name="WS_VinilesVintachPortBinding" type="tns:WS_VinilesVintach">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="catalogoProductos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="procesoCompra">
 <soap:operation soapAction=""/>
 <input>
@@ -64,26 +62,11 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="ExcepNoExisteClte_Exception">
-<soap:fault name="ExcepNoExisteClte_Exception" use="literal"/>
-</fault>
-<fault name="ExcepNoCredito_Exception">
-<soap:fault name="ExcepNoCredito_Exception" use="literal"/>
-</fault>
 <fault name="ExcepSinExistencias">
 <soap:fault name="ExcepSinExistencias" use="literal"/>
 </fault>
 </operation>
 <operation name="catalogoClientes">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="catalogoProductos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
