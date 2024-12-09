@@ -28,6 +28,15 @@
 <message name="findAllResponse">
 <part name="parameters" element="tns:findAllResponse"/>
 </message>
+<message name="findRange">
+<part name="parameters" element="tns:findRange"/>
+</message>
+<message name="findRangeResponse">
+<part name="parameters" element="tns:findRangeResponse"/>
+</message>
+<message name="edit">
+<part name="parameters" element="tns:edit"/>
+</message>
 <message name="autoriza_double">
 <part name="parameters" element="tns:autoriza_double"/>
 </message>
@@ -45,15 +54,6 @@
 </message>
 <message name="autorizaResponse">
 <part name="parameters" element="tns:autorizaResponse"/>
-</message>
-<message name="edit">
-<part name="parameters" element="tns:edit"/>
-</message>
-<message name="findRange">
-<part name="parameters" element="tns:findRange"/>
-</message>
-<message name="findRangeResponse">
-<part name="parameters" element="tns:findRangeResponse"/>
 </message>
 <portType name="WSMusicaCredito">
 <operation name="remove">
@@ -74,6 +74,13 @@
 <input wsam:Action="http://wsmusicacredito/WSMusicaCredito/findAllRequest" message="tns:findAll"/>
 <output wsam:Action="http://wsmusicacredito/WSMusicaCredito/findAllResponse" message="tns:findAllResponse"/>
 </operation>
+<operation name="findRange">
+<input wsam:Action="http://wsmusicacredito/WSMusicaCredito/findRangeRequest" message="tns:findRange"/>
+<output wsam:Action="http://wsmusicacredito/WSMusicaCredito/findRangeResponse" message="tns:findRangeResponse"/>
+</operation>
+<operation name="edit">
+<input wsam:Action="http://wsmusicacredito/WSMusicaCredito/edit" message="tns:edit"/>
+</operation>
 <operation name="autoriza_double">
 <input wsam:Action="http://wsmusicacredito/WSMusicaCredito/autoriza_doubleRequest" message="tns:autoriza_double"/>
 <output wsam:Action="http://wsmusicacredito/WSMusicaCredito/autoriza_doubleResponse" message="tns:autoriza_doubleResponse"/>
@@ -85,13 +92,6 @@
 <output wsam:Action="http://wsmusicacredito/WSMusicaCredito/autorizaResponse" message="tns:autorizaResponse"/>
 <fault message="tns:ExcepNoCredito" name="ExcepNoCredito" wsam:Action="http://wsmusicacredito/WSMusicaCredito/autoriza/Fault/ExcepNoCredito"/>
 <fault message="tns:ExcepNoExisteClte" name="ExcepNoExisteClte" wsam:Action="http://wsmusicacredito/WSMusicaCredito/autoriza/Fault/ExcepNoExisteClte"/>
-</operation>
-<operation name="edit">
-<input wsam:Action="http://wsmusicacredito/WSMusicaCredito/edit" message="tns:edit"/>
-</operation>
-<operation name="findRange">
-<input wsam:Action="http://wsmusicacredito/WSMusicaCredito/findRangeRequest" message="tns:findRange"/>
-<output wsam:Action="http://wsmusicacredito/WSMusicaCredito/findRangeResponse" message="tns:findRangeResponse"/>
 </operation>
 </portType>
 <binding name="WSMusicaCreditoPortBinding" type="tns:WSMusicaCredito">
@@ -135,6 +135,21 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="findRange">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="edit">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+</operation>
 <operation name="autoriza_double">
 <soap:operation soapAction=""/>
 <input>
@@ -164,21 +179,6 @@
 <fault name="ExcepNoExisteClte">
 <soap:fault name="ExcepNoExisteClte" use="literal"/>
 </fault>
-</operation>
-<operation name="edit">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-</operation>
-<operation name="findRange">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
 </operation>
 </binding>
 <service name="WSMusicaCredito">

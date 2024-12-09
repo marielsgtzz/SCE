@@ -13,6 +13,12 @@
 <message name="catalogoProductosResponse">
 <part name="parameters" element="tns:catalogoProductosResponse"/>
 </message>
+<message name="catalogoClientes">
+<part name="parameters" element="tns:catalogoClientes"/>
+</message>
+<message name="catalogoClientesResponse">
+<part name="parameters" element="tns:catalogoClientesResponse"/>
+</message>
 <message name="procesoCompra">
 <part name="parameters" element="tns:procesoCompra"/>
 </message>
@@ -22,30 +28,33 @@
 <message name="ExcepSinExistencias">
 <part name="fault" element="tns:ExcepSinExistencias"/>
 </message>
-<message name="catalogoClientes">
-<part name="parameters" element="tns:catalogoClientes"/>
-</message>
-<message name="catalogoClientesResponse">
-<part name="parameters" element="tns:catalogoClientesResponse"/>
-</message>
 <portType name="WS_VinilesVintach">
 <operation name="catalogoProductos">
 <input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoProductosRequest" message="tns:catalogoProductos"/>
 <output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoProductosResponse" message="tns:catalogoProductosResponse"/>
+</operation>
+<operation name="catalogoClientes">
+<input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoClientesRequest" message="tns:catalogoClientes"/>
+<output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoClientesResponse" message="tns:catalogoClientesResponse"/>
 </operation>
 <operation name="procesoCompra">
 <input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompraRequest" message="tns:procesoCompra"/>
 <output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompraResponse" message="tns:procesoCompraResponse"/>
 <fault message="tns:ExcepSinExistencias" name="ExcepSinExistencias" wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/procesoCompra/Fault/ExcepSinExistencias"/>
 </operation>
-<operation name="catalogoClientes">
-<input wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoClientesRequest" message="tns:catalogoClientes"/>
-<output wsam:Action="http://wsvinilesvintach/WS_VinilesVintach/catalogoClientesResponse" message="tns:catalogoClientesResponse"/>
-</operation>
 </portType>
 <binding name="WS_VinilesVintachPortBinding" type="tns:WS_VinilesVintach">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="catalogoProductos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="catalogoClientes">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -65,15 +74,6 @@
 <fault name="ExcepSinExistencias">
 <soap:fault name="ExcepSinExistencias" use="literal"/>
 </fault>
-</operation>
-<operation name="catalogoClientes">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
 </operation>
 </binding>
 <service name="WS_VinilesVintach">
