@@ -28,6 +28,7 @@ public class POJO_Credito {
                if( autorizaDouble(id_clte,dblMonto))
                {
                    System.out.println("Se ha autorizado el credito de " + dblMonto + " para el id_clte " +id_clte);
+                   System.out.println("Los detalles del cliente son: "+getClienteDetalles(id_clte).toString());
                }
                else
                {
@@ -47,7 +48,11 @@ public class POJO_Credito {
         wsmusicacredito.WSMusicaCredito port = service.getWSMusicaCreditoPort();        
         return port.autorizaDouble(idClte, dblMonto);
     }
-    
-    
+
+    private static java.util.List<java.lang.String> getClienteDetalles(int idClte) throws ExcepNoExisteClte_Exception {
+        wsmusicacredito.WSMusicaCredito_Service service = new wsmusicacredito.WSMusicaCredito_Service();
+        wsmusicacredito.WSMusicaCredito port = service.getWSMusicaCreditoPort();
+        return port.getClienteDetalles(idClte);
+    }
     
 }

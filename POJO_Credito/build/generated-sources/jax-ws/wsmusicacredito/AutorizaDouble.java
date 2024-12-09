@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para autoriza_double complex type.
+ * <p>Java class for autoriza_double complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="autoriza_double">
@@ -40,7 +40,7 @@ public class AutorizaDouble {
     protected double dblMonto;
 
     /**
-     * Obtiene el valor de la propiedad idClte.
+     * Gets the value of the idClte property.
      * 
      */
     public int getIdClte() {
@@ -48,7 +48,7 @@ public class AutorizaDouble {
     }
 
     /**
-     * Define el valor de la propiedad idClte.
+     * Sets the value of the idClte property.
      * 
      */
     public void setIdClte(int value) {
@@ -56,7 +56,7 @@ public class AutorizaDouble {
     }
 
     /**
-     * Obtiene el valor de la propiedad dblMonto.
+     * Gets the value of the dblMonto property.
      * 
      */
     public double getDblMonto() {
@@ -64,7 +64,7 @@ public class AutorizaDouble {
     }
 
     /**
-     * Define el valor de la propiedad dblMonto.
+     * Sets the value of the dblMonto property.
      * 
      */
     public void setDblMonto(double value) {

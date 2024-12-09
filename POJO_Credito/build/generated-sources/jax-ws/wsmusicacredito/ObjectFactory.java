@@ -35,9 +35,11 @@ public class ObjectFactory {
     private final static QName _FindRange_QNAME = new QName("http://wsmusicacredito/", "findRange");
     private final static QName _Edit_QNAME = new QName("http://wsmusicacredito/", "edit");
     private final static QName _Autoriza_QNAME = new QName("http://wsmusicacredito/", "autoriza");
+    private final static QName _GetClienteDetallesResponse_QNAME = new QName("http://wsmusicacredito/", "getClienteDetallesResponse");
     private final static QName _Remove_QNAME = new QName("http://wsmusicacredito/", "remove");
     private final static QName _ExcepNoExisteClte_QNAME = new QName("http://wsmusicacredito/", "ExcepNoExisteClte");
     private final static QName _FindAll_QNAME = new QName("http://wsmusicacredito/", "findAll");
+    private final static QName _GetClienteDetalles_QNAME = new QName("http://wsmusicacredito/", "getClienteDetalles");
     private final static QName _AutorizaResponse_QNAME = new QName("http://wsmusicacredito/", "autorizaResponse");
     private final static QName _CountResponse_QNAME = new QName("http://wsmusicacredito/", "countResponse");
     private final static QName _FindResponse_QNAME = new QName("http://wsmusicacredito/", "findResponse");
@@ -120,6 +122,22 @@ public class ObjectFactory {
      */
     public FindAll createFindAll() {
         return new FindAll();
+    }
+
+    /**
+     * Create an instance of {@link GetClienteDetalles }
+     * 
+     */
+    public GetClienteDetalles createGetClienteDetalles() {
+        return new GetClienteDetalles();
+    }
+
+    /**
+     * Create an instance of {@link GetClienteDetallesResponse }
+     * 
+     */
+    public GetClienteDetallesResponse createGetClienteDetallesResponse() {
+        return new GetClienteDetallesResponse();
     }
 
     /**
@@ -294,6 +312,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetClienteDetallesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://wsmusicacredito/", name = "getClienteDetallesResponse")
+    public JAXBElement<GetClienteDetallesResponse> createGetClienteDetallesResponse(GetClienteDetallesResponse value) {
+        return new JAXBElement<GetClienteDetallesResponse>(_GetClienteDetallesResponse_QNAME, GetClienteDetallesResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Remove }{@code >}}
      * 
      */
@@ -318,6 +345,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://wsmusicacredito/", name = "findAll")
     public JAXBElement<FindAll> createFindAll(FindAll value) {
         return new JAXBElement<FindAll>(_FindAll_QNAME, FindAll.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetClienteDetalles }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://wsmusicacredito/", name = "getClienteDetalles")
+    public JAXBElement<GetClienteDetalles> createGetClienteDetalles(GetClienteDetalles value) {
+        return new JAXBElement<GetClienteDetalles>(_GetClienteDetalles_QNAME, GetClienteDetalles.class, null, value);
     }
 
     /**

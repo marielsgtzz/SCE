@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para credito complex type.
+ * <p>Java class for credito complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="credito">
@@ -56,7 +56,7 @@ public class Credito {
     protected String phone;
 
     /**
-     * Obtiene el valor de la propiedad address.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad address.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad ccNumber.
+     * Gets the value of the ccNumber property.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad ccNumber.
+     * Sets the value of the ccNumber property.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad cityRegion.
+     * Gets the value of the cityRegion property.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad cityRegion.
+     * Sets the value of the cityRegion property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad credito.
+     * Gets the value of the credito property.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad credito.
+     * Sets the value of the credito property.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad email.
+     * Gets the value of the email property.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad email.
+     * Sets the value of the email property.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -200,7 +200,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -212,7 +212,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +224,7 @@ public class Credito {
     }
 
     /**
-     * Obtiene el valor de la propiedad phone.
+     * Gets the value of the phone property.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class Credito {
     }
 
     /**
-     * Define el valor de la propiedad phone.
+     * Sets the value of the phone property.
      * 
      * @param value
      *     allowed object is

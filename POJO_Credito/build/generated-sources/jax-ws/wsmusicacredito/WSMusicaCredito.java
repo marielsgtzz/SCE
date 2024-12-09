@@ -93,33 +93,6 @@ public interface WSMusicaCredito {
 
     /**
      * 
-     * @param entity
-     */
-    @WebMethod
-    @Oneway
-    @RequestWrapper(localName = "edit", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.Edit")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/edit")
-    public void edit(
-        @WebParam(name = "entity", targetNamespace = "")
-        Credito entity);
-
-    /**
-     * 
-     * @param range
-     * @return
-     *     returns java.util.List<wsmusicacredito.Credito>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findRange", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRange")
-    @ResponseWrapper(localName = "findRangeResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRangeResponse")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findRangeRequest", output = "http://wsmusicacredito/WSMusicaCredito/findRangeResponse")
-    public List<Credito> findRange(
-        @WebParam(name = "range", targetNamespace = "")
-        List<Integer> range);
-
-    /**
-     * 
      * @param idClte
      * @param dblMonto
      * @return
@@ -166,6 +139,53 @@ public interface WSMusicaCredito {
         @WebParam(name = "monto", targetNamespace = "")
         BigDecimal monto)
         throws ExcepNoCredito_Exception, ExcepNoExisteClte_Exception
+    ;
+
+    /**
+     * 
+     * @param range
+     * @return
+     *     returns java.util.List<wsmusicacredito.Credito>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findRange", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRange")
+    @ResponseWrapper(localName = "findRangeResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRangeResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findRangeRequest", output = "http://wsmusicacredito/WSMusicaCredito/findRangeResponse")
+    public List<Credito> findRange(
+        @WebParam(name = "range", targetNamespace = "")
+        List<Integer> range);
+
+    /**
+     * 
+     * @param entity
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "edit", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.Edit")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/edit")
+    public void edit(
+        @WebParam(name = "entity", targetNamespace = "")
+        Credito entity);
+
+    /**
+     * 
+     * @param idClte
+     * @return
+     *     returns java.util.List<java.lang.String>
+     * @throws ExcepNoExisteClte_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClienteDetalles", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.GetClienteDetalles")
+    @ResponseWrapper(localName = "getClienteDetallesResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.GetClienteDetallesResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/getClienteDetallesRequest", output = "http://wsmusicacredito/WSMusicaCredito/getClienteDetallesResponse", fault = {
+        @FaultAction(className = ExcepNoExisteClte_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/getClienteDetalles/Fault/ExcepNoExisteClte")
+    })
+    public List<String> getClienteDetalles(
+        @WebParam(name = "id_clte", targetNamespace = "")
+        int idClte)
+        throws ExcepNoExisteClte_Exception
     ;
 
 }

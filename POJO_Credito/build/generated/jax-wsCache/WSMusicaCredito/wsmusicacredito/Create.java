@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para create complex type.
+ * <p>Java class for create complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="create">
@@ -34,7 +34,7 @@ public class Create {
     protected Credito entity;
 
     /**
-     * Obtiene el valor de la propiedad entity.
+     * Gets the value of the entity property.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class Create {
     }
 
     /**
-     * Define el valor de la propiedad entity.
+     * Sets the value of the entity property.
      * 
      * @param value
      *     allowed object is

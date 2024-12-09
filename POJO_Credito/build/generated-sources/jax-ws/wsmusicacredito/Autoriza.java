@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para autoriza complex type.
+ * <p>Java class for autoriza complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="autoriza">
@@ -40,7 +40,7 @@ public class Autoriza {
     protected BigDecimal monto;
 
     /**
-     * Obtiene el valor de la propiedad idClte.
+     * Gets the value of the idClte property.
      * 
      */
     public int getIdClte() {
@@ -48,7 +48,7 @@ public class Autoriza {
     }
 
     /**
-     * Define el valor de la propiedad idClte.
+     * Sets the value of the idClte property.
      * 
      */
     public void setIdClte(int value) {
@@ -56,7 +56,7 @@ public class Autoriza {
     }
 
     /**
-     * Obtiene el valor de la propiedad monto.
+     * Gets the value of the monto property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class Autoriza {
     }
 
     /**
-     * Define el valor de la propiedad monto.
+     * Sets the value of the monto property.
      * 
      * @param value
      *     allowed object is

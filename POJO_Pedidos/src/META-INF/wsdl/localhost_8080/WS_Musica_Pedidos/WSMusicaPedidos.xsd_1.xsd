@@ -22,13 +22,7 @@
 
 <xs:element name="customer" type="tns:customer"/>
 
-<xs:element name="customerOrder" type="tns:customerOrder"/>
-
 <xs:element name="genre" type="tns:genre"/>
-
-<xs:element name="getOrderedProductsByOrder" type="tns:getOrderedProductsByOrder"/>
-
-<xs:element name="getOrderedProductsByOrderResponse" type="tns:getOrderedProductsByOrderResponse"/>
 
 <xs:element name="hello" type="tns:hello"/>
 
@@ -38,21 +32,11 @@
 
 <xs:element name="montoPedidoResponse" type="tns:montoPedidoResponse"/>
 
-<xs:element name="orderedProduct" type="tns:orderedProduct"/>
-
 <xs:element name="procesoDeCompra" type="tns:procesoDeCompra"/>
 
 <xs:element name="procesoDeCompraResponse" type="tns:procesoDeCompraResponse"/>
 
 <xs:element name="product" type="tns:product"/>
-
-<xs:element name="restockProduct" type="tns:restockProduct"/>
-
-<xs:element name="restockProductResponse" type="tns:restockProductResponse"/>
-
-<xs:element name="updateOrderedProductStatus" type="tns:updateOrderedProductStatus"/>
-
-<xs:element name="updateOrderedProductStatusResponse" type="tns:updateOrderedProductStatusResponse"/>
 
 <xs:complexType name="hello">
 <xs:sequence>
@@ -64,17 +48,6 @@
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="restockProduct">
-<xs:sequence>
-<xs:element name="productId" type="xs:int"/>
-<xs:element name="cantidad" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="restockProductResponse">
-<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="clteDelPedido">
@@ -156,45 +129,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getOrderedProductsByOrder">
-<xs:sequence>
-<xs:element name="numPedido" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getOrderedProductsByOrderResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:orderedProduct" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="orderedProduct">
-<xs:sequence>
-<xs:element name="customerOrder" type="tns:customerOrder" minOccurs="0"/>
-<xs:element name="orderedProductPK" type="tns:orderedProductPK" minOccurs="0"/>
-<xs:element name="product" type="tns:product" minOccurs="0"/>
-<xs:element name="quantity" type="xs:short"/>
-<xs:element name="statusId" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="customerOrder">
-<xs:sequence>
-<xs:element name="amount" type="xs:decimal" minOccurs="0"/>
-<xs:element name="confirmationNumber" type="xs:int"/>
-<xs:element name="customerId" type="tns:customer" minOccurs="0"/>
-<xs:element name="dateCreated" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="id" type="xs:int" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="orderedProductPK">
-<xs:sequence>
-<xs:element name="customerOrderId" type="xs:int"/>
-<xs:element name="productId" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="catalogoCltes">
 <xs:sequence/>
 </xs:complexType>
@@ -203,18 +137,6 @@
 <xs:sequence>
 <xs:element name="return" type="tns:customer" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateOrderedProductStatus">
-<xs:sequence>
-<xs:element name="numPedido" type="xs:int"/>
-<xs:element name="productId" type="xs:int"/>
-<xs:element name="status" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="updateOrderedProductStatusResponse">
-<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="montoPedido">

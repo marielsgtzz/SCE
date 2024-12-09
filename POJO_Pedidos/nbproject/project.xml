@@ -10,7 +10,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>POJO_Pedidos</name>
             <source-roots>
-                <root id="src.dir"/>
+                <root id="src.src.dir" name="Source Packages"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>

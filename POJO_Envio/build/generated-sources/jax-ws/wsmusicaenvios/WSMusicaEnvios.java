@@ -79,30 +79,15 @@ public interface WSMusicaEnvios {
 
     /**
      * 
-     * @param entity
-     */
-    @WebMethod
-    @Oneway
-    @RequestWrapper(localName = "edit", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.Edit")
-    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/edit")
-    public void edit(
-        @WebParam(name = "entity", targetNamespace = "")
-        Envios entity);
-
-    /**
-     * 
-     * @param range
      * @return
      *     returns java.util.List<wsmusicaenvios.Envios>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findRange", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindRange")
-    @ResponseWrapper(localName = "findRangeResponse", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindRangeResponse")
-    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/findRangeRequest", output = "http://wsmusicaenvios/WS_Musica_Envios/findRangeResponse")
-    public List<Envios> findRange(
-        @WebParam(name = "range", targetNamespace = "")
-        List<Integer> range);
+    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAll")
+    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAllResponse")
+    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/findAllRequest", output = "http://wsmusicaenvios/WS_Musica_Envios/findAllResponse")
+    public List<Envios> findAll();
 
     /**
      * 
@@ -139,14 +124,29 @@ public interface WSMusicaEnvios {
 
     /**
      * 
+     * @param range
      * @return
      *     returns java.util.List<wsmusicaenvios.Envios>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAll")
-    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindAllResponse")
-    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/findAllRequest", output = "http://wsmusicaenvios/WS_Musica_Envios/findAllResponse")
-    public List<Envios> findAll();
+    @RequestWrapper(localName = "findRange", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindRange")
+    @ResponseWrapper(localName = "findRangeResponse", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.FindRangeResponse")
+    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/findRangeRequest", output = "http://wsmusicaenvios/WS_Musica_Envios/findRangeResponse")
+    public List<Envios> findRange(
+        @WebParam(name = "range", targetNamespace = "")
+        List<Integer> range);
+
+    /**
+     * 
+     * @param entity
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "edit", targetNamespace = "http://wsmusicaenvios/", className = "wsmusicaenvios.Edit")
+    @Action(input = "http://wsmusicaenvios/WS_Musica_Envios/edit")
+    public void edit(
+        @WebParam(name = "entity", targetNamespace = "")
+        Envios entity);
 
 }
