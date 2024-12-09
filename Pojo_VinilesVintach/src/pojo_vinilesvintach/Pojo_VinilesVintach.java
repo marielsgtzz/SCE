@@ -47,8 +47,8 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
         wsmusicapedidos.ClsItem item;
         
         queClte = (int) ( num_cltes * Math.random());
-        //id_clte = catCltes.get(queClte).getId();
-        id_clte = 1;
+        id_clte = catCltes.get(queClte).getId();
+        //id_clte = 1;
 
         num_it = (int) (1.0 + 4.0 * Math.random());
         num_it = num_it <= num_prods ? num_it : num_prods;
@@ -123,11 +123,13 @@ public class Pojo_VinilesVintach implements InterfazVinilesVintachEstres{
     public static void main(String[] args)
     {
         Pojo_VinilesVintach objServ = new Pojo_VinilesVintach();
-        
+        long dt= 0;
         objServ.prepara(25, null);
         int n_veces = args.length > 0 ? Integer.parseInt(args[0]):5;
         for( int vez = 1; vez <= n_veces; vez++)
-            objServ.solicitaServicio(vez);
+            dt += objServ.solicitaServicio(vez);
+        
+        System.out.println("El tiempo que tardo el pojo con:"+ n_veces+" veces, fue de: "+ dt +" milisegundos");
         objServ.cierra();
         
     }
