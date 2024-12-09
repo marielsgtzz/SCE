@@ -81,68 +81,6 @@ public interface WSMusicaCredito {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<wsmusicacredito.Credito>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAll")
-    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAllResponse")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findAllRequest", output = "http://wsmusicacredito/WSMusicaCredito/findAllResponse")
-    public List<Credito> findAll();
-
-    /**
-     * 
-     * @param idClte
-     * @param dblMonto
-     * @return
-     *     returns boolean
-     * @throws ExcepNoCredito_Exception
-     * @throws ExcepNoExisteClte_Exception
-     */
-    @WebMethod(operationName = "autoriza_double")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "autoriza_double", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.AutorizaDouble")
-    @ResponseWrapper(localName = "autoriza_doubleResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.AutorizaDoubleResponse")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/autoriza_doubleRequest", output = "http://wsmusicacredito/WSMusicaCredito/autoriza_doubleResponse", fault = {
-        @FaultAction(className = ExcepNoCredito_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza_double/Fault/ExcepNoCredito"),
-        @FaultAction(className = ExcepNoExisteClte_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza_double/Fault/ExcepNoExisteClte")
-    })
-    public boolean autorizaDouble(
-        @WebParam(name = "id_clte", targetNamespace = "")
-        int idClte,
-        @WebParam(name = "dbl_monto", targetNamespace = "")
-        double dblMonto)
-        throws ExcepNoCredito_Exception, ExcepNoExisteClte_Exception
-    ;
-
-    /**
-     * 
-     * @param monto
-     * @param idClte
-     * @return
-     *     returns boolean
-     * @throws ExcepNoCredito_Exception
-     * @throws ExcepNoExisteClte_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "autoriza", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.Autoriza")
-    @ResponseWrapper(localName = "autorizaResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.AutorizaResponse")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/autorizaRequest", output = "http://wsmusicacredito/WSMusicaCredito/autorizaResponse", fault = {
-        @FaultAction(className = ExcepNoCredito_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza/Fault/ExcepNoCredito"),
-        @FaultAction(className = ExcepNoExisteClte_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza/Fault/ExcepNoExisteClte")
-    })
-    public boolean autoriza(
-        @WebParam(name = "id_clte", targetNamespace = "")
-        int idClte,
-        @WebParam(name = "monto", targetNamespace = "")
-        BigDecimal monto)
-        throws ExcepNoCredito_Exception, ExcepNoExisteClte_Exception
-    ;
-
-    /**
-     * 
      * @param range
      * @return
      *     returns java.util.List<wsmusicacredito.Credito>
@@ -170,6 +108,18 @@ public interface WSMusicaCredito {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<wsmusicacredito.Credito>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAll")
+    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAllResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findAllRequest", output = "http://wsmusicacredito/WSMusicaCredito/findAllResponse")
+    public List<Credito> findAll();
+
+    /**
+     * 
      * @param idClte
      * @return
      *     returns java.util.List<java.lang.String>
@@ -186,6 +136,56 @@ public interface WSMusicaCredito {
         @WebParam(name = "id_clte", targetNamespace = "")
         int idClte)
         throws ExcepNoExisteClte_Exception
+    ;
+
+    /**
+     * 
+     * @param idClte
+     * @param dblMonto
+     * @return
+     *     returns boolean
+     * @throws ExcepNoExisteClte_Exception
+     * @throws ExcepNoCredito_Exception
+     */
+    @WebMethod(operationName = "autoriza_double")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "autoriza_double", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.AutorizaDouble")
+    @ResponseWrapper(localName = "autoriza_doubleResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.AutorizaDoubleResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/autoriza_doubleRequest", output = "http://wsmusicacredito/WSMusicaCredito/autoriza_doubleResponse", fault = {
+        @FaultAction(className = ExcepNoCredito_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza_double/Fault/ExcepNoCredito"),
+        @FaultAction(className = ExcepNoExisteClte_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza_double/Fault/ExcepNoExisteClte")
+    })
+    public boolean autorizaDouble(
+        @WebParam(name = "id_clte", targetNamespace = "")
+        int idClte,
+        @WebParam(name = "dbl_monto", targetNamespace = "")
+        double dblMonto)
+        throws ExcepNoCredito_Exception, ExcepNoExisteClte_Exception
+    ;
+
+    /**
+     * 
+     * @param monto
+     * @param idClte
+     * @return
+     *     returns boolean
+     * @throws ExcepNoExisteClte_Exception
+     * @throws ExcepNoCredito_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "autoriza", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.Autoriza")
+    @ResponseWrapper(localName = "autorizaResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.AutorizaResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/autorizaRequest", output = "http://wsmusicacredito/WSMusicaCredito/autorizaResponse", fault = {
+        @FaultAction(className = ExcepNoCredito_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza/Fault/ExcepNoCredito"),
+        @FaultAction(className = ExcepNoExisteClte_Exception.class, value = "http://wsmusicacredito/WSMusicaCredito/autoriza/Fault/ExcepNoExisteClte")
+    })
+    public boolean autoriza(
+        @WebParam(name = "id_clte", targetNamespace = "")
+        int idClte,
+        @WebParam(name = "monto", targetNamespace = "")
+        BigDecimal monto)
+        throws ExcepNoCredito_Exception, ExcepNoExisteClte_Exception
     ;
 
 }
