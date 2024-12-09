@@ -67,6 +67,8 @@ public class WSMusicaPedidos {
     {
         //List<entidades.Product> lista_prods_en_pedido = new ArrayList<>();
         List<entidades.OrderedProduct> lista_orderedProducts = new ArrayList<>();
+        List<entidades.Backorder> backorderList = new ArrayList<>();
+
         entidades.OrderedProduct ordered_product;
         entidades.Product prod;
         int num_conf;
@@ -109,7 +111,11 @@ public class WSMusicaPedidos {
             } 
             else 
             {
-                Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Clave de producto " + it.getId_prod() + " INEXISTENTE o sin existencias");
+                //LOGICA DEL BACKORDER
+                //Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Clave de producto " + it.getId_prod() + " INEXISTENTE o sin existencias");
+                Logger.getLogger(this.getClass().getName()).log(Level.WARNING,
+                        "Backorder: Producto " + it.getId_prod() + " sin existencias suficientes.");
+                backorderList.add(new Backorder(it.getId_prod(), it.getCantidad()));
             }
         }
         if( lista_orderedProducts.size() > 0 ) // hay items en el pedido
@@ -156,6 +162,11 @@ public class WSMusicaPedidos {
         else
         {
             num_pedido = 0;  // no hay items a surtir en el pedido
+        }
+        
+        // Registrar backorders en el sistema
+        if (!backorderList.isEmpty()) {
+            procesarBackorders(backorderList);
         }
         
         return num_pedido;
@@ -228,7 +239,15 @@ public class WSMusicaPedidos {
         return orderedProductFacade.getOrderedProductsByOrder(numPedido);
     }
 
-
+    @WebMethod(operationName = "procesarBackorders")
+    public void procesarBackorders(@WebParam(name = "backorderList") List<entidades.Backorder> backorderList) {
+        for (entidades.Backorder backorder : backorderList) {
+            Logger.getLogger(this.getClass().getName()).log(Level.INFO,
+                    "Procesando backorder: Producto " + backorder.getProductId() +
+                    ", cantidad pendiente: " + backorder.getCantidadPendiente());
+            productFacade.restockProduct(backorder.getProductId(), backorder.getCantidadPendiente());
+        }
+    }
 
 
     // =============================================================================
@@ -236,3 +255,5 @@ public class WSMusicaPedidos {
     // =============================================================================    
 
 }
+
+
