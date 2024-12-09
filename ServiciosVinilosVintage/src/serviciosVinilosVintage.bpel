@@ -10,7 +10,6 @@
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
     xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://xml.netbeans.org/schema/VinilosVintachSchema">
-    <import namespace="http://j2ee.netbeans.org/wsdl/ServiciosVinilosVintage/src/ServicioVinilosVintach" location="DescriptorBPEL/ServicioVinilosVintach.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" location="WSMusicaPedidosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://wsmusicapedidos/" location="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" location="WS_Musica_EnviosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -37,41 +36,37 @@
                 <sxed:predicate path="$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]" source="to"/>
             </sxed:editor>
         </variable>
-        <variable name="ServicioVinilosVintachOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVinilosVintage/src/ServicioVinilosVintach" messageType="tns:ServicioVinilosVintachOperationResponse"/>
-        <variable name="ServicioVinilosVintachOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVinilosVintage/src/ServicioVinilosVintach" messageType="tns:ServicioVinilosVintachOperationRequest"/>
-    </variables>
+        </variables>
     <sequence>
         <receive name="RecibirPedido" createInstance="yes" partnerLink="VinilosVintach" operation="VinilosVintachOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVinilosVintage/DescriptorBPEL/VinilosVintach" portType="tns:VinilosVintachPortType" variable="VinilosVintachOperationIn"/>
         <forEach name="ForEachClsItem" parallel="no" counterName="ForEach1Counter">
             <scope name="Scope1">
                 <assign name="Assign1">
-                    <copy>
-                            <from>$AltaPedidoOut.parameters/return</from>
-                                <to variable="ServicioVinilosVintachOperationOut" part="idPedido"/>
+                    
+                        <copy>
+                            <from>$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]/ns0:idProducto
+                            <sxed:editor>
+                                            <sxed:predicate path="$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]" source="from"/>
+                                        </sxed:editor>
+                                </from>
+                                <to>$AltaPedidoIn.parameters/lista_it/id_prod</to>
                         </copy>
                         <copy>
-                            <from>$VinilosVintachOperationIn.part1/ns0:idCliente</from>
-                                <to>$AltaPedidoIn.parameters/id_clte</to>
+                            <from>$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]/ns0:cantidad
+                            <sxed:editor>
+                                            <sxed:predicate path="$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]" source="from"/>
+                                        </sxed:editor>
+                                </from>
+                                <to>$AltaPedidoIn.parameters/lista_it/cantidad</to>
                         </copy>
-                    <copy>
-                        <from>$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]/ns0:idProducto
-                            <sxed:editor>
-                                <sxed:predicate path="$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]" source="from"/>
-                            </sxed:editor>
-                        </from>
-                        <to>$AltaPedidoIn.parameters/lista_it/id_prod</to>
-                    </copy>
-                    <copy>
-                        <from>$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]/ns0:cantidad
-                            <sxed:editor>
-                                <sxed:predicate path="$VinilosVintachOperationIn.part1/ns0:clsItem[$ForEach1Counter]" source="from"/>
-                            </sxed:editor>
-                        </from>
-                        <to>$AltaPedidoIn.parameters/lista_it/cantidad</to>
-                    </copy>
+                        <copy>
+                            <from>$AltaPedidoOut.parameters/return</from>
+                                <to variable="VinilosVintachOperationOut" part="numeroPedido"/>
+                        </copy>
                 </assign>
             </scope>
         </forEach>
+
         <invoke name="altaPedido" partnerLink="WSPedidos" operation="altaPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="AltaPedidoIn" outputVariable="AltaPedidoOut"/>
         <reply name="NumPedido" partnerLink="VinilosVintach" operation="VinilosVintachOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVinilosVintage/DescriptorBPEL/VinilosVintach" portType="tns:VinilosVintachPortType" variable="VinilosVintachOperationOut"/>
     </sequence>
