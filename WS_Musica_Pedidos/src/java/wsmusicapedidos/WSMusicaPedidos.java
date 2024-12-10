@@ -241,38 +241,28 @@ public class WSMusicaPedidos {
     }
 
     @WebMethod(operationName = "procesarBackorders")
-    public int procesarBackorders(@WebParam(name = "numPedido") int numPedido,
-                                  @WebParam(name = "backorderList") List<entidades.Backorder> backorderList) {
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "===================================");
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Procesando backorders para el pedido: " + numPedido);
-
-        int totalProcesados = 0;
+    public void procesarBackorders(@WebParam(name = "numPedido") int numPedido,
+                                   @WebParam(name = "backorderList") List<entidades.Backorder> backorderList) {
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "-----------------------------------------------");
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "Procesando backorders para el pedido: " + numPedido);
 
         for (entidades.Backorder backorder : backorderList) {
             Logger.getLogger(this.getClass().getName()).log(Level.INFO,
                     "Producto ID: " + backorder.getProductId() +
-                            ", Cantidad pendiente: " + backorder.getCantidadPendiente());
-
-            // Procesar restock (actualizar inventario)
+                    ", Cantidad pendiente: " + backorder.getCantidadPendiente());
             productFacade.restockProduct(backorder.getProductId(), backorder.getCantidadPendiente());
-            totalProcesados++;
         }
 
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
-                "Total de backorders procesados para el pedido " + numPedido + ": " + totalProcesados);
-        Logger.getLogger(this.getClass().getName()).log(Level.INFO, "===================================");
-
-        return totalProcesados;
+                "Total de backorders procesados para el pedido " + numPedido + ": " + backorderList.size());
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "-----------------------------------------------");
     }
-
-
-
-
-
     // =============================================================================
     // Fin de Nuevos servicio
     // =============================================================================    
 
 }
-
 

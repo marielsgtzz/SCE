@@ -40,6 +40,10 @@
 
 <xs:element name="orderedProduct" type="tns:orderedProduct"/>
 
+<xs:element name="procesarBackorders" type="tns:procesarBackorders"/>
+
+<xs:element name="procesarBackordersResponse" type="tns:procesarBackordersResponse"/>
+
 <xs:element name="procesoDeCompra" type="tns:procesoDeCompra"/>
 
 <xs:element name="procesoDeCompraResponse" type="tns:procesoDeCompraResponse"/>
@@ -227,6 +231,21 @@
 <xs:sequence>
 <xs:element name="return" type="xs:decimal" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="procesarBackorders">
+<xs:sequence>
+<xs:element name="numPedido" type="xs:int"/>
+<xs:element name="backorderList" type="tns:backorder" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="backorder">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="procesarBackordersResponse">
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="altaPedido">

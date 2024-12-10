@@ -78,7 +78,7 @@ public class POJO_Pedidos {
             System.out.println("- Producto ID: " + it.getIdProd() + ", Cantidad: " + it.getCantidad());
         }
         System.out.println("===============================================");
-        
+
         numPedido = altaPedido(idClte, listaIt);
 
         if (numPedido == 0) {
@@ -86,19 +86,10 @@ public class POJO_Pedidos {
         } else {
             System.out.println("Número de pedido generado: " + numPedido);
         }
-         // Procesar los posibles backorders
-        int totalBackordersProcesados = procesarBackorders(numPedido, backorderList);
-        if (totalBackordersProcesados > 0) {
-            System.out.println("Procesando posibles backorders para el pedido " + numPedido + "...");
-            System.out.println("Total de backorders procesados para el pedido " + numPedido + ": " + totalBackordersProcesados);
-        } else {
-            System.out.println("No hubo backorders para el pedido " + numPedido);
-        }
-        
-        
 
         System.out.println("===============================================");
     }
+
 
 
     public void cierra() {
@@ -121,14 +112,7 @@ public class POJO_Pedidos {
         wsmusicapedidos.WSMusicaPedidos_Service service = new wsmusicapedidos.WSMusicaPedidos_Service();
         wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.catalogoProds();
-    }
-
-    private static int procesarBackorders(int numPedido, List<wsmusicapedidos.Backorder> backorderList) {
-        wsmusicapedidos.WSMusicaPedidos_Service service = new wsmusicapedidos.WSMusicaPedidos_Service();
-        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
-        return port.procesarBackorders(numPedido, backorderList);
-    }
-
+    }   
 
     public static void main(String[] args) {
         POJO_Pedidos pojo = new POJO_Pedidos();
@@ -139,5 +123,11 @@ public class POJO_Pedidos {
             pojo.solicitaServicio(i);
         }
         pojo.cierra();
+    }
+
+    private static void procesarBackorders(int numPedido, java.util.List<wsmusicapedidos.Backorder> backorderList) {
+        wsmusicapedidos.WSMusicaPedidos_Service service = new wsmusicapedidos.WSMusicaPedidos_Service();
+        wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
+        port.procesarBackorders(numPedido, backorderList);
     }
 }
