@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="my_VV" targetNamespace="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" xmlns:ns="http://xml.netbeans.org/schema/VVXmlSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV">
+            <xsd:import namespace="http://xml.netbeans.org/schema/VVXmlSchema" schemaLocation="../VVXmlSchema.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="my_VVOperationRequest">
+        <part name="altaPedido" type="ns:altaPedido"/>
+    </message>
+    <message name="my_VVOperationResponse">
+        <part name="confEnvio" type="ns:confEnvio"/>
+    </message>
+    <message name="my_VVOperationFault">
+        <part name="excepAlmacen" type="ns:excepAlmacen"/>
+        <part name="excepClte" type="ns:excepClte"/>
+        <part name="excepCred" type="ns:excepCredito"/>
+    </message>
+    <portType name="my_VVPortType">
+        <operation name="my_VVOperation">
+            <input name="input1" message="tns:my_VVOperationRequest"/>
+            <output name="output1" message="tns:my_VVOperationResponse"/>
+            <fault name="fault1" message="tns:my_VVOperationFault"/>
+        </operation>
+    </portType>
+    <binding name="my_VVBinding" type="tns:my_VVPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="my_VVOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV"/>
+            </output>
+            <fault name="fault1">
+                <soap:fault name="fault1" use="literal" namespace="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="my_VVService">
+        <port name="my_VVPort" binding="tns:my_VVBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/my_VVService/my_VVPort"/>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="my_VV">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="my_VVPortTypeRole" portType="tns:my_VVPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

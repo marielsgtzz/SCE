@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://wsmusicacredito/" xmlns:ns2="http://wsmusicaenvios/" xmlns:ns3="http://wsmusicapedidos/" xmlns:ns4="http://j2ee.netbeans.org/wsdl/BPEL_VV/WS_VV/my_VV" xmlns:ns5="CA_VV" xmlns:ns6="http://enterprise.netbeans.org/bpel/BPEL_VV/BPEL_VV" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="WSMusicaCreditoPort" interface-name="ns1:WSMusicaCredito" name="endpoint1" service-name="ns1:WSMusicaCredito"/>
+        <endpoint endpoint-name="WS_Musica_EnviosPort" interface-name="ns2:WS_Musica_Envios" name="endpoint2" service-name="ns2:WS_Musica_Envios"/>
+        <endpoint endpoint-name="WSMusicaPedidosPort" interface-name="ns3:WSMusicaPedidos" name="endpoint3" service-name="ns3:WSMusicaPedidos"/>
+        <endpoint endpoint-name="my_VVPort" interface-name="ns4:my_VVPortType" name="endpoint4" service-name="ns4:my_VVService"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns4:my_VVPortType" name="endpoint5" service-name="ns5:CA_VVService1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="my_VVPortTypeRole_myRole" file-path="BPEL_VV.bpel" interface-name="ns4:my_VVPortType" name="endpoint6" process-name="BPEL_VV" service-name="ns6:PartnerLink1"/>
+        <endpoint display-name="WS_Credito" endpoint-name="WSMusicaCreditoRole_partnerRole" file-path="BPEL_VV.bpel" interface-name="ns1:WSMusicaCredito" name="endpoint7" process-name="BPEL_VV" service-name="ns6:WS_Credito"/>
+        <endpoint display-name="WS_Envios" endpoint-name="WS_Musica_EnviosRole_partnerRole" file-path="BPEL_VV.bpel" interface-name="ns2:WS_Musica_Envios" name="endpoint8" process-name="BPEL_VV" service-name="ns6:WS_Envios"/>
+        <endpoint display-name="WS_Pedidos" endpoint-name="WSMusicaPedidosRole_partnerRole" file-path="BPEL_VV.bpel" interface-name="ns3:WSMusicaPedidos" name="endpoint9" process-name="BPEL_VV" service-name="ns6:WS_Pedidos"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="BPEL_VV.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CA_VV-BPEL_VV" unit-name="BPEL_VV" unknown="false" x="165" y="99">
+            <provides endpoint="endpoint6"/>
+            <consumes endpoint="endpoint7"/>
+            <consumes endpoint="endpoint8"/>
+            <consumes endpoint="endpoint9"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CA_VV-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="67" y="77">
+                    <link xlink:href="../jbiasa/CA_VV.wsdl#xpointer(/definitions/service[@name='CA_VVService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+                <port x="67" y="314">
+                    <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Credito/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito']/port[@name='WSMusicaCreditoPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port x="67" y="235">
+                    <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Envio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/service[@name='WS_Musica_Envios']/port[@name='WS_Musica_EnviosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="156">
+                    <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Pedido/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos']/port[@name='WSMusicaPedidosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port state="deleted" x="67" y="39">
+                    <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_VV/my_VV.wsdl#xpointer(/definitions/service[@name='my_VVService']/port[@name='my_VVPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint7" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint8" mode="" provider="endpoint2" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint5" mode="" provider="endpoint6" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint9" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint4" provider="endpoint6" state="deleted"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CA_VV.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Credito/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/portType[@name='WSMusicaCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Envio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/portType[@name='WS_Musica_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Pedido/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/portType[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_VV/my_VV.wsdl#xpointer(/definitions/portType[@name='my_VVPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CA_VV.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CA_VV.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Credito/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/binding[@name='WSMusicaCreditoPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Envio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/binding[@name='WS_Musica_EnviosPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Pedido/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/binding[@name='WSMusicaPedidosPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_VV/my_VV.wsdl#xpointer(/definitions/binding[@name='my_VVBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CA_VV.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/CA_VV.wsdl#xpointer(/definitions/service[@name='CA_VVService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Credito/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Envio/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/service[@name='WS_Musica_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_Pedido/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/BPEL_VV/WS_VV/my_VV.wsdl#xpointer(/definitions/service[@name='my_VVService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CA_VV.wsdl#xpointer(/definitions/service[@name='CA_VVService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

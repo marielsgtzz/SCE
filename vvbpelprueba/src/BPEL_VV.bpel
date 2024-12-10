@@ -51,12 +51,8 @@
                 <to>$AltaPedidoIn.parameters/id_clte</to>
             </copy>
             <copy>
-                <from>$My_VVOperationIn.altaPedido/ns0:listaItems/ns0:id_prod</from>
-                <to>$AltaPedidoIn.parameters/lista_it/id_prod</to>
-            </copy>
-            <copy>
-                <from>$My_VVOperationIn.altaPedido/ns0:listaItems/ns0:cant_prod</from>
-                <to>$AltaPedidoIn.parameters/lista_it/cantidad</to>
+                <from>$My_VVOperationIn.altaPedido/ns0:listaItems</from>
+                <to>$AltaPedidoIn.parameters/lista_it</to>
             </copy>
         </assign>
         <invoke name="Invoke1" partnerLink="WS_Pedidos" operation="altaPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="AltaPedidoIn" outputVariable="AltaPedidoOut"/>
@@ -65,7 +61,6 @@
             <sequence name="Sequence1">
                 <scope name="Scope1">
                     <variables>
-                        <variable name="My_VVOperationOut4" messageType="ns1:my_VVOperationResponse"/>
                         <variable name="My_VVOperationOut3" messageType="ns1:my_VVOperationResponse"/>
                         <variable name="My_VVOperationOut2" messageType="ns1:my_VVOperationResponse"/>
                         <variable name="My_VVOperationOut1" messageType="ns1:my_VVOperationResponse"/>
@@ -136,69 +131,6 @@
                                 <reply name="Reply4" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" variable="My_VVOperationOut3"/>
                             </sequence>
                         </catch>
-                        <catch faultName="ns2:ExcepNoExisteClte" faultVariable="noClte" faultMessageType="ns2:ExcepNoExisteClte">
-                            <sequence name="Sequence9">
-                                <forEach name="ForEach2" parallel="no" counterName="ForEach1Counter" xmlns:tns="http://wsmusicapedidos/">
-                                    <startCounterValue>1</startCounterValue>
-                                        <finalCounterValue>count($My_VVOperationIn.altaPedido/ns0:listaItems)</finalCounterValue>
-                                        <scope name="Scope10">
-                                        <variables>
-                                            <variable name="RestockProductOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockProductResponse"/>
-                                            <variable name="UpdateOrderedProductStatusOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateOrderedProductStatusResponse"/>
-                                            <variable name="UpdateOrderedProductStatusIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateOrderedProductStatus"/>
-                                            <variable name="RestockProductIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockProduct"/>
-                                        </variables>
-                                            <sequence name="Sequence8">
-                                            <assign name="Assign20">
-                                                <copy>
-                                                    <from>$My_VVOperationIn.altaPedido/ns0:listaItems[.]/ns0:id_prod
-                                                        <sxed:editor>
-                                                            <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
-                                                        </sxed:editor>
-                                                    </from>
-                                                    <to>$RestockProductIn.parameters/productId</to>
-                                                </copy>
-                                                <copy>
-                                                    <from>$My_VVOperationIn.altaPedido/ns0:listaItems[.]/ns0:cant_prod
-                                                        <sxed:editor>
-                                                            <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
-                                                        </sxed:editor>
-                                                    </from>
-                                                    <to>$RestockProductIn.parameters/cantidad</to>
-                                                </copy>
-                                            </assign>
-                                            <invoke name="Invoke9" partnerLink="WS_Pedidos" operation="restockProduct" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="RestockProductIn" outputVariable="RestockProductOut"/>
-                                            <assign name="Assign21">
-                                                <copy>
-                                                    <from>$My_VVOperationIn.altaPedido/ns0:listaItems[.]/ns0:id_prod
-                                                        <sxed:editor>
-                                                            <sxed:predicate path="$My_VVOperationIn.altaPedido/ns0:listaItems[.]" source="from"/>
-                                                        </sxed:editor>
-                                                    </from>
-                                                    <to>$UpdateOrderedProductStatusIn.parameters/productId</to>
-                                                </copy>
-                                                <copy>
-                                                    <from>$AltaPedidoOut.parameters/return</from>
-                                                    <to>$UpdateOrderedProductStatusIn.parameters/numPedido</to>
-                                                </copy>
-                                                <copy>
-                                                    <from>'C'</from>
-                                                    <to>$UpdateOrderedProductStatusIn.parameters/status</to>
-                                                </copy>
-                                            </assign>
-                                            <invoke name="Invoke10" partnerLink="WS_Pedidos" operation="updateOrderedProductStatus" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="UpdateOrderedProductStatusIn" outputVariable="UpdateOrderedProductStatusOut"/>
-                                        </sequence>
-                                    </scope>
-                                </forEach>
-                                <assign name="Assign22">
-                                    <copy>
-                                        <from>'No existe el cliente.'</from>
-                                        <to>$Fault1FaultVar2.excepClte/ns0:msg</to>
-                                    </copy>
-                                </assign>
-                                <reply name="Reply6" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" faultName="ns2:ExcepNoExisteClte" variable="Fault1FaultVar2"/>
-                            </sequence>
-                        </catch>
                     </faultHandlers>
                     <sequence name="Sequence3">
                         <assign name="Assign2">
@@ -263,7 +195,7 @@
                                 <assign name="enviado">
                                     <copy>
                                         <from>concat('"Pedido confirmado: ', $AltaPedidoOut.parameters/return)</from>
-                                        <to>$My_VVOperationOut2.confEnvio/ns0:confEnvio</to>
+                                        <to>$My_VVOperationOut.confEnvio/ns0:confEnvio</to>
                                     </copy>
                                 </assign>
                                 <reply name="Reply5" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" variable="My_VVOperationOut2"/>
@@ -273,10 +205,10 @@
                                     <assign name="cancelado">
                                         <copy>
                                             <from>'Error en la generación del pedido.'</from>
-                                            <to>$My_VVOperationOut4.confEnvio/ns0:confEnvio</to>
+                                            <to>$My_VVOperationOut.confEnvio/ns0:confEnvio</to>
                                         </copy>
                                     </assign>
-                                    <reply name="Reply3" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" variable="My_VVOperationOut4"/>
+                                    <reply name="Reply3" partnerLink="PartnerLink1" operation="my_VVOperation" portType="ns1:my_VVPortType" variable="My_VVOperationOut"/>
                                 </sequence>
                             </else>
                         </if>

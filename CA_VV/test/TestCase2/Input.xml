@@ -1,0 +1,14 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ca="CA_VV" xmlns:vvx="http://xml.netbeans.org/schema/VVXmlSchema">
+  <soapenv:Body>
+    <ca:my_VVOperation>
+      <altaPedido>
+        <vvx:id_clte>2</vvx:id_clte>
+        <!--Zero or more repetitions:-->
+        <vvx:listaItems>
+          <vvx:id_prod>34</vvx:id_prod>
+          <vvx:cant_prod>1</vvx:cant_prod>
+        </vvx:listaItems>
+      </altaPedido>
+    </ca:my_VVOperation>
+  </soapenv:Body>
+</soapenv:Envelope>

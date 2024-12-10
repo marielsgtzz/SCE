@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
+import javax.jws.Oneway;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -209,13 +210,15 @@ public class WSMusicaPedidos {
     {
         return customerOrderFacade.find(num_pedido).getCustomerId();
     }
-    
+   
+    @Oneway
     @WebMethod(operationName = "restockProduct")
     public void restockProduct(@WebParam(name = "productId") int productId, 
                                @WebParam(name = "cantidad") int cantidad) {
         productFacade.restockProduct(productId, cantidad);
     }
     
+    @Oneway
     @WebMethod(operationName = "updateOrderedProductStatus")
     public void updateOrderedProductStatus(@WebParam(name = "numPedido") int numPedido,
                                            @WebParam(name = "productId") int productId,

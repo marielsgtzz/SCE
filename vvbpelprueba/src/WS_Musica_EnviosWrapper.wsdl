@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WS_Musica_EnviosWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://wsmusicaenvios/">
+    <import location="http://localhost:8080/WS_Musica_Envios/WS_Musica_Envios?WSDL" namespace="http://wsmusicaenvios/"/>
+    <plnk:partnerLinkType name="WS_Musica_EnviosLinkType">
+        <plnk:role name="WS_Musica_EnviosRole" portType="ns:WS_Musica_Envios"/>
+    </plnk:partnerLinkType>
+</definitions>
