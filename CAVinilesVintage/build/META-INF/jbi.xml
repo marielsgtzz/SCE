@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel" xmlns:ns2="http://wsmusicacredito/" xmlns:ns3="CAVinilesVintage" xmlns:ns4="http://wsmusicaenvios/" xmlns:ns5="http://wsmusicapedidos/" xmlns:ns6="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/jbi ./jbi.xsd">
+    <service-assembly>
+        <identification>
+            <name>CAVinilesVintage</name>
+            <description>Represents the Service Assembly of CAVinilesVintage</description>
+        </identification>
+        <service-unit>
+            <identification>
+                <name>CAVinilesVintage-VinilesVintageBpel</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>VinilesVintageBpel.jar</artifacts-zip>
+                <component-name>sun-bpel-engine</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>CAVinilesVintage-sun-http-binding</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>sun-http-binding.jar</artifacts-zip>
+                <component-name>sun-http-binding</component-name>
+            </target>
+        </service-unit>
+        <connections>
+            <connection>
+                <consumer endpoint-name="WSMusicaCreditoRole_partnerRole" service-name="ns1:WS_Credito"/>
+                <provider endpoint-name="WSMusicaCreditoPort" service-name="ns2:WSMusicaCredito"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="casaPort1" service-name="ns3:CAVinilesVintageService1"/>
+                <provider endpoint-name="VinilesVintageWSDLPortTypeRole_myRole" service-name="ns1:gestionaPedido"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="WS_Musica_EnviosRole_partnerRole" service-name="ns1:WS_Envios"/>
+                <provider endpoint-name="WS_Musica_EnviosPort" service-name="ns4:WS_Musica_Envios"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="WSMusicaPedidosRole_partnerRole" service-name="ns1:WS_Pedido"/>
+                <provider endpoint-name="WSMusicaPedidosPort" service-name="ns5:WSMusicaPedidos"/>
+            </connection>
+        </connections>
+        <route-types xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <source endpoint-name="WSMusicaCreditoRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:WS_Credito">direct</source>
+            <source endpoint-name="casaPort1" mode="local" routing-rule="default" service-name="ns3:CAVinilesVintageService1">direct</source>
+            <source endpoint-name="WS_Musica_EnviosRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:WS_Envios">direct</source>
+            <source endpoint-name="WSMusicaPedidosRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:WS_Pedido">direct</source>
+        </route-types>
+        <interface-mapping xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <implementation>
+                <by-provider endpoint-name="VinilesVintageWSDLPortTypeRole_myRole" service-name="ns1:gestionaPedido"/>
+                <interface name="ns6:VinilesVintageWSDLPortType"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSMusicaCreditoPort" service-name="ns2:WSMusicaCredito"/>
+                <interface name="ns2:WSMusicaCredito"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WS_Musica_EnviosPort" service-name="ns4:WS_Musica_Envios"/>
+                <interface name="ns4:WS_Musica_Envios"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSMusicaPedidosPort" service-name="ns5:WSMusicaPedidos"/>
+                <interface name="ns5:WSMusicaPedidos"/>
+            </implementation>
+        </interface-mapping>
+    </service-assembly>
+</jbi>

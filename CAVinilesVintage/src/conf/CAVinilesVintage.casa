@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://wsmusicapedidos/" xmlns:ns2="CAVinilesVintage" xmlns:ns3="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" xmlns:ns4="http://wsmusicacredito/" xmlns:ns5="http://wsmusicaenvios/" xmlns:ns6="http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="WSMusicaPedidosPort" interface-name="ns1:WSMusicaPedidos" name="endpoint1" service-name="ns1:WSMusicaPedidos"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns3:VinilesVintageWSDLPortType" name="endpoint2" service-name="ns2:CAVinilesVintageService1"/>
+        <endpoint endpoint-name="WSMusicaCreditoPort" interface-name="ns4:WSMusicaCredito" name="endpoint3" service-name="ns4:WSMusicaCredito"/>
+        <endpoint endpoint-name="WS_Musica_EnviosPort" interface-name="ns5:WS_Musica_Envios" name="endpoint4" service-name="ns5:WS_Musica_Envios"/>
+        <endpoint display-name="gestionaPedido" endpoint-name="VinilesVintageWSDLPortTypeRole_myRole" file-path="vinilesVintageBpel.bpel" interface-name="ns3:VinilesVintageWSDLPortType" name="endpoint5" process-name="vinilesVintageBpel" service-name="ns6:gestionaPedido"/>
+        <endpoint display-name="WS_Pedido" endpoint-name="WSMusicaPedidosRole_partnerRole" file-path="vinilesVintageBpel.bpel" interface-name="ns1:WSMusicaPedidos" name="endpoint6" process-name="vinilesVintageBpel" service-name="ns6:WS_Pedido"/>
+        <endpoint display-name="WS_Credito" endpoint-name="WSMusicaCreditoRole_partnerRole" file-path="vinilesVintageBpel.bpel" interface-name="ns4:WSMusicaCredito" name="endpoint7" process-name="vinilesVintageBpel" service-name="ns6:WS_Credito"/>
+        <endpoint display-name="WS_Envios" endpoint-name="WS_Musica_EnviosRole_partnerRole" file-path="vinilesVintageBpel.bpel" interface-name="ns5:WS_Musica_Envios" name="endpoint8" process-name="vinilesVintageBpel" service-name="ns6:WS_Envios"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="VinilesVintageBpel.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CAVinilesVintage-VinilesVintageBpel" unit-name="VinilesVintageBpel" unknown="false" x="138" y="99">
+            <provides endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
+            <consumes endpoint="endpoint7"/>
+            <consumes endpoint="endpoint8"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CAVinilesVintage-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="67" y="466">
+                    <link xlink:href="../jbiasa/CAVinilesVintage.wsdl#xpointer(/definitions/service[@name='CAVinilesVintageService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="118">
+                    <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito']/port[@name='WSMusicaCreditoPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="39">
+                    <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/service[@name='WS_Musica_Envios']/port[@name='WS_Musica_EnviosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port x="67" y="197">
+                    <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos']/port[@name='WSMusicaPedidosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint7" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint2" mode="" provider="endpoint5" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint8" mode="" provider="endpoint4" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint6" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CAVinilesVintage.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CAVinilesVintage.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/portType[@name='WSMusicaCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/portType[@name='WS_Musica_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/portType[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/VinilesVintageWSDL.wsdl#xpointer(/definitions/portType[@name='VinilesVintageWSDLPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CAVinilesVintage.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CAVinilesVintage.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/binding[@name='WSMusicaCreditoPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/binding[@name='WS_Musica_EnviosPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/binding[@name='WSMusicaPedidosPortBinding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/CAVinilesVintage.wsdl#xpointer(/definitions/service[@name='CAVinilesVintageService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CAVinilesVintage.wsdl#xpointer(/definitions/service[@name='CAVinilesVintageService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Envios/WS_Musica_Envios.wsdl#xpointer(/definitions/service[@name='WS_Musica_Envios'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/VinilesVintageBpel/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

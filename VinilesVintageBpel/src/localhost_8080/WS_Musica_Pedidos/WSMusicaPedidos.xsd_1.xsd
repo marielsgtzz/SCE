@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://wsmusicapedidos/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://wsmusicapedidos/">
+
+<xs:element name="altaPedido" type="tns:altaPedido"/>
+<xs:element name="altaPedidoResponse" type="tns:altaPedidoResponse"/>
+<xs:element name="artist" type="tns:artist"/>
+<xs:element name="catalogoCltes" type="tns:catalogoCltes"/>
+<xs:element name="catalogoCltesResponse" type="tns:catalogoCltesResponse"/>
+<xs:element name="catalogoProds" type="tns:catalogoProds"/>
+<xs:element name="catalogoProdsResponse" type="tns:catalogoProdsResponse"/>
+<xs:element name="category" type="tns:category"/>
+<xs:element name="clteDelPedido" type="tns:clteDelPedido"/>
+<xs:element name="clteDelPedidoResponse" type="tns:clteDelPedidoResponse"/>
+<xs:element name="customer" type="tns:customer"/>
+<xs:element name="customerOrder" type="tns:customerOrder"/>
+<xs:element name="genre" type="tns:genre"/>
+<xs:element name="getOrderedProductsByOrder" type="tns:getOrderedProductsByOrder"/>
+<xs:element name="getOrderedProductsByOrderResponse" type="tns:getOrderedProductsByOrderResponse"/>
+<xs:element name="hello" type="tns:hello"/>
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+<xs:element name="montoPedido" type="tns:montoPedido"/>
+<xs:element name="montoPedidoResponse" type="tns:montoPedidoResponse"/>
+<xs:element name="orderedProduct" type="tns:orderedProduct"/>
+<xs:element name="procesarBackorders" type="tns:procesarBackorders"/>
+<xs:element name="procesoDeCompra" type="tns:procesoDeCompra"/>
+<xs:element name="procesoDeCompraResponse" type="tns:procesoDeCompraResponse"/>
+<xs:element name="product" type="tns:product"/>
+<xs:element name="restockLista" type="tns:restockLista"/>
+<xs:element name="restockProduct" type="tns:restockProduct"/>
+<xs:element name="updateOrderedProductStatus" type="tns:updateOrderedProductStatus"/>
+<xs:element name="updateStatusLista" type="tns:updateStatusLista"/>
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="restockProduct">
+<xs:sequence>
+<xs:element name="productId" type="xs:int"/>
+<xs:element name="cantidad" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="restockLista">
+<xs:sequence>
+<xs:element name="lista_it" type="tns:clsItem" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clsItem">
+<xs:sequence>
+<xs:element name="cantidad" type="xs:int"/>
+<xs:element name="id_prod" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procesoDeCompra">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="procesoDeCompraResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="catalogoProds">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="catalogoProdsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:product" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="artistId" type="tns:artist" minOccurs="0"/>
+<xs:element name="categoryId" type="tns:category" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="existencia" type="xs:int"/>
+<xs:element name="genreId" type="tns:genre" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="lastUpdate" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="artist">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="genre">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateOrderedProductStatus">
+<xs:sequence>
+<xs:element name="numPedido" type="xs:int"/>
+<xs:element name="productId" type="xs:int"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="montoPedido">
+<xs:sequence>
+<xs:element name="num_pedido" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="montoPedidoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="updateStatusLista">
+<xs:sequence>
+<xs:element name="lista_it" type="tns:clsItem" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clteDelPedido">
+<xs:sequence>
+<xs:element name="num_pedido" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="clteDelPedidoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customer" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="customer">
+<xs:sequence>
+<xs:element name="address" type="xs:string" minOccurs="0"/>
+<xs:element name="ccNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="cityRegion" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="phone" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getOrderedProductsByOrder">
+<xs:sequence>
+<xs:element name="numPedido" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getOrderedProductsByOrderResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:orderedProduct" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orderedProduct">
+<xs:sequence>
+<xs:element name="customerOrder" type="tns:customerOrder" minOccurs="0"/>
+<xs:element name="orderedProductPK" type="tns:orderedProductPK" minOccurs="0"/>
+<xs:element name="product" type="tns:product" minOccurs="0"/>
+<xs:element name="quantity" type="xs:short"/>
+<xs:element name="statusId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="customerOrder">
+<xs:sequence>
+<xs:element name="amount" type="xs:decimal" minOccurs="0"/>
+<xs:element name="confirmationNumber" type="xs:int"/>
+<xs:element name="customerId" type="tns:customer" minOccurs="0"/>
+<xs:element name="dateCreated" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orderedProductPK">
+<xs:sequence>
+<xs:element name="customerOrderId" type="xs:int"/>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="catalogoCltes">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="catalogoCltesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:customer" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procesarBackorders">
+<xs:sequence>
+<xs:element name="numPedido" type="xs:int"/>
+<xs:element name="backorderList" type="tns:backorder" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="backorder">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="altaPedido">
+<xs:sequence>
+<xs:element name="id_clte" type="xs:int"/>
+<xs:element name="lista_it" type="tns:clsItem" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="altaPedidoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

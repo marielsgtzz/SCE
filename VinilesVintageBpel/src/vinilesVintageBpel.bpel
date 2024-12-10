@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="vinilesVintageBpel"
+    targetNamespace="http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://xml.netbeans.org/schema/VinilesVintageSchema" xmlns:ns1="http://wsmusicacredito/">
+    <import namespace="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" location="VinilesVintageWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" location="WSMusicaPedidosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicapedidos/" location="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaCreditoWrapper" location="WSMusicaCreditoWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicacredito/" location="http://localhost:8080/WS_Musica_Credito/WSMusicaCredito?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" location="WS_Musica_EnviosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicaenvios/" location="http://localhost:8080/WS_Musica_Envios/WS_Musica_Envios?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="WS_Pedido" xmlns:tns="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" partnerLinkType="tns:WSMusicaPedidosLinkType" partnerRole="WSMusicaPedidosRole"/>
+        <partnerLink name="WS_Envios" xmlns:tns="http://enterprise.netbeans.org/bpel/WS_Musica_EnviosWrapper" partnerLinkType="tns:WS_Musica_EnviosLinkType" partnerRole="WS_Musica_EnviosRole"/>
+        <partnerLink name="WS_Credito" xmlns:tns="http://enterprise.netbeans.org/bpel/WSMusicaCreditoWrapper" partnerLinkType="tns:WSMusicaCreditoLinkType" partnerRole="WSMusicaCreditoRole"/>
+        <partnerLink name="gestionaPedido" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" partnerLinkType="tns:VinilesVintageWSDL" myRole="VinilesVintageWSDLPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="VinilesVintageWSDLOperationOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationResponse"/>
+        <variable name="SolicitudEnvioOut" xmlns:tns="http://wsmusicaenvios/" messageType="tns:solicitudEnvioResponse"/>
+        <variable name="SolicitudEnvioIn" xmlns:tns="http://wsmusicaenvios/" messageType="tns:solicitudEnvio"/>
+        <variable name="ClteDelPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:clteDelPedidoResponse"/>
+        <variable name="ClteDelPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:clteDelPedido"/>
+        <variable name="AutorizaOut" xmlns:tns="http://wsmusicacredito/" messageType="tns:autorizaResponse"/>
+        <variable name="AutorizaIn" xmlns:tns="http://wsmusicacredito/" messageType="tns:autoriza"/>
+        <variable name="MontoPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedidoResponse"/>
+        <variable name="MontoPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedido"/>
+        <variable name="Fault1FaultVar1" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationFault"/>
+        <variable name="VinilesVintageWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationResponse"/>
+        <variable name="Fault1FaultVar" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationFault"/>
+        <variable name="AltaPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedidoResponse"/>
+        <variable name="AltaPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedido">
+            <sxed:editor>
+                <sxed:predicate path="$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]" source="from"/>
+                <sxed:predicate path="$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]" source="to"/>
+            </sxed:editor>
+        </variable>
+        <variable name="VinilesVintageWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationRequest">
+            <sxed:editor>
+                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach1Counter]" source="from"/>
+                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]" source="from"/>
+                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]" source="from"/>
+            </sxed:editor>
+        </variable>
+    </variables>
+    <sequence>
+        <receive name="DatosCompra" createInstance="yes" partnerLink="gestionaPedido" operation="VinilesVintageWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" portType="tns:VinilesVintageWSDLPortType" variable="VinilesVintageWSDLOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from>$VinilesVintageWSDLOperationIn.part1/ns0:id_clte</from>
+                <to>$AltaPedidoIn.parameters/id_clte</to>
+            </copy>
+        </assign>
+        <forEach name="ForEach1" parallel="no" counterName="ForEach1Counter">
+            <startCounterValue>1</startCounterValue>
+            <finalCounterValue>count($VinilesVintageWSDLOperationIn.part1/ns0:listaIt/ns0:id_prod)</finalCounterValue>
+            <scope name="Scope1">
+                <assign name="Assign2">
+                    <copy>
+                        <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach1Counter]/ns0:id_prod
+                            <sxed:editor>
+                                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach1Counter]" source="from"/>
+                            </sxed:editor>
+                        </from>
+                        <to>$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]/id_prod
+                            <sxed:editor>
+                                <sxed:predicate path="$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]" source="to"/>
+                            </sxed:editor>
+                        </to>
+                    </copy>
+                    <copy>
+                        <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach1Counter]/ns0:cantidad
+                            <sxed:editor>
+                                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach1Counter]" source="from"/>
+                            </sxed:editor>
+                        </from>
+                        <to>$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]/cantidad
+                            <sxed:editor>
+                                <sxed:predicate path="$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]" source="to"/>
+                            </sxed:editor>
+                        </to>
+                    </copy>
+                </assign>
+            </scope>
+        </forEach>
+        <invoke name="alta_Pedido" partnerLink="WS_Pedido" operation="altaPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="AltaPedidoIn" outputVariable="AltaPedidoOut"/>
+        <if name="If1">
+            <condition>0 != $AltaPedidoOut.parameters/return</condition>
+            <if name="If2">
+                <condition>-1 != $AltaPedidoOut.parameters/return</condition>
+                <sequence name="Sequence2">
+                    <assign name="Assign6">
+                        <copy>
+                            <from>$AltaPedidoOut.parameters/return</from>
+                            <to>$MontoPedidoIn.parameters/num_pedido</to>
+                        </copy>
+                    </assign>
+                    <invoke name="Monto" partnerLink="WS_Pedido" operation="montoPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="MontoPedidoIn" outputVariable="MontoPedidoOut"/>
+                    <assign name="Assign7">
+                        <copy>
+                            <from>$MontoPedidoOut.parameters/return</from>
+                            <to>$AutorizaIn.parameters/monto</to>
+                        </copy>
+                        <copy>
+                            <from>$VinilesVintageWSDLOperationIn.part1/ns0:id_clte</from>
+                            <to>$AutorizaIn.parameters/id_clte</to>
+                        </copy>
+                    </assign>
+                    <scope name="Scope2">
+                        <variables>
+                            <variable name="UpdateStatusListaOut1" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateStatusListaResponse"/>
+                            <variable name="UpdateStatusListaIn1" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateStatusLista">
+                                <sxed:editor>
+                                    <sxed:predicate path="$UpdateStatusListaIn1.parameters/lista_it[$ForEach4Counter]" source="to"/>
+                                </sxed:editor>
+                            </variable>
+                            <variable name="UpdateStatusListaOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateStatusListaResponse"/>
+                            <variable name="UpdateStatusListaIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:updateStatusLista">
+                                <sxed:editor>
+                                    <sxed:predicate path="$UpdateStatusListaIn.parameters/lista_it[$ForEach3Counter]" source="from"/>
+                                    <sxed:predicate path="$UpdateStatusListaIn.parameters/lista_it[$ForEach3Counter]" source="to"/>
+                                </sxed:editor>
+                            </variable>
+                            <variable name="RestockListaOut1" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockListaResponse"/>
+                            <variable name="RestockListaIn1" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockLista">
+                                <sxed:editor>
+                                    <sxed:predicate path="$RestockListaIn1.parameters/lista_it[$ForEach4Counter]" source="to"/>
+                                </sxed:editor>
+                            </variable>
+                            <variable name="RestockListaOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockListaResponse"/>
+                            <variable name="RestockListaIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:restockLista">
+                                <sxed:editor>
+                                    <sxed:predicate path="$RestockListaIn.parameters/lista_it[$ForEach3Counter]" source="to"/>
+                                </sxed:editor>
+                            </variable>
+                            <variable name="Fault1FaultVar3" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationFault"/>
+                            <variable name="Fault1FaultVar2" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" messageType="tns:VinilesVintageWSDLOperationFault"/>
+                        </variables>
+                        <faultHandlers>
+                            <catch faultName="ns1:ExcepNoCredito" faultVariable="noCredito" faultMessageType="ns1:ExcepNoCredito">
+                                <sequence name="Sequence4">
+                                    <forEach name="ForEach3" parallel="no" counterName="ForEach3Counter">
+                                        <startCounterValue>1</startCounterValue>
+                                        <finalCounterValue>count($ForEach3Counter)</finalCounterValue>
+                                        <scope name="Scope5">
+                                            <sequence name="Sequence7">
+                                                <assign name="Assign15">
+                                                    <copy>
+                                                            <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]/ns0:id_prod
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]" source="from"/>
+                                                                        </sxed:editor>
+                                                                </from>
+                                                                <to>$RestockListaIn.parameters/lista_it[$ForEach3Counter]/id_prod
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$RestockListaIn.parameters/lista_it[$ForEach3Counter]" source="to"/>
+                                                                        </sxed:editor>
+                                                                </to>
+                                                        </copy>
+                                                        <copy>
+                                                            <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]/ns0:cantidad
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]" source="from"/>
+                                                                        </sxed:editor>
+                                                                </from>
+                                                                <to>$RestockListaIn.parameters/lista_it[$ForEach3Counter]/cantidad
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$RestockListaIn.parameters/lista_it[$ForEach3Counter]" source="to"/>
+                                                                        </sxed:editor>
+                                                                </to>
+                                                        </copy>
+                                                </assign>
+                                                <assign name="Assign16">
+                                                    <copy>
+                                                        <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]/ns0:id_prod
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]" source="from"/>
+                                                            </sxed:editor>
+                                                        </from>
+                                                        <to>$UpdateStatusListaIn.parameters/lista_it[$ForEach3Counter]/id_prod
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$UpdateStatusListaIn.parameters/lista_it[$ForEach3Counter]" source="to"/>
+                                                            </sxed:editor>
+                                                        </to>
+                                                    </copy>
+                                                    <copy>
+                                                        <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]/ns0:cantidad
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach3Counter]" source="from"/>
+                                                            </sxed:editor>
+                                                        </from>
+                                                        <to>$UpdateStatusListaIn.parameters/lista_it[$ForEach3Counter]/cantidad
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$UpdateStatusListaIn.parameters/lista_it[$ForEach3Counter]" source="to"/>
+                                                            </sxed:editor>
+                                                        </to>
+                                                    </copy>
+                                                    <copy>
+                                                        <from>'C'</from>
+                                                        <to>$UpdateStatusListaIn.parameters/status</to>
+                                                    </copy>
+                                                </assign>
+                                            </sequence>
+                                        </scope>
+                                    </forEach>
+                                    <invoke name="restock1" partnerLink="WS_Pedido" operation="restockLista" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="RestockListaIn" outputVariable="RestockListaOut"/>
+                                    <invoke name="update1" partnerLink="WS_Pedido" operation="updateStatusLista" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="UpdateStatusListaIn" outputVariable="UpdateStatusListaOut"/>
+                                    <assign name="Assign8">
+                                        <copy>
+                                            <from>$noCredito.fault/msg</from>
+                                            <to>$Fault1FaultVar2.part1/ns0:fault</to>
+                                        </copy>
+                                    </assign>
+                                    <reply name="NoCredito" partnerLink="gestionaPedido" operation="VinilesVintageWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" portType="tns:VinilesVintageWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar2"/>
+                                </sequence>
+                            </catch>
+                            <catch faultName="ns1:ExcepNoExisteClte" faultVariable="noClte" faultMessageType="ns1:ExcepNoExisteClte">
+                                <sequence name="Sequence5">
+                                    <forEach name="ForEach4" parallel="no" counterName="ForEach4Counter">
+                                        <startCounterValue>1</startCounterValue>
+                                        <finalCounterValue>count($ForEach4Counter)</finalCounterValue>
+                                        <scope name="Scope4">
+                                            <sequence name="Sequence8">
+                                                <assign name="Assign14">
+                                                    <copy>
+                                                            <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]/ns0:id_prod
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]" source="from"/>
+                                                                        </sxed:editor>
+                                                                </from>
+                                                                <to>$RestockListaIn1.parameters/lista_it[$ForEach4Counter]/id_prod
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$RestockListaIn1.parameters/lista_it[$ForEach4Counter]" source="to"/>
+                                                                        </sxed:editor>
+                                                                </to>
+                                                        </copy>
+                                                        <copy>
+                                                            <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]/ns0:cantidad
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]" source="from"/>
+                                                                        </sxed:editor>
+                                                                </from>
+                                                                <to>$RestockListaIn1.parameters/lista_it[$ForEach4Counter]/cantidad
+                                                        <sxed:editor>
+                                                                            <sxed:predicate path="$RestockListaIn1.parameters/lista_it[$ForEach4Counter]" source="to"/>
+                                                                        </sxed:editor>
+                                                                </to>
+                                                        </copy>
+                                                </assign>
+                                                <assign name="Assign17">
+                                                    <copy>
+                                                        <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]/ns0:id_prod
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]" source="from"/>
+                                                            </sxed:editor>
+                                                        </from>
+                                                        <to>$UpdateStatusListaIn1.parameters/lista_it[$ForEach4Counter]/id_prod
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$UpdateStatusListaIn1.parameters/lista_it[$ForEach4Counter]" source="to"/>
+                                                            </sxed:editor>
+                                                        </to>
+                                                    </copy>
+                                                    <copy>
+                                                        <from>$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]/ns0:cantidad
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$VinilesVintageWSDLOperationIn.part1/ns0:listaIt[$ForEach4Counter]" source="from"/>
+                                                            </sxed:editor>
+                                                        </from>
+                                                        <to>$UpdateStatusListaIn1.parameters/lista_it[$ForEach4Counter]/cantidad
+                                                            <sxed:editor>
+                                                                <sxed:predicate path="$UpdateStatusListaIn1.parameters/lista_it[$ForEach4Counter]" source="to"/>
+                                                            </sxed:editor>
+                                                        </to>
+                                                    </copy>
+                                                    <copy>
+                                                        <from>'C'</from>
+                                                        <to>$UpdateStatusListaIn1.parameters/status</to>
+                                                    </copy>
+                                                </assign>
+                                            </sequence>
+                                        </scope>
+                                    </forEach>
+                                    <invoke name="restock" partnerLink="WS_Pedido" operation="restockLista" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="RestockListaIn1" outputVariable="RestockListaOut1"/>
+                                    <invoke name="update" partnerLink="WS_Pedido" operation="updateStatusLista" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="UpdateStatusListaIn1" outputVariable="UpdateStatusListaOut1"/>
+                                    <assign name="Assign9">
+                                        <copy>
+                                            <from>$noClte.fault/msg</from>
+                                            <to>$Fault1FaultVar3.part1/ns0:fault</to>
+                                        </copy>
+                                    </assign>
+                                    <reply name="NoClte" partnerLink="gestionaPedido" operation="VinilesVintageWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" portType="tns:VinilesVintageWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar3"/>
+                                </sequence>
+                            </catch>
+                        </faultHandlers>
+                        <sequence name="Sequence6">
+                            <invoke name="Autoriza" partnerLink="WS_Credito" operation="autoriza" portType="ns1:WSMusicaCredito" inputVariable="AutorizaIn" outputVariable="AutorizaOut"/>
+                        </sequence>
+                    </scope>
+                    <assign name="Assign10">
+                        <copy>
+                            <from>$AltaPedidoOut.parameters/return</from>
+                            <to>$ClteDelPedidoIn.parameters/num_pedido</to>
+                        </copy>
+                    </assign>
+                    <invoke name="Clte_delPedido" partnerLink="WS_Pedido" operation="clteDelPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="ClteDelPedidoIn" outputVariable="ClteDelPedidoOut"/>
+                    <assign name="Assign11">
+                        <copy>
+                            <from>1</from>
+                            <to>$SolicitudEnvioIn.parameters/id_Tda</to>
+                        </copy>
+                        <copy>
+                            <from>$ClteDelPedidoOut.parameters/return/email</from>
+                            <to>$SolicitudEnvioIn.parameters/email</to>
+                        </copy>
+                        <copy>
+                            <from>$ClteDelPedidoOut.parameters/return/name</from>
+                            <to>$SolicitudEnvioIn.parameters/name</to>
+                        </copy>
+                        <copy>
+                            <from>$ClteDelPedidoOut.parameters/return/phone</from>
+                            <to>$SolicitudEnvioIn.parameters/phone</to>
+                        </copy>
+                        <copy>
+                            <from>$ClteDelPedidoOut.parameters/return/address</from>
+                            <to>$SolicitudEnvioIn.parameters/address</to>
+                        </copy>
+                        <copy>
+                            <from>$ClteDelPedidoOut.parameters/return/cityRegion</from>
+                            <to>$SolicitudEnvioIn.parameters/city_region</to>
+                        </copy>
+                        <copy>
+                            <from>$AltaPedidoOut.parameters/return</from>
+                            <to>$SolicitudEnvioIn.parameters/id_pedido</to>
+                        </copy>
+                    </assign>
+                    <invoke name="solEnvio" partnerLink="WS_Envios" operation="solicitudEnvio" xmlns:tns="http://wsmusicaenvios/" portType="tns:WS_Musica_Envios" inputVariable="SolicitudEnvioIn" outputVariable="SolicitudEnvioOut"/>
+                    <assign name="Assign12">
+                        <copy>
+                            <from>concat('Pedido confirmado con id: ', $AltaPedidoOut.parameters/return)</from>
+                            <to>$VinilesVintageWSDLOperationOut1.part1/ns0:return</to>
+                        </copy>
+                    </assign>
+                    <reply name="todoOK" partnerLink="gestionaPedido" operation="VinilesVintageWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" portType="tns:VinilesVintageWSDLPortType" variable="VinilesVintageWSDLOperationOut1"/>
+                </sequence>
+                <else>
+                    <sequence name="Sequence3">
+                        <assign name="Assign5">
+                            <copy>
+                                <from>concat('No existe el cliente con id: ', $VinilesVintageWSDLOperationIn.part1/ns0:id_clte)</from>
+                                <to>$Fault1FaultVar1.part1/ns0:fault</to>
+                            </copy>
+                        </assign>
+                        <reply name="NohayClte" partnerLink="gestionaPedido" operation="VinilesVintageWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" portType="tns:VinilesVintageWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar1"/>
+                    </sequence>
+                </else>
+            </if>
+            <else>
+                <sequence name="Sequence1">
+                    <assign name="Assign3">
+                        <copy>
+                            <from>'Producto sin existencias. No se puede generar el pedido.'</from>
+                            <to>$Fault1FaultVar.part1/ns0:fault</to>
+                        </copy>
+                    </assign>
+                    <reply name="NohayDePiña" partnerLink="gestionaPedido" operation="VinilesVintageWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" portType="tns:VinilesVintageWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar"/>
+                </sequence>
+            </else>
+        </if>
+    </sequence>
+</process>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel" xmlns:ns2="http://wsmusicacredito/" xmlns:ns3="CAVinilesVintage" xmlns:ns4="http://wsmusicaenvios/" xmlns:ns5="http://wsmusicapedidos/" xmlns:ns6="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" version="1.0">
+    <services binding-component="true">
+        <provides endpoint-name="WSMusicaCreditoPort" interface-name="ns2:WSMusicaCredito" service-name="ns2:WSMusicaCredito"/>
+        <provides endpoint-name="WS_Musica_EnviosPort" interface-name="ns4:WS_Musica_Envios" service-name="ns4:WS_Musica_Envios"/>
+        <provides endpoint-name="WSMusicaPedidosPort" interface-name="ns5:WSMusicaPedidos" service-name="ns5:WSMusicaPedidos"/>
+        <consumes endpoint-name="casaPort1" interface-name="ns6:VinilesVintageWSDLPortType" service-name="ns3:CAVinilesVintageService1"/>
+    </services>
+</jbi>

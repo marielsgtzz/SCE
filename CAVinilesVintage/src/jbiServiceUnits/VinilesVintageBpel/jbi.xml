@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel" xmlns:ns1="http://wsmusicapedidos/" xmlns:ns2="http://wsmusicacredito/" xmlns:ns3="http://wsmusicaenvios/" xmlns:ns4="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" xmlns:ns5="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="VinilesVintageWSDLPortTypeRole_myRole" interface-name="ns4:VinilesVintageWSDLPortType" service-name="ns0:gestionaPedido">
+            <ns5:display-name>gestionaPedido</ns5:display-name>
+            <ns5:process-name>vinilesVintageBpel</ns5:process-name>
+            <ns5:file-path>vinilesVintageBpel.bpel</ns5:file-path>
+        </provides>
+        <consumes endpoint-name="WSMusicaPedidosRole_partnerRole" interface-name="ns1:WSMusicaPedidos" service-name="ns0:WS_Pedido">
+            <ns5:display-name>WS_Pedido</ns5:display-name>
+            <ns5:process-name>vinilesVintageBpel</ns5:process-name>
+            <ns5:file-path>vinilesVintageBpel.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="WSMusicaCreditoRole_partnerRole" interface-name="ns2:WSMusicaCredito" service-name="ns0:WS_Credito">
+            <ns5:display-name>WS_Credito</ns5:display-name>
+            <ns5:process-name>vinilesVintageBpel</ns5:process-name>
+            <ns5:file-path>vinilesVintageBpel.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="WS_Musica_EnviosRole_partnerRole" interface-name="ns3:WS_Musica_Envios" service-name="ns0:WS_Envios">
+            <ns5:display-name>WS_Envios</ns5:display-name>
+            <ns5:process-name>vinilesVintageBpel</ns5:process-name>
+            <ns5:file-path>vinilesVintageBpel.bpel</ns5:file-path>
+        </consumes>
+    </services>
+</jbi>

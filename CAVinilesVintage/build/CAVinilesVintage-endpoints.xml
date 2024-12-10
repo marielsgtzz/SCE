@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endpoints xmlns="http://xml.netbeans.org/schema/endPoints" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xml.netbeans.org/schema/endPoints endPoints.xsd">
+    <project>
+        <name>CAVinilesVintage</name>
+        <version>1.0</version>
+        <description>description</description>
+    </project>
+    <team>
+        <name>unknown team</name>
+        <contact>no contact provided</contact>
+    </team>
+    <endpoint>
+        <type>provider</type>
+        <endpoint-name>VinilesVintageWSDLPortTypeRole_myRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel</namespace>
+            <localname>gestionaPedido</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL</namespace>
+            <localname>VinilesVintageWSDLPortType</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>WSMusicaPedidosRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel</namespace>
+            <localname>WS_Pedido</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://wsmusicapedidos/</namespace>
+            <localname>WSMusicaPedidos</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>WSMusicaCreditoRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel</namespace>
+            <localname>WS_Credito</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://wsmusicacredito/</namespace>
+            <localname>WSMusicaCredito</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>WS_Musica_EnviosRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/VinilesVintageBpel/vinilesVintageBpel</namespace>
+            <localname>WS_Envios</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://wsmusicaenvios/</namespace>
+            <localname>WS_Musica_Envios</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+</endpoints>
