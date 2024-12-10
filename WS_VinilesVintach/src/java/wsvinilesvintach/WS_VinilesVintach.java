@@ -54,6 +54,10 @@ public class WS_VinilesVintach {
         }
 
         int numPedido = altaPedido(idClte, listaIt);
+        
+        if (numPedido == -1){
+            throw new ExcepSinExistencias();
+        }
 
         if (numPedido == 0) {
             throw new ExcepSinExistencias();

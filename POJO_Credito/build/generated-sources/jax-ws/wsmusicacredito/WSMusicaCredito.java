@@ -81,51 +81,12 @@ public interface WSMusicaCredito {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<wsmusicacredito.Credito>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAll")
-    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAllResponse")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findAllRequest", output = "http://wsmusicacredito/WSMusicaCredito/findAllResponse")
-    public List<Credito> findAll();
-
-    /**
-     * 
-     * @param entity
-     */
-    @WebMethod
-    @Oneway
-    @RequestWrapper(localName = "edit", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.Edit")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/edit")
-    public void edit(
-        @WebParam(name = "entity", targetNamespace = "")
-        Credito entity);
-
-    /**
-     * 
-     * @param range
-     * @return
-     *     returns java.util.List<wsmusicacredito.Credito>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findRange", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRange")
-    @ResponseWrapper(localName = "findRangeResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRangeResponse")
-    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findRangeRequest", output = "http://wsmusicacredito/WSMusicaCredito/findRangeResponse")
-    public List<Credito> findRange(
-        @WebParam(name = "range", targetNamespace = "")
-        List<Integer> range);
-
-    /**
-     * 
      * @param idClte
      * @param dblMonto
      * @return
      *     returns boolean
-     * @throws ExcepNoCredito_Exception
      * @throws ExcepNoExisteClte_Exception
+     * @throws ExcepNoCredito_Exception
      */
     @WebMethod(operationName = "autoriza_double")
     @WebResult(targetNamespace = "")
@@ -149,8 +110,8 @@ public interface WSMusicaCredito {
      * @param idClte
      * @return
      *     returns boolean
-     * @throws ExcepNoCredito_Exception
      * @throws ExcepNoExisteClte_Exception
+     * @throws ExcepNoCredito_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -167,5 +128,44 @@ public interface WSMusicaCredito {
         BigDecimal monto)
         throws ExcepNoCredito_Exception, ExcepNoExisteClte_Exception
     ;
+
+    /**
+     * 
+     * @param range
+     * @return
+     *     returns java.util.List<wsmusicacredito.Credito>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findRange", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRange")
+    @ResponseWrapper(localName = "findRangeResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindRangeResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findRangeRequest", output = "http://wsmusicacredito/WSMusicaCredito/findRangeResponse")
+    public List<Credito> findRange(
+        @WebParam(name = "range", targetNamespace = "")
+        List<Integer> range);
+
+    /**
+     * 
+     * @param entity
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "edit", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.Edit")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/edit")
+    public void edit(
+        @WebParam(name = "entity", targetNamespace = "")
+        Credito entity);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<wsmusicacredito.Credito>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findAll", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAll")
+    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://wsmusicacredito/", className = "wsmusicacredito.FindAllResponse")
+    @Action(input = "http://wsmusicacredito/WSMusicaCredito/findAllRequest", output = "http://wsmusicacredito/WSMusicaCredito/findAllResponse")
+    public List<Credito> findAll();
 
 }

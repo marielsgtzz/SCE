@@ -28,25 +28,37 @@
         <variable name="MontoPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedido"/>
         <variable name="Fault1FaultVar" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationFault"/>
         <variable name="AltaPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedidoResponse"/>
-        <variable name="AltaPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedido"/>
-        <variable name="IntegradorWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationRequest"/>
+        <variable name="AltaPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedido">
+            <sxed:editor>
+                <sxed:predicate path="$AltaPedidoIn.parameters/lista_it[$ForEach1Counter]" source="to"/>
+            </sxed:editor>
+        </variable>
+        <variable name="IntegradorWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationRequest">
+            <sxed:editor>
+                <sxed:predicate path="$IntegradorWSDLOperationIn.part1/ns0:listaIt[$ForEach1Counter]" source="from"/>
+            </sxed:editor>
+        </variable>
     </variables>
     <sequence>
         <receive name="Receive1" createInstance="yes" partnerLink="gestionaPedido" operation="IntegradorWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" portType="tns:IntegradorWSDLPortType" variable="IntegradorWSDLOperationIn"/>
-        <assign name="Assign1">
-            <copy>
-                <from>$IntegradorWSDLOperationIn.part1/ns0:id_clte</from>
-                <to>$AltaPedidoIn.parameters/id_clte</to>
-            </copy>
-            <copy>
-                <from>$IntegradorWSDLOperationIn.part1/ns0:listaIt/ns0:id_prod</from>
-                <to>$AltaPedidoIn.parameters/lista_it/id_prod</to>
-            </copy>
-            <copy>
-                <from>$IntegradorWSDLOperationIn.part1/ns0:listaIt/ns0:cantidad</from>
-                <to>$AltaPedidoIn.parameters/lista_it/cantidad</to>
-            </copy>
-        </assign>
+        <forEach name="ForEach1" parallel="no" counterName="ForEach1Counter">
+            <scope name="Scope2">
+                <assign name="Assign1">
+                    <copy>
+                            <from>$IntegradorWSDLOperationIn.part1/ns0:id_clte</from>
+                                <to>$AltaPedidoIn.parameters/id_clte</to>
+                        </copy>
+                        <copy>
+                            <from>$IntegradorWSDLOperationIn.part1/ns0:listaIt/ns0:id_prod</from>
+                                <to>$AltaPedidoIn.parameters/lista_it/id_prod</to>
+                        </copy>
+                        <copy>
+                            <from>$IntegradorWSDLOperationIn.part1/ns0:listaIt/ns0:cantidad</from>
+                                <to>$AltaPedidoIn.parameters/lista_it/cantidad</to>
+                        </copy>
+                </assign>
+            </scope>
+        </forEach>
         <invoke name="Invoke1" partnerLink="WS_Pedidos" operation="altaPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="AltaPedidoIn" outputVariable="AltaPedidoOut"/>
         <if name="If1">
             <condition>0 != $AltaPedidoOut.parameters/return</condition>

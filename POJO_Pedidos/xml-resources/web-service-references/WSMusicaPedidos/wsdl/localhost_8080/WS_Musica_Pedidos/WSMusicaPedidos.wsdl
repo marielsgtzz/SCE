@@ -4,35 +4,29 @@
 <xsd:import namespace="http://wsmusicapedidos/" schemaLocation="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="hello">
+<part name="parameters" element="tns:hello"/>
+</message>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse"/>
+</message>
 <message name="restockProduct">
 <part name="parameters" element="tns:restockProduct"/>
 </message>
 <message name="restockProductResponse">
 <part name="parameters" element="tns:restockProductResponse"/>
 </message>
-<message name="catalogoProds">
-<part name="parameters" element="tns:catalogoProds"/>
+<message name="altaPedido">
+<part name="parameters" element="tns:altaPedido"/>
 </message>
-<message name="catalogoProdsResponse">
-<part name="parameters" element="tns:catalogoProdsResponse"/>
-</message>
-<message name="procesoDeCompra">
-<part name="parameters" element="tns:procesoDeCompra"/>
-</message>
-<message name="procesoDeCompraResponse">
-<part name="parameters" element="tns:procesoDeCompraResponse"/>
+<message name="altaPedidoResponse">
+<part name="parameters" element="tns:altaPedidoResponse"/>
 </message>
 <message name="clteDelPedido">
 <part name="parameters" element="tns:clteDelPedido"/>
 </message>
 <message name="clteDelPedidoResponse">
 <part name="parameters" element="tns:clteDelPedidoResponse"/>
-</message>
-<message name="altaPedido">
-<part name="parameters" element="tns:altaPedido"/>
-</message>
-<message name="altaPedidoResponse">
-<part name="parameters" element="tns:altaPedidoResponse"/>
 </message>
 <message name="catalogoCltes">
 <part name="parameters" element="tns:catalogoCltes"/>
@@ -46,17 +40,17 @@
 <message name="montoPedidoResponse">
 <part name="parameters" element="tns:montoPedidoResponse"/>
 </message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
+<message name="procesoDeCompra">
+<part name="parameters" element="tns:procesoDeCompra"/>
 </message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
+<message name="procesoDeCompraResponse">
+<part name="parameters" element="tns:procesoDeCompraResponse"/>
 </message>
-<message name="updateOrderedProductStatus">
-<part name="parameters" element="tns:updateOrderedProductStatus"/>
+<message name="catalogoProds">
+<part name="parameters" element="tns:catalogoProds"/>
 </message>
-<message name="updateOrderedProductStatusResponse">
-<part name="parameters" element="tns:updateOrderedProductStatusResponse"/>
+<message name="catalogoProdsResponse">
+<part name="parameters" element="tns:catalogoProdsResponse"/>
 </message>
 <message name="getOrderedProductsByOrder">
 <part name="parameters" element="tns:getOrderedProductsByOrder"/>
@@ -64,26 +58,28 @@
 <message name="getOrderedProductsByOrderResponse">
 <part name="parameters" element="tns:getOrderedProductsByOrderResponse"/>
 </message>
+<message name="updateOrderedProductStatus">
+<part name="parameters" element="tns:updateOrderedProductStatus"/>
+</message>
+<message name="updateOrderedProductStatusResponse">
+<part name="parameters" element="tns:updateOrderedProductStatusResponse"/>
+</message>
 <portType name="WSMusicaPedidos">
+<operation name="hello">
+<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/helloRequest" message="tns:hello"/>
+<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/helloResponse" message="tns:helloResponse"/>
+</operation>
 <operation name="restockProduct">
 <input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/restockProductRequest" message="tns:restockProduct"/>
 <output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/restockProductResponse" message="tns:restockProductResponse"/>
 </operation>
-<operation name="catalogoProds">
-<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/catalogoProdsRequest" message="tns:catalogoProds"/>
-<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/catalogoProdsResponse" message="tns:catalogoProdsResponse"/>
-</operation>
-<operation name="procesoDeCompra">
-<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/procesoDeCompraRequest" message="tns:procesoDeCompra"/>
-<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/procesoDeCompraResponse" message="tns:procesoDeCompraResponse"/>
+<operation name="altaPedido">
+<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/altaPedidoRequest" message="tns:altaPedido"/>
+<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/altaPedidoResponse" message="tns:altaPedidoResponse"/>
 </operation>
 <operation name="clteDelPedido">
 <input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/clteDelPedidoRequest" message="tns:clteDelPedido"/>
 <output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/clteDelPedidoResponse" message="tns:clteDelPedidoResponse"/>
-</operation>
-<operation name="altaPedido">
-<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/altaPedidoRequest" message="tns:altaPedido"/>
-<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/altaPedidoResponse" message="tns:altaPedidoResponse"/>
 </operation>
 <operation name="catalogoCltes">
 <input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/catalogoCltesRequest" message="tns:catalogoCltes"/>
@@ -93,21 +89,34 @@
 <input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/montoPedidoRequest" message="tns:montoPedido"/>
 <output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/montoPedidoResponse" message="tns:montoPedidoResponse"/>
 </operation>
-<operation name="hello">
-<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/helloResponse" message="tns:helloResponse"/>
+<operation name="procesoDeCompra">
+<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/procesoDeCompraRequest" message="tns:procesoDeCompra"/>
+<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/procesoDeCompraResponse" message="tns:procesoDeCompraResponse"/>
 </operation>
-<operation name="updateOrderedProductStatus">
-<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/updateOrderedProductStatusRequest" message="tns:updateOrderedProductStatus"/>
-<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/updateOrderedProductStatusResponse" message="tns:updateOrderedProductStatusResponse"/>
+<operation name="catalogoProds">
+<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/catalogoProdsRequest" message="tns:catalogoProds"/>
+<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/catalogoProdsResponse" message="tns:catalogoProdsResponse"/>
 </operation>
 <operation name="getOrderedProductsByOrder">
 <input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/getOrderedProductsByOrderRequest" message="tns:getOrderedProductsByOrder"/>
 <output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/getOrderedProductsByOrderResponse" message="tns:getOrderedProductsByOrderResponse"/>
 </operation>
+<operation name="updateOrderedProductStatus">
+<input wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/updateOrderedProductStatusRequest" message="tns:updateOrderedProductStatus"/>
+<output wsam:Action="http://wsmusicapedidos/WSMusicaPedidos/updateOrderedProductStatusResponse" message="tns:updateOrderedProductStatusResponse"/>
+</operation>
 </portType>
 <binding name="WSMusicaPedidosPortBinding" type="tns:WSMusicaPedidos">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="restockProduct">
 <soap:operation soapAction=""/>
 <input>
@@ -117,16 +126,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="catalogoProds">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="procesoDeCompra">
+<operation name="altaPedido">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -136,15 +136,6 @@
 </output>
 </operation>
 <operation name="clteDelPedido">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="altaPedido">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -171,7 +162,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="hello">
+<operation name="procesoDeCompra">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -180,7 +171,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="updateOrderedProductStatus">
+<operation name="catalogoProds">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -190,6 +181,15 @@
 </output>
 </operation>
 <operation name="getOrderedProductsByOrder">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateOrderedProductStatus">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

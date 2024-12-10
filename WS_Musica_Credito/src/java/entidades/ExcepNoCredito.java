@@ -7,15 +7,22 @@ package entidades;
 
 public class ExcepNoCredito extends Exception
 {
-    int id_clte;
+    private String msg;
     
-    public ExcepNoCredito(int id_clte) {
-        this.id_clte = id_clte;
+    public ExcepNoCredito(String mensaje) {
+        this.msg = mensaje;
+        
     }
+
+    public String getMsg() {
+        return msg;
+    }
+    
+    
 
     @Override
     public String toString() {
-        return "El Cliente " + this.id_clte + " no tiene crèdito";
+        return "Excepcion de servicio:" + this.msg;
     }
         
 }

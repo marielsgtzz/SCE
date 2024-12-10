@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xml.netbeans.org/schema/VinilesVintageSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VinilesVintageWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL">
+            <xsd:import namespace="http://xml.netbeans.org/schema/VinilesVintageSchema" schemaLocation="VinilesVintageSchema.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="VinilesVintageWSDLOperationRequest">
+        <part element="ns:eltoGestionaIn" name="part1"/>
+    </message>
+    <message name="VinilesVintageWSDLOperationResponse">
+        <part element="ns:eltoGestionaOut" name="part1"/>
+    </message>
+    <message name="VinilesVintageWSDLOperationFault">
+        <part element="ns:eltoGestionaFault" name="part1"/>
+    </message>
+    <portType name="VinilesVintageWSDLPortType">
+        <operation name="VinilesVintageWSDLOperation">
+            <input message="tns:VinilesVintageWSDLOperationRequest" name="input1"/>
+            <output message="tns:VinilesVintageWSDLOperationResponse" name="output1"/>
+            <fault message="tns:VinilesVintageWSDLOperationFault" name="fault1"/>
+        </operation>
+    </portType>
+    <plnk:partnerLinkType name="VinilesVintageWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="VinilesVintageWSDLPortTypeRole" portType="tns:VinilesVintageWSDLPortType"/>
+    </plnk:partnerLinkType>
+</definitions>

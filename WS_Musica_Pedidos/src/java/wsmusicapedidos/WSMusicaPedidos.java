@@ -115,6 +115,10 @@ public class WSMusicaPedidos {
         if( lista_orderedProducts.size() > 0 ) // hay items en el pedido
         {
             
+          boolean cliente = customerFacade.encuentraClt(id_clte);
+          if(cliente == false){
+              return -1;
+          }
             
           entidades.Customer clte = customerFacade.find(new Integer(id_clte));
           // se obtiene el cliente

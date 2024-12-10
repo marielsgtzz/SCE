@@ -9,8 +9,8 @@ rem 	definición de roles de los jars para la ejecución
 rem =============================================================
 
 set cb=%cd%\tstRMI_proyecto.jar
-set JAR_INTERFAZ=InterfazVinilesVintachEstres.jar
-set JAR_CLTE_ESTRESS=Pojo_VinilesVintach.jar
+set JAR_INTERFAZ=InterfazVVBpel.jar
+set JAR_CLTE_ESTRESS=CltePojoVinilesVintage.jar
 set POJO_ESTRESS=Clt_proy_des
 set DIST=proyectormi.Distribuidor
 

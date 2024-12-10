@@ -22,6 +22,7 @@ public class POJO_Credito {
        {
            dblMonto = 100.0 * Math.random();
            id_clte  = (int)(10.0 * Math.random());
+           //id_clte = 3;
            
            try
            {

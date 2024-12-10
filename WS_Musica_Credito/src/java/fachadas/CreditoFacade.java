@@ -40,7 +40,7 @@ public class CreditoFacade extends AbstractFacade<Credito> {
        Credito credito   = em.find(Credito.class, new Integer(id_clte), LockModeType.PESSIMISTIC_WRITE);
        if(credito == null)
        {
-         throw new entidades.ExcepNoExisteClte(id_clte);
+         throw new entidades.ExcepNoExisteClte("El cliente con id: "+ id_clte+" no existe");
        }
        else
        {  
@@ -69,7 +69,7 @@ public class CreditoFacade extends AbstractFacade<Credito> {
          else
          {
            credito = null;  
-           throw new entidades.ExcepNoCredito(id_clte);
+           throw new entidades.ExcepNoCredito("El cliente con id: "+ id_clte+" no tiene crédito");
          }
        }
        

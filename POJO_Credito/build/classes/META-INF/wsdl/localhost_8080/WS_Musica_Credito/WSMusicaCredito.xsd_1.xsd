@@ -95,12 +95,14 @@
 <xs:complexType name="ExcepNoCredito">
 <xs:sequence>
 <xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="msg" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="ExcepNoExisteClte">
 <xs:sequence>
 <xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="msg" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

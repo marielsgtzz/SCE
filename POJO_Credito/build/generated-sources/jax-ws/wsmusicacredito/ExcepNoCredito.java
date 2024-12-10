@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="msg" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,11 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ExcepNoCredito", propOrder = {
-    "message"
+    "message",
+    "msg"
 })
 public class ExcepNoCredito {
 
     protected String message;
+    protected String msg;
 
     /**
      * Obtiene el valor de la propiedad message.
@@ -55,6 +58,30 @@ public class ExcepNoCredito {
      */
     public void setMessage(String value) {
         this.message = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad msg.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMsg() {
+        return msg;
+    }
+
+    /**
+     * Define el valor de la propiedad msg.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMsg(String value) {
+        this.msg = value;
     }
 
 }

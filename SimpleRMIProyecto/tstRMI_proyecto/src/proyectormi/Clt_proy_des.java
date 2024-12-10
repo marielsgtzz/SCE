@@ -10,14 +10,17 @@ package proyectormi;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import interfazvinilesvintachestres.InterfazVinilesVintachEstres;
-import pojo_vinilesvintach.Pojo_VinilesVintach;
+//import interfazvinilesvintachestres.InterfazVinilesVintachEstres;
+import interfazvvbpelestress.interfazVVBpelEstress;
+//import pojo_vinilesvintach.Pojo_VinilesVintach;
+import cltepojovinilesvintage.CltePojoVinilesVintage;
 
 public class Clt_proy_des {
     
     public static void main(String[] args) {
         // Objeto que representa el servicio remoto que realizará las operaciones
-        interfazvinilesvintachestres.InterfazVinilesVintachEstres objServ;
+        //interfazvinilesvintachestres.InterfazVinilesVintachEstres objServ;
+        interfazvvbpelestress.interfazVVBpelEstress objServ;
         
         // Variables para el cliente
         long lngQuienSoy;    // Identificador del cliente, proporcionado por el servidor
@@ -47,7 +50,7 @@ public class Clt_proy_des {
             //objServ = (interfazestrestiendita.InterfazEstresTiendita)
             //        Class.forName("pojo_cltetiendita.Pojo_ClteTiendita").newInstance();
             
-            objServ = new Pojo_VinilesVintach();
+            objServ = new CltePojoVinilesVintage();
             
             // Conectar con el registro RMI del servidor de disparo
             Registry registry = LocateRegistry.getRegistry(host);

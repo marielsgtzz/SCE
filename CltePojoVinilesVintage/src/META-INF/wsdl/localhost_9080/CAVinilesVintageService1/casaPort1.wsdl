@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="CAVinilesVintage" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="CAVinilesVintage">
+  <import location="http://DESKTOP-3NK68AM:9080/CAVinilesVintage-sun-http-binding/VinilesVintageBpel/VinilesVintageWSDL.wsdl" namespace="http://j2ee.netbeans.org/wsdl/VinilesVintageBpel/src/VinilesVintageWSDL">
+    </import>
+  <portType name="dummyCasaPortType">
+  </portType>
+  <binding name="casaBinding1" type="ns:VinilesVintageWSDLPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="VinilesVintageWSDLOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body use="literal"/>
+      </input>
+      <output name="output1">
+        <soap:body use="literal"/>
+      </output>
+      <fault name="fault1">
+        <soap:fault name="fault1" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="CAVinilesVintageService1">
+    <port binding="tns:casaBinding1" name="casaPort1">
+      <soap:address location="http://DESKTOP-3NK68AM:9080/CAVinilesVintageService1/casaPort1"/>
+    </port>
+  </service>
+</definitions>

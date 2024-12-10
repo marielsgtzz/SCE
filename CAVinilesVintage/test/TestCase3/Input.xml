@@ -1,0 +1,12 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vin="http://xml.netbeans.org/schema/VinilesVintageSchema">
+  <soapenv:Body>
+    <vin:eltoGestionaIn>
+      <vin:id_clte>1</vin:id_clte>
+      <!--Zero or more repetitions:-->
+      <vin:listaIt>
+        <vin:id_prod>30</vin:id_prod>
+        <vin:cantidad>1</vin:cantidad>
+      </vin:listaIt>
+    </vin:eltoGestionaIn>
+  </soapenv:Body>
+</soapenv:Envelope>

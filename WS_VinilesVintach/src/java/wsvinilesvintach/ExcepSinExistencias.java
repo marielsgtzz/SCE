@@ -18,7 +18,8 @@ public class ExcepSinExistencias extends Exception{
 
     @Override
     public String toString() {
-        return "Producto sin existencias. No se puede generar el pedido.";
+        //return "Producto sin existencias. No se puede generar el pedido.";
+        return "No hay cliente";
     }
     
 }

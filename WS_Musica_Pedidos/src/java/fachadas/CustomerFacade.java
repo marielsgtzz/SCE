@@ -8,6 +8,7 @@ package fachadas;
 import entidades.Customer;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 
 /**
@@ -27,6 +28,14 @@ public class CustomerFacade extends AbstractFacade<Customer> {
 
     public CustomerFacade() {
         super(Customer.class);
+    }
+    
+    public boolean encuentraClt(int idClte){
+        Customer clte = em.find(Customer.class,new  Integer(idClte),LockModeType.PESSIMISTIC_WRITE);
+        if(clte == null){
+            return false;
+        }
+        return true;
     }
     
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9080/CAVinilesVintageService1/casaPort1?WSDL" uri="wsdl/localhost_9080/CAVinilesVintageService1/casaPort1.wsdl"/>
+    <system systemId="http://DESKTOP-3NK68AM:9080/CAVinilesVintage-sun-http-binding/VinilesVintageBpel/VinilesVintageWSDL.wsdl" uri="wsdl/DESKTOP-3NK68AM_9080/CAVinilesVintage-sun-http-binding/VinilesVintageBpel/VinilesVintageWSDL.wsdl"/>
+    <system systemId="http://DESKTOP-3NK68AM:9080/CAVinilesVintage-sun-http-binding/VinilesVintageBpel/VinilesVintageSchema.xsd" uri="wsdl/DESKTOP-3NK68AM_9080/CAVinilesVintage-sun-http-binding/VinilesVintageBpel/VinilesVintageSchema.xsd"/>
+</catalog>
