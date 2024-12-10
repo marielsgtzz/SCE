@@ -1,130 +1,112 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pojo_pedidos;
 /**
  *
  * @author Alejandro Uribe
  */
-public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
-{
+public class POJO_Pedidos {
+
     long quienSoy;
     String host = null;
-    
-    /* 
-    * Si marca error con wsmusicapedidos, abrir carpeta Web Service References,
-    * click derecho en el web server WSMusicaPedidos y seleccionar Refresh...
-    */ 
+
     java.util.List<wsmusicapedidos.Customer> listaCltes = new java.util.ArrayList<>();
     java.util.List<wsmusicapedidos.Product>  listaProds = new java.util.ArrayList<>();
-    
+
     int num_cltes;
     int num_prods;
- 
-    //@Override
-    public void prepara(long quienSoy, String host) 
-    {
+
+    public void prepara(long quienSoy, String host) {
         this.quienSoy = quienSoy;
-        this.host     = host;        // NOTA: no se utiliza
-        
+        this.host     = host;
+
         listaCltes    = catalogoCltes();
         listaProds    = catalogoProds();
         num_cltes     = listaCltes.size();
         num_prods     = listaProds.size();
     }
 
-    //@Override
-    public void solicitaServicio(int vez) 
-    {
-    
-        java.util.List<wsmusicapedidos.ClsItem>  listaIt    = new java.util.ArrayList<>();
+    public void solicitaServicio(int vez) {
+        java.util.List<wsmusicapedidos.ClsItem> listaIt = new java.util.ArrayList<>();
         
-        int num_pedido;
-        int id_clte;
-        int num_it;
-        int id_prod,cantidad;
+        int numPedido;
+        int idClte;
+        int numItems;
+        int idProd, cantidad;
 
-        int queClte,queProd = 0;
-       
+        int queClte, queProd = 0;
+
         wsmusicapedidos.ClsItem item;
-        
-        queClte = (int) ( num_cltes * Math.random());
-        id_clte = listaCltes.get(queClte).getId();
 
-        num_it = (int) (1.0 + 10.0 * Math.random());
-        num_it = num_it <= this.num_prods ? num_it : this.num_prods;
-        
-        //
-        // para controlar que no se repitan los id_prod de los items
-        //
-        int [] arr_id_prod = new int[num_it];
-        boolean ya_esta;
-        //
-        // Se generan los items para el pedido
-        //
-        for( int k = 0; k <  num_it; k++)
-        {
-            ya_esta = true;
-            while(ya_esta)
-            {
-              queProd = (int) ( num_prods * Math.random());
-              if( k == 0)
-                  ya_esta = false;
-              else
-              {   
-                  ya_esta = false;
-                  for( int j = 0; j < k; j++)
-                      ya_esta = ya_esta | queProd == arr_id_prod[j]; 
-              }
+        queClte = (int) (num_cltes * Math.random());
+        idClte = listaCltes.get(queClte).getId();
+
+        numItems = (int) (1.0 + 10.0 * Math.random());
+        numItems = Math.min(numItems, num_prods);
+
+        int[] arrIdProd = new int[numItems];
+        boolean yaEsta;
+
+        for (int i = 0; i < numItems; i++) {
+            yaEsta = true;
+            while (yaEsta) {
+                queProd = (int) (num_prods * Math.random());
+                if (i == 0) {
+                    yaEsta = false;
+                } else {
+                    yaEsta = false;
+                    for (int j = 0; j < i; j++) {
+                        yaEsta = yaEsta || queProd == arrIdProd[j];
+                    }
+                }
             }
-            arr_id_prod[k] = queProd;
-            
-            id_prod  = listaProds.get(queProd).getId();
-            cantidad = (int)( 5.0 + 100 * Math.random() );
+            arrIdProd[i] = queProd;
+
+            idProd = listaProds.get(queProd).getId();
+            cantidad = (int) (1.0 + 10.0 * Math.random()); // Random cantidades
+
             item = new wsmusicapedidos.ClsItem();
-            item.setIdProd(id_prod);
+            item.setIdProd(idProd);
             item.setCantidad(cantidad);
             listaIt.add(item);
         }
+
         System.out.println("-----------------------------------------------");
-        System.out.println("Estresador:" + this.quienSoy + ", vez:" + vez + ", Clte:" + id_clte);
+        System.out.println("Cliente: " + idClte);
+        System.out.println("Ítems en el pedido:");
+        for (wsmusicapedidos.ClsItem it : listaIt) {
+            System.out.println(" - Producto ID: " + it.getIdProd() + ", Cantidad: " + it.getCantidad());
+        }
         System.out.println("-----------------------------------------------");
-        for(wsmusicapedidos.ClsItem it : listaIt)
-            System.out.println("Prod_id:" + it.getIdProd() + ", cantidad:" + it.getCantidad() );
-        System.out.println("-----------------------------------------------");
-        //
-        //   Se solicita registrar el pedido en el WS
-        //
-        num_pedido = altaPedido(id_clte,listaIt);
-        System.out.println("El número de pedido es:" + num_pedido);
-        System.out.println("===============================================");
+
+        numPedido = altaPedido(idClte, listaIt);
+
+        if (numPedido == 0) {
+            System.out.println("El pedido no pudo ser completado debido a falta de existencias. Se generaron backorders.");
+        } else {
+            System.out.println("Número de pedido generado: " + numPedido);
+        }
     }
 
-    //@Override
-    public void cierra() 
-    {
-         System.out.println("El thread de stress " + this.quienSoy + " ha terminado su trabajo"); 
+    public void probarBackorders() {
+        System.out.println("-----------------------------------------------");
+        System.out.println("Procesando backorders...");
+        // Puedes agregar un método aquí si necesitas probar algún flujo relacionado con el backorder
+        System.out.println("Backorders procesados.");
+        System.out.println("-----------------------------------------------");
     }
 
-    // =========================================================================
-    //                    main para probar el pojo  
-    // =========================================================================
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) 
-    {
-        POJO_Pedidos objServ = new POJO_Pedidos();
-        
-        objServ.prepara(25, null);
-        int n_veces = args.length > 0 ? Integer.parseInt(args[0]):5;
-        for( int vez = 1; vez <= n_veces; vez++)
-            objServ.solicitaServicio(vez);
-        objServ.cierra();
-        
+    public void cierra() {
+        System.out.println("El thread de stress " + this.quienSoy + " ha terminado su trabajo.");
+    }
+
+    public static void main(String[] args) {
+        POJO_Pedidos pojo = new POJO_Pedidos();
+
+        pojo.prepara(25, null);
+        int veces = args.length > 0 ? Integer.parseInt(args[0]) : 5;
+        for (int i = 1; i <= veces; i++) {
+            pojo.solicitaServicio(i);
+        }
+        pojo.cierra();
     }
 
     private static int altaPedido(int idClte, java.util.List<wsmusicapedidos.ClsItem> listaIt) {
@@ -144,7 +126,5 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
         wsmusicapedidos.WSMusicaPedidos port = service.getWSMusicaPedidosPort();
         return port.catalogoProds();
     }
-
     
 }
-

@@ -113,9 +113,9 @@ public class WSMusicaPedidos {
             {
                 //LOGICA DEL BACKORDER
                 //Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Clave de producto " + it.getId_prod() + " INEXISTENTE o sin existencias");
-                Logger.getLogger(this.getClass().getName()).log(Level.WARNING,
+                Logger.getLogger(this.getClass().getName()).log(Level.INFO,
                         "Backorder: Producto " + it.getId_prod() + " sin existencias suficientes.");
-                backorderList.add(new Backorder(it.getId_prod(), it.getCantidad()));
+                backorderList.add(new entidades.Backorder(it.getId_prod(), it.getCantidad()));
             }
         }
         if( lista_orderedProducts.size() > 0 ) // hay items en el pedido
@@ -166,8 +166,9 @@ public class WSMusicaPedidos {
         
         // Registrar backorders en el sistema
         if (!backorderList.isEmpty()) {
-            procesarBackorders(backorderList);
+            procesarBackorders(num_pedido, backorderList);
         }
+
         
         return num_pedido;
     }
@@ -240,14 +241,27 @@ public class WSMusicaPedidos {
     }
 
     @WebMethod(operationName = "procesarBackorders")
-    public void procesarBackorders(@WebParam(name = "backorderList") List<entidades.Backorder> backorderList) {
+    public void procesarBackorders(@WebParam(name = "numPedido") int numPedido,
+                                   @WebParam(name = "backorderList") List<entidades.Backorder> backorderList) {
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "-----------------------------------------------");
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "Procesando backorders para el pedido: " + numPedido);
+
         for (entidades.Backorder backorder : backorderList) {
             Logger.getLogger(this.getClass().getName()).log(Level.INFO,
-                    "Procesando backorder: Producto " + backorder.getProductId() +
-                    ", cantidad pendiente: " + backorder.getCantidadPendiente());
+                    "Producto ID: " + backorder.getProductId() +
+                    ", Cantidad pendiente: " + backorder.getCantidadPendiente());
             productFacade.restockProduct(backorder.getProductId(), backorder.getCantidadPendiente());
         }
+
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "Total de backorders procesados para el pedido " + numPedido + ": " + backorderList.size());
+        Logger.getLogger(this.getClass().getName()).log(Level.INFO, 
+                "-----------------------------------------------");
     }
+
+
 
 
     // =============================================================================
