@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://wsmusicapedidos/" xmlns:ns2="CA_Prueba1" xmlns:ns3="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" xmlns:ns4="http://wsmusicacredito/" xmlns:ns5="http://enterprise.netbeans.org/bpel/Integrador_BPEL/integrador_BPEL" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="WSMusicaPedidosPort" interface-name="ns1:WSMusicaPedidos" name="endpoint1" service-name="ns1:WSMusicaPedidos"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns3:IntegradorWSDLPortType" name="endpoint2" service-name="ns2:CA_Prueba1Service1"/>
+        <endpoint endpoint-name="WSMusicaCreditoPort" interface-name="ns4:WSMusicaCredito" name="endpoint3" service-name="ns4:WSMusicaCredito"/>
+        <endpoint display-name="gestionaPedido" endpoint-name="IntegradorWSDLPortTypeRole_myRole" file-path="integrador_BPEL.bpel" interface-name="ns3:IntegradorWSDLPortType" name="endpoint4" process-name="integrador_BPEL" service-name="ns5:gestionaPedido"/>
+        <endpoint display-name="WS_Pedidos" endpoint-name="WSMusicaPedidosRole_partnerRole" file-path="integrador_BPEL.bpel" interface-name="ns1:WSMusicaPedidos" name="endpoint5" process-name="integrador_BPEL" service-name="ns5:WS_Pedidos"/>
+        <endpoint display-name="WS_Credito" endpoint-name="WSMusicaCreditoRole_partnerRole" file-path="integrador_BPEL.bpel" interface-name="ns4:WSMusicaCredito" name="endpoint6" process-name="integrador_BPEL" service-name="ns5:WS_Credito"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="Integrador_BPEL.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CA_Prueba1-Integrador_BPEL" unit-name="Integrador_BPEL" unknown="false" x="143" y="99">
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CA_Prueba1-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port bindingType="soap" x="67" y="300">
+                    <link xlink:href="../jbiasa/CA_Prueba1.wsdl#xpointer(/definitions/service[@name='CA_Prueba1Service1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="39">
+                    <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito']/port[@name='WSMusicaCreditoPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="118">
+                    <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos']/port[@name='WSMusicaPedidosPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint6" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint2" mode="" provider="endpoint4" route-type="direct" routing-rule="" state="new"/>
+        <connection consumer="endpoint5" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CA_Prueba1.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CA_Prueba1.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/IntegradorWSDL.wsdl#xpointer(/definitions/portType[@name='IntegradorWSDLPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/portType[@name='WSMusicaCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/portType[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CA_Prueba1.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CA_Prueba1.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/binding[@name='WSMusicaCreditoPortBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/binding[@name='WSMusicaPedidosPortBinding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/CA_Prueba1.wsdl#xpointer(/definitions/service[@name='CA_Prueba1Service1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CA_Prueba1.wsdl#xpointer(/definitions/service[@name='CA_Prueba1Service1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Credito/WSMusicaCredito.wsdl#xpointer(/definitions/service[@name='WSMusicaCredito'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/Integrador_BPEL/localhost_8080/WS_Musica_Pedidos/WSMusicaPedidos.wsdl#xpointer(/definitions/service[@name='WSMusicaPedidos'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

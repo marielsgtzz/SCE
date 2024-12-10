@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="DESKTOP-3NK68AM" name="org.netbeans.modules.compapp.catd.ConfiguredTest" skipped="0" tests="1" time="0.889" timestamp="2024-12-10T01:38:14">
+  <properties>
+    <property name="libs.jsp-compiler.javadoc" value="" />
+    <property name="netbeans.autoupdate.country" value="MX" />
+    <property name="com.sun.jbi.sa.internal.routing" value="true" />
+    <property name="libs.Encoder-HL7.javadoc" value="" />
+    <property name="resource.Proyecto_BPEL" value="${project.Proyecto_BPEL}/setup" />
+    <property name="libs.jsf20.maven-pom" value="" />
+    <property name="source.root" value="src" />
+    <property name="libs.spring-webmvc4.0.src" value="" />
+    <property name="ant.core.lib" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant.jar" />
+    <property name="libs.jsp-compilation.javadoc" value="" />
+    <property name="user.dir" value="C:\SCE_202403\Proyecto\SCE\CA_Prueba1" />
+    <property name="libs.javaee-api-7.0.src" value="" />
+    <property name="java.vm.version" value="25.162-b12" />
+    <property name="libs.MySQLDriver.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar" />
+    <property name="jbi.content.additional" value="../Integrador_BPEL/build/SEDeployment.jar" />
+    <property name="libs.eclipselinkmodelgen.src" value="" />
+    <property name="netbeans.autoupdate.version" value="1.23" />
+    <property name="libs.javaee-web-api-6.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee-web-api-6.0.jar" />
+    <property name="jdk.home" value="C:\Program Files\Java\jdk1.8.0_162" />
+    <property name="libs.javac-api.src" value="" />
+    <property name="xml.module.install.dir" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules" />
+    <property name="libs.jpa2-persistence.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-jpa-2.1-api-1.0.0.Final.jar" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="libs.Encoder-Custom.javadoc" value="" />
+    <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
+    <property name="netbeans.autoupdate.variant" value="" />
+    <property name="have.tests" value="true" />
+    <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
+    <property name="ant.file.type.CA_Prueba1-jbi-impl" value="file" />
+    <property name="libs.hamcrest.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="j2ee.server.instance" value="openesb-standalone-deployer:home=C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Instance&amp;" />
+    <property name="reference.Integrador_BPEL.dist_se" value="../Integrador_BPEL/build/SEDeployment.jar" />
+    <property name="libs.javac-api.javadoc" value="" />
+    <property name="os.name" value="Windows 10" />
+    <property name="esb.netbeans.platform" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform" />
+    <property name="libs.beans-binding.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\beansbinding-1.2.1.jar" />
+    <property name="libs.javaee-endorsed-api-7.0.maven-pom" value="" />
+    <property name="libs.restapi.javadoc" value="" />
+    <property name="libs.JWSAntTasks.maven-pom" value="" />
+    <property name="libs.jstl.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jstl-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jstl-api.jar" />
+    <property name="libs.testng.src" value="" />
+    <property name="libs.spring-webmvc3.0.src" value="" />
+    <property name="libs.restapi.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jaxrs-2.0\javax.ws.rs-api-2.0.jar" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="netbeans.user.dir" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\bin" />
+    <property name="libs.jaxb.maven-pom" value="" />
+    <property name="os.arch" value="amd64" />
+    <property name="libs.Encoder-Custom.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\custom.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\customencoder-xsdextension.jar" />
+    <property name="libs.eclipselink.src" value="" />
+    <property name="user.name" value="juanp" />
+    <property name="libs.jsf12.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.spring-webmvc3.0.maven-pom" value="" />
+    <property name="libs.swing-layout.maven-pom" value="" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\SCE_202403\Proyecto\SCE\CA_Prueba1\test\results\TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=C:\Users\juanp\AppData\Local\Temp\junitvmwatcher5273799452277817365.properties propsfile=C:\Users\juanp\AppData\Local\Temp\junit5323673207822894920.properties" />
+    <property name="build.classes.dir" value="build/jar" />
+    <property name="enterprise.module.install.dir" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules" />
+    <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.jaxws21.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\docs\jaxws-api-doc.zip" />
+    <property name="libs.spring-webmvc4.0.javadoc" value="" />
+    <property name="user.country" value="MX" />
+    <property name="libs.jsp-compilation-syscp.src" value="" />
+    <property name="libs.JAVADB_DRIVER_LABEL.src" value="" />
+    <property name="libs.spring-framework400.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-apache-commons-logging.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\cglib-2.2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-aop-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-aspects-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-beans-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-build-src-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-context-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-context-support-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-core-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-expression-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-framework-bom-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-instrument-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-instrument-tomcat-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-jdbc-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-jms-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-messaging-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-orm-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-oxm-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-test-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-tx-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-web-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-webmvc-portlet-4.0.1.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-websocket-4.0.1.RELEASE.jar" />
+    <property name="meta.inf" value="src/conf" />
+    <property name="ServerPassword" value="admin" />
+    <property name="netbeans.home" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform" />
+    <property name="build.compiler.emacs" value="true" />
+    <property name="libs.javaee-web-api-6.0.src" value="" />
+    <property name="libs.jsp-compilation-syscp.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jstl-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
+    <property name="nu.validator.checker.imageCandidateString.hasWidth" value="0" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_162\jre\lib\endorsed" />
+    <property name="netbeans.dynamic.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\asm-all-5.0.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\core-base.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\core.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\org-netbeans-libs-asm.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\org-openide-filesystems-compat8.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\org-openide-filesystems.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core-base_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core-base_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core-base_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core-base_zh_CN.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\core_zh_CN.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-netbeans-libs-asm_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-netbeans-libs-asm_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems-compat8_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems-compat8_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\core\locale\core_soa.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\org-netbeans-upgrader.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\core_nb.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\core_nb_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\core_nb_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\core_nb_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\core_nb_zh_CN.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\org-netbeans-upgrader_ja.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\org-netbeans-upgrader_ru.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="libs.hibernate4-support.src" value="" />
+    <property name="libs.primefaces.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\primefaces\primefaces-5.0.jar" />
+    <property name="libs.javaee-api-6.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee-api-6.0.jar" />
+    <property name="netbeans.productversion" value="OpenESB Studio Community Edition 3.1.2" />
+    <property name="java.awt.headless" value="${java.awt.headless}" />
+    <property name="libs.jaxws21.src" value="" />
+    <property name="netbeans.autoupdate.language" value="es" />
+    <property name="libs.Encoder-Framework.javadoc" value="" />
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="libs.javaee-api-6.0.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="file.separator" value="\" />
+    <property name="libs.junit_4.maven-pom" value="" />
+    <property name="netbeans.buildnumber" value="201609300101" />
+    <property name="libs.JWSAntTasks.javadoc" value="" />
+    <property name="user.variant" value="" />
+    <property name="libs.eclipselinkmodelgen.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.modelgen_2.5.2.v20140319-9ad6abd.jar" />
+    <property name="libs.javaee-endorsed-api-7.0.src" value="" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="libs.hibernate4-persistencemodelgen.javadoc" value="" />
+    <property name="libs.jaxb.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\docs\jaxb-api-doc.zip" />
+    <property name="libs.struts.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\antlr-2.7.2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\bsf-2.3.0.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-beanutils-1.8.0.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-chain-1.2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-digester-1.8.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-fileupload-1.1.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-io-1.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-logging-1.0.4.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\commons-validator-1.3.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\jstl-1.0.2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\oro-2.0.8.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\standard-1.0.6.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-core-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-el-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-extras-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-faces-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-mailreader-dao-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-scripting-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-taglib-1.3.10.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\struts\struts-tiles-1.3.10.jar" />
+    <property name="ant.home" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant" />
+    <property name="libs.junit_4.src" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\docs\junit-4.12-sources.jar" />
+    <property name="libs.testng.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\ext\testng-6.8.1-dist.jar" />
+    <property name="libs.absolutelayout.maven-pom" value="" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_162\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\libnvvp;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.3.1\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\juanp\AppData\Local\Microsoft\WindowsApps;;C:\Users\juanp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\juanp\AppData\Roaming\npm;." />
+    <property name="libs.metro.maven-pom" value="" />
+    <property name="libs.Encoder-HL7.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\hl7.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\hl7encoder-xsdextension.jar" />
+    <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
+    <property name="libs.spring-framework400.src" value="" />
+    <property name="libs.PostgreSQLDriver.src" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="basedir" value="C:\SCE_202403\Proyecto\SCE\CA_Prueba1" />
+    <property name="libs.jpa20-persistence.maven-pom" value="" />
+    <property name="libs.javaee-web-api-7.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee-web-api-7.0.jar" />
+    <property name="path.separator" value=";" />
+    <property name="libs.javaee-web-api-6.0.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="ant.junit.enabletestlistenerevents" value="true" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="libs.jaxws21.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\jaxb-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\FastInfoset.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\gmbal-api-only.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\ha-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\javax.mail_1.4.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\jaxws-rt.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\jaxws-tools.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\management-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\mimepull.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\policy.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\saaj-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\stax-ex.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\stax2-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\streambuffer.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\woodstox-core-asl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\api\jaxws-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\api\jsr181-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\api\javax.annotation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\api\saaj-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\activation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
+    <property name="resource.Integrador_BPEL" value="../Integrador_BPEL/setup" />
+    <property name="libs.struts.src" value="" />
+    <property name="user.language" value="es" />
+    <property name="libs.Encoder-Framework.src" value="" />
+    <property name="libs.JAXB-ENDORSED.maven-pom" value="" />
+    <property name="ant.file." value="C:\SCE_202403\Proyecto\SCE\CA_Prueba1\build.xml" />
+    <property name="libs.eclipselink.maven-pom" value="" />
+    <property name="ant.file.CA_Prueba1-jbi-impl" value="C:\SCE_202403\Proyecto\SCE\CA_Prueba1\nbproject\build-impl.xml" />
+    <property name="libs.primefaces.javadoc" value="" />
+    <property name="libs.spring-framework300.maven-pom" value="" />
+    <property name="ant.project.invoked-targets" value="test-single" />
+    <property name="libs.Encoder-Framework.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\encoderframework.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\encoderfrmwk-xsdextension.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\xbean.jar" />
+    <property name="libs.swing-layout.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\docs\swing-layout-1.0.4-doc.zip" />
+    <property name="sun.java2d.d3d" value="false" />
+    <property name="libs.hibernate4-persistence.maven-pom" value="" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|DESKTOP-3NK68AM" />
+    <property name="libs.PostgreSQLDriver.maven-pom" value="" />
+    <property name="java.class.version" value="52.0" />
+    <property name="libs.JAVADB_DRIVER_LABEL.classpath" value="C:\Program Files\Java\jdk1.8.0_162\db\lib\derby.jar;C:\Program Files\Java\jdk1.8.0_162\db\lib\derbyclient.jar;C:\Program Files\Java\jdk1.8.0_162\db\lib\derbynet.jar" />
+    <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
+    <property name="libs.javaee-endorsed-api-6.0.src" value="" />
+    <property name="libs.eclipselink.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
+    <property name="libs.jsp-compilation.maven-pom" value="" />
+    <property name="user.properties.file" value="C:\Users\juanp\AppData\Roaming\.openesb_studio\3.1.2\build.properties" />
+    <property name="libs.javac-api.maven-pom" value="" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="libs.JAXB-ENDORSED.javadoc" value="" />
+    <property name="libs.JWSAntTasks.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\ant\extra\org-netbeans-modules-javawebstart-anttasks.jar" />
+    <property name="libs.spring-webmvc4.0.maven-pom" value="" />
+    <property name="libs.spring-framework300.src" value="" />
+    <property name="libs.PojoSELib.src" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\sun-pojo-engine-api-src.jar" />
+    <property name="libs.jstl.src" value="" />
+    <property name="libs.hibernate4-persistencemodelgen.src" value="" />
+    <property name="libs.jpa20-persistence.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_162\jre" />
+    <property name="libs.jsp-compilation.src" value="" />
+    <property name="libs.javaee-endorsed-api-6.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee6-endorsed\javax.annotation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee6-endorsed\jaxb-api-osgi.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee6-endorsed\webservices-api-osgi.jar" />
+    <property name="libs.javaee-api-6.0.src" value="" />
+    <property name="ant.project.default-target" value="default" />
+    <property name="libs.PostgreSQLDriver.javadoc" value="" />
+    <property name="libs.restlib.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\asm-all-repackaged-2.2.0-b21.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\cglib-2.2.0-b21.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\guava-14.0.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\hk2-api-2.2.0-b21.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\hk2-locator-2.2.0-b21.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\hk2-utils-2.2.0-b21.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\javax.annotation-api-1.2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\javax.inject-2.2.0-b21.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\javax.servlet-api-3.0.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\jaxb-api-2.2.7.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\jersey-entity-filtering-2.5.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\jersey-media-moxy-2.5.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\org.osgi.core-4.2.0.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\osgi-resource-locator-1.0.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\persistence-api-1.0.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\ext\validation-api-1.1.0.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\jersey-client.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\jersey-common.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\jersey-container-servlet.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\jersey-container-servlet-core.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jersey2\jersey-server.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\eclipselink\eclipselink.jar" />
+    <property name="jbi.service-unit.description" value="Represents this Service Unit" />
+    <property name="libs.MySQLDriver.maven-pom" value="" />
+    <property name="libs.hibernate4-persistence.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|DESKTOP-3NK68AM" />
+    <property name="libs.junit_4.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\docs\junit-4.12-javadoc.jar" />
+    <property name="test.results.dir" value="C:\SCE_202403\Proyecto\SCE\CA_Prueba1/test/results" />
+    <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
+    <property name="jna.boot.library.name" value="jnidispatch-422" />
+    <property name="libs.javaee-endorsed-api-6.0.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.javaee-api-7.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee-api-7.0.jar" />
+    <property name="sun.awt.datatransfer.timeout" value="1000" />
+    <property name="libs.PojoSELib.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\sun-pojo-engine-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\jbi.jar" />
+    <property name="ant.file.type." value="file" />
+    <property name="libs.spring-webmvc3.0.javadoc" value="" />
+    <property name="libs.jpa2-persistence.maven-pom" value="" />
+    <property name="libs.hibernate4-support.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\antlr-2.7.7.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\dom4j-1.6.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar" />
+    <property name="nb.native.filechooser" value="false" />
+    <property name="libs.restapi.src" value="" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="sun.java2d.noddraw" value="true" />
+    <property name="libs.jsp-compiler.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\ant\extra\jspcompile.jar" />
+    <property name="libs.hamcrest.maven-pom" value="" />
+    <property name="ant.file" value="C:\SCE_202403\Proyecto\SCE\CA_Prueba1\build.xml" />
+    <property name="libs.beans-binding.maven-pom" value="" />
+    <property name="libs.hibernate4-support.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
+    <property name="libs.jsf12.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-1_2\commons-beanutils.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-1_2\commons-collections.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-1_2\commons-digester.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-1_2\commons-logging.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-1_2\jsf-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-1_2\jsf-impl.jar" />
+    <property name="libs.Encoder-HL7.src" value="" />
+    <property name="libs.jstl.maven-pom" value="" />
+    <property name="GenerateATSOutput" value="${generate.ats.output}" />
+    <property name="libs.restapi.maven-pom" value="" />
+    <property name="no.catd.context" value="true" />
+    <property name="libs.beans-binding.src" value="" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="libs.swing-layout.src" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\docs\swing-layout-1.0.4-src.zip" />
+    <property name="org.openide.major.version" value="IDE/1" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="libs.Encoder-Custom.maven-pom" value="" />
+    <property name="netbeans.user" value="C:\Users\juanp\AppData\Roaming\.openesb_studio\3.1.2" />
+    <property name="java.io.tmpdir" value="C:\Users\juanp\AppData\Local\Temp\" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="jna.loaded" value="true" />
+    <property name="libs.jsp-compiler.src" value="" />
+    <property name="org.openide.awt.ActionReference.completion" value="org.netbeans.modules.apisupport.project.layers.PathCompletions" />
+    <property name="libs.Encoder-COCO.src" value="" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_162\jre\bin" />
+    <property name="libs.hamcrest.javadoc" value="" />
+    <property name="libs.jsf20.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
+    <property name="src.build.dir" value="src/jbiServiceUnits" />
+    <property name="dist.jar" value="dist/CA_Prueba1.zip" />
+    <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.project.name" value="" />
+    <property name="libs.PojoSELib.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\sun-pojo-engine-api-javadoc.jar" />
+    <property name="netbeans.hash.code" value="unique=0dd406113-c0a2-488c-a237-4db241cb6536_a21ce4bf-d8bf-4a18-94fb-91d9f182b093" />
+    <property name="netbeans.default_userdir_root" value="" />
+    <property name="libs.jsp-compilation-syscp.maven-pom" value="" />
+    <property name="project.Integrador_BPEL" value="../Integrador_BPEL" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="libs.spring-framework400.javadoc" value="" />
+    <property name="libs.CopyLibs.javadoc" value="" />
+    <property name="org.openide.specification.version" value="6.2" />
+    <property name="user.home" value="C:\Users\juanp" />
+    <property name="libs.primefaces.maven-pom" value="" />
+    <property name="com.sun.jbi.routing" value="true" />
+    <property name="libs.javaee-api-6.0.maven-pom" value="" />
+    <property name="libs.JWSAntTasks.src" value="" />
+    <property name="libs.CopyLibs.maven-pom" value="" />
+    <property name="libs.spring-framework300.javadoc" value="" />
+    <property name="libs.absolutelayout.javadoc" value="" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="libs.Encoder-COCO.maven-pom" value="" />
+    <property name="ide.module.install.dir" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="libs.javac-api.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\nb-javac-api.jar" />
+    <property name="java.version" value="1.8.0_162" />
+    <property name="libs.MySQLDriver.javadoc" value="" />
+    <property name="org.openide.version" value="deprecated" />
+    <property name="source.encoding" value="UTF-8" />
+    <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
+    <property name="libs.jsp-compilation-syscp.javadoc" value="" />
+    <property name="server.password" value="admin" />
+    <property name="libs.eclipselinkmodelgen.javadoc" value="" />
+    <property name="libs.javaee-endorsed-api-7.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee7-endorsed\javax.annotation-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee7-endorsed\javax.xml.soap-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee7-endorsed\jaxb-api-osgi.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee7-endorsed\jaxws-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\javaee7-endorsed\jsr181-api.jar" />
+    <property name="libs.metro.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\metro-1.4-doc.zip" />
+    <property name="libs.struts.maven-pom" value="" />
+    <property name="libs.testng.maven-pom" value="" />
+    <property name="NetBeansUserDir" value="C:\Users\juanp\AppData\Roaming\.openesb_studio\3.1.2" />
+    <property name="test.dir" value="test" />
+    <property name="libs.jaxb.src" value="" />
+    <property name="jdk.launcher.addexports.5" value="java.management/sun.management=ALL-UNNAMED" />
+    <property name="jdk.launcher.addexports.4" value="java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED" />
+    <property name="libs.Encoder-HL7.maven-pom" value="" />
+    <property name="jdk.launcher.addexports.3" value="java.desktop/sun.awt.im=ALL-UNNAMED" />
+    <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
+    <property name="libs.jaxb.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\jaxb-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\activation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
+    <property name="jdk.launcher.addexports.1" value="java.base/jdk.internal.jrtfs=ALL-UNNAMED" />
+    <property name="jdk.launcher.addexports.0" value="java.desktop/sun.awt=ALL-UNNAMED" />
+    <property name="libs.swing-layout.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\ext\swing-layout-1.0.4.jar" />
+    <property name="libs.spring-webmvc3.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar" />
+    <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
+    <property name="libs.restlib.src" value="" />
+    <property name="build.generated.dir" value="build/generated" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_162\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_162\jre\classes" />
+    <property name="src.dir" value="src/jbiasa" />
+    <property name="libs.Encoder-Framework.maven-pom" value="" />
+    <property name="libs.jpa2-persistence.src" value="" />
+    <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
+    <property name="libs.jsf20.src" value="" />
+    <property name="libs.jpa20-persistence.src" value="" />
+    <property name="libs.jsf12.src" value="" />
+    <property name="libs.JAVADB_DRIVER_LABEL.maven-pom" value="" />
+    <property name="libs.struts.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\struts-1.3.10-javadoc.zip" />
+    <property name="libs.javaee-web-api-7.0.src" value="" />
+    <property name="libs.primefaces.src" value="" />
+    <property name="dist.dir" value="dist" />
+    <property name="org.netbeans.modules.compapp.catd.context" value="" />
+    <property name="inDebug" value="${inDebug}" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="default.javac.source" value="1.8" />
+    <property name="libs.MySQLDriver.src" value="" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="jbi.service-assembly.id" value="CA_Prueba1" />
+    <property name="libs.Encoder-COCO.javadoc" value="" />
+    <property name="java.runtime.version" value="1.8.0_162-b12" />
+    <property name="jbi.service-assembly.description" value="Represents the Service Assembly of CA_Prueba1" />
+    <property name="default.javac.target" value="1.8" />
+    <property name="libs.junit_4.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\ext\junit-4.12.jar" />
+    <property name="user.timezone" value="" />
+    <property name="java.module.install.dir" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules" />
+    <property name="libs.JAVADB_DRIVER_LABEL.javadoc" value="" />
+    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
+    <property name="netbeans.dirs" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\apisupport;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ergonomics;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\harness;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\nb;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\profiler;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\webcommon;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\websvccommon" />
+    <property name="libs.jsf20.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.jstl.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_162\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="libs.metro.src" value="" />
+    <property name="libs.absolutelayout.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\AbsoluteLayout.jar" />
+    <property name="libs.metro.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\activation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\metro\webservices-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\metro\webservices-extra.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\metro\webservices-rt.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\metro\webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
+    <property name="libs.jpa2-persistence.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
+    <property name="jbi.content.component" value="sun-bpel-engine" />
+    <property name="java.class.path" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\org-netbeans-modules-compapp-manager-jbi.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\org-netbeans-modules-compapp-projects-jbi.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\jbi-admin-common.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\catd.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\api\saaj-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\saaj-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\FastInfoset.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-lib.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-deprecated-pre65formatting.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-util.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-lib2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-indent.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-plain.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-plain-lib.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-document.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-settings.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-settings-lib.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-settings-storage.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-lexer.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-core.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-lexer.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-text.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-xdm.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-xam.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-csl-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\activation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-modules.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-util.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-util-ui.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-util-lookup.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-awt.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-options.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-text.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-loaders.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-nodes.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-netbeans-modules-editor-mimelookup.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-netbeans-modules-editor-mimelookup-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\org-openide-filesystems.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-netbeans-modules-keyring.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-dialogs.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\ext\junit-4.12.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-launcher.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-junit.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-junit4.jar" />
+    <property name="libs.absolutelayout.src" value="" />
+    <property name="libs.jpa20-persistence.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
+    <property name="os.version" value="10.0" />
+    <property name="libs.javaee-api-7.0.maven-pom" value="" />
+    <property name="sun.awt.enableExtraMouseButtons" value="true" />
+    <property name="sun.desktop" value="windows" />
+    <property name="libs.PojoSELib.maven-pom" value="" />
+    <property name="libs.hibernate4-persistence.src" value="" />
+    <property name="libs.hibernate4-support.maven-pom" value="" />
+    <property name="libs.restlib.javadoc" value="" />
+    <property name="libs.JAXB-ENDORSED.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\api\jaxb-api.jar" />
+    <property name="libs.javaee-api-7.0.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.eclipselink.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\eclipselink\eclipselink.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.beans-binding.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\docs\beansbinding-1.2.1-doc.zip" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="libs.CopyLibs.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+    <property name="libs.spring-framework300.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-apache-commons-logging.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\cglib-2.2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
+    <property name="libs.jsp-compiler.maven-pom" value="" />
+    <property name="libs.Encoder-COCO.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\coco.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\cocoencoder-xsdextension.jar" />
+    <property name="libs.hamcrest.src" value="" />
+    <property name="libs.hibernate4-persistence.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\antlr-2.7.7.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\dom4j-1.6.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-jpa-2.1-api-1.0.0.Final.jar" />
+    <property name="libs.JAXB-ENDORSED.src" value="" />
+    <property name="libs.testng.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\docs\testng-6.8.1-javadoc.zip" />
+    <property name="user.script" value="" />
+    <property name="libs.PostgreSQLDriver.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\postgresql-9.4.1209.jar" />
+    <property name="libs.jsf12.maven-pom" value="" />
+    <property name="soa.module.install.dir" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules" />
+    <property name="libs.hibernate4-persistencemodelgen.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
+    <property name="libs.Encoder-Custom.src" value="" />
+    <property name="libs.CopyLibs.src" value="" />
+    <property name="build.dir" value="build" />
+    <property name="libs.jsp-compilation.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jsf-2_2\javax.faces.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\modules\ext\jstl-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-launcher.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="libs.spring-webmvc4.0.classpath" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="libs.javaee-web-api-7.0.javadoc" value="C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\enterprise\docs\javaee-doc-api.jar" />
+  </properties>
+  <testcase classname="org.netbeans.modules.compapp.catd.ConfiguredTest" name="TestCase3" time="0.875">
+    <failure message="[9/12/2024 07:38:15 PM] The response is not identical to the expected output." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: [9/12/2024 07:38:15 PM] The response is not identical to the expected output.
+	at org.netbeans.modules.compapp.catd.ConfiguredTest.checkExpectedOutput(ConfiguredTest.java:2354)
+	at org.netbeans.modules.compapp.catd.ConfiguredTest.checkExpectedOutput(ConfiguredTest.java:2224)
+	at org.netbeans.modules.compapp.catd.ConfiguredTest.testConcurrentSOAPRequest(ConfiguredTest.java:867)
+</failure>
+  </testcase>
+  <system-out><![CDATA[GenerateATSOutput=${generate.ats.output}
+NetBeansUserDir=C:\Users\juanp\AppData\Roaming\.openesb_studio\3.1.2
+ServerPassword=admin
+awt.toolkit=sun.awt.windows.WToolkit
+file.encoding=Cp1252
+file.encoding.pkg=sun.io
+file.separator=\
+inDebug=${inDebug}
+java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+java.awt.headless=${java.awt.headless}
+java.awt.printerjob=sun.awt.windows.WPrinterJob
+java.class.path=C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\org-netbeans-modules-compapp-manager-jbi.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\org-netbeans-modules-compapp-projects-jbi.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\jbi-admin-common.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\soa\modules\ext\catd.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\api\saaj-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\saaj-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\java\modules\ext\jaxws22\FastInfoset.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-lib.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-deprecated-pre65formatting.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-util.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-lib2.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-indent.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-plain.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-plain-lib.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-document.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-settings.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-settings-lib.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-editor-settings-storage.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-lexer.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-core.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-lexer.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-text.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-xdm.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-xml-xam.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\org-netbeans-modules-csl-api.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\ide\modules\ext\jaxb\activation.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-modules.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-util.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-util-ui.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\lib\org-openide-util-lookup.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-awt.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-options.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-text.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-loaders.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-nodes.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-netbeans-modules-editor-mimelookup.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-netbeans-modules-editor-mimelookup-impl.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\core\org-openide-filesystems.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-netbeans-modules-keyring.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\org-openide-dialogs.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\platform\modules\ext\junit-4.12.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-launcher.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-junit.jar;C:\SCE_202403\Tercer_Parcial\OpenESB-SE-3.1.2.3-a\OE-Studio\extide\ant\lib\ant-junit4.jar
+java.class.version=52.0
+java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_162\jre\lib\endorsed
+java.ext.dirs=C:\Program Files\Java\jdk1.8.0_162\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+java.home=C:\Program Files\Java\jdk1.8.0_162\jre
+java.io.tmpdir=C:\Users\juanp\AppData\Local\Temp\
+java.library.path=C:\Program Files\Java\jdk1.8.0_162\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.3\libnvvp;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Python312\Scripts\;C:\Program Files\Python312\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.3.1\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\juanp\AppData\Local\Microsoft\WindowsApps;;C:\Users\juanp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\juanp\AppData\Roaming\npm;.
+java.runtime.name=Java(TM) SE Runtime Environment
+java.runtime.version=1.8.0_162-b12
+java.specification.name=Java Platform API Specification
+java.specification.vendor=Oracle Corporation
+java.specification.version=1.8
+java.vendor=Oracle Corporation
+java.vendor.url=http://java.oracle.com/
+java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+java.version=1.8.0_162
+java.vm.info=mixed mode
+java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.specification.vendor=Oracle Corporation
+java.vm.specification.version=1.8
+java.vm.vendor=Oracle Corporation
+java.vm.version=25.162-b12
+line.separator=
+
+org.netbeans.modules.compapp.catd.context=
+os.arch=amd64
+os.name=Windows 10
+os.version=10.0
+path.separator=;
+sun.arch.data.model=64
+sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_162\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_162\jre\classes
+sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_162\jre\bin
+sun.cpu.endian=little
+sun.cpu.isalist=amd64
+sun.desktop=windows
+sun.io.unicode.encoding=UnicodeLittle
+sun.java.command=org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\SCE_202403\Proyecto\SCE\CA_Prueba1\test\results\TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=C:\Users\juanp\AppData\Local\Temp\junitvmwatcher5273799452277817365.properties propsfile=C:\Users\juanp\AppData\Local\Temp\junit5323673207822894920.properties
+sun.java.launcher=SUN_STANDARD
+sun.jnu.encoding=Cp1252
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+sun.os.patch.level=
+user.country=MX
+user.dir=C:\SCE_202403\Proyecto\SCE\CA_Prueba1
+user.home=C:\Users\juanp
+user.language=es
+user.name=juanp
+user.script=
+user.timezone=America/Mexico_City
+user.variant=
+Test TestCase3\Concurrent.properties
+  * Difference (Delete): SOAP-ENV:Fault
+  * Difference (Add): eltoGestionaOut
+ Failed. (Destination: http://localhost:${HttpDefaultPort}/CA_Prueba1Service1/casaPort1)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

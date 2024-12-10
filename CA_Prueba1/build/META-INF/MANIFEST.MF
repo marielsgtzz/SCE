@@ -1,0 +1,4 @@
+Bundle-Name: CA_Prueba1
+Bundle-SymbolicName: CA_Prueba1
+Bundle-ManifestVersion: 2
+Bundle-Version: 1.0.0

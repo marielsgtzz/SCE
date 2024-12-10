@@ -52,7 +52,7 @@ public class POJO_Pedidos //implements solicita_servicio.ISolicitaServicio
         
         queClte = (int) ( num_cltes * Math.random());
         id_clte = listaCltes.get(queClte).getId();
-
+        //id_clte = 28;
         num_it = (int) (1.0 + 10.0 * Math.random());
         num_it = num_it <= this.num_prods ? num_it : this.num_prods;
         

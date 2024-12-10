@@ -1,0 +1,12 @@
+<soapenv:Envelope xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://xml.netbeans.org/schema/IntegradorSchema">
+  <soapenv:Body>
+    <int:eltoGestionaIn>
+      <int:id_clte>3</int:id_clte>
+      <!--Zero or more repetitions:-->
+      <int:listaIt>
+        <int:id_prod>8</int:id_prod>
+        <int:cantidad>8</int:cantidad>
+      </int:listaIt>
+    </int:eltoGestionaIn>
+  </soapenv:Body>
+</soapenv:Envelope>

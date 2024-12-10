@@ -23,7 +23,7 @@ CREATE TABLE credito
 INSERT INTO credito (name, email, phone, address, city_region, cc_number, credito) VALUES
 ('Ditirambo Farfulla', 'ditirambo.farfulla@mkt.bond', '56284000', 'Arroyo Bajo 10 int 10', 'AO', '123456', 10000.0),
 ('Gandulfo Roncante', 'gandulfo.roncante@mkt.bond', '56284000', 'Arroyo Bajo 10 int 12', 'AO', '123456', 10000.0),
-('Vagonzo Durmiente', 'vagonzo.durminte@mkt.bond', '56284000', 'Arroyo Bajo 10 int 45', 'AO', '123456', 10000.0),
+('Vagonzo Durmiente', 'vagonzo.durminte@mkt.bond', '56284000', 'Arroyo Bajo 10 int 45', 'AO', '123456', 0.0),
 ('Hambrosio Comensal', 'hambrosio.comensal@mkt.bond', '56284000', 'Arroyo Bajo 10 int 58', 'AO', '123456', 10000.0);
 
 disconnect;

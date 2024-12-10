@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="integrador_BPEL"
+    targetNamespace="http://enterprise.netbeans.org/bpel/Integrador_BPEL/integrador_BPEL"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/Integrador_BPEL/integrador_BPEL"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://xml.netbeans.org/schema/IntegradorSchema" xmlns:ns1="http://wsmusicacredito/">
+    <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" location="WSMusicaPedidosWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicapedidos/" location="http://localhost:8080/WS_Musica_Pedidos/WSMusicaPedidos?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" location="IntegradorWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/WSMusicaCreditoWrapper" location="WSMusicaCreditoWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://wsmusicacredito/" location="http://localhost:8080/WS_Musica_Credito/WSMusicaCredito?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="gestionaPedido" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" partnerLinkType="tns:IntegradorWSDL" myRole="IntegradorWSDLPortTypeRole"/>
+        <partnerLink name="WS_Pedidos" xmlns:tns="http://enterprise.netbeans.org/bpel/WSMusicaPedidosWrapper" partnerLinkType="tns:WSMusicaPedidosLinkType" partnerRole="WSMusicaPedidosRole"/>
+        <partnerLink name="WS_Credito" xmlns:tns="http://enterprise.netbeans.org/bpel/WSMusicaCreditoWrapper" partnerLinkType="tns:WSMusicaCreditoLinkType" partnerRole="WSMusicaCreditoRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="IntegradorWSDLOperationOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationResponse"/>
+        <variable name="AutorizaOut1" xmlns:tns="http://wsmusicacredito/" messageType="tns:autorizaResponse"/>
+        <variable name="AutorizaIn1" xmlns:tns="http://wsmusicacredito/" messageType="tns:autoriza"/>
+        <variable name="MontoPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedidoResponse"/>
+        <variable name="MontoPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:montoPedido"/>
+        <variable name="Fault1FaultVar" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationFault"/>
+        <variable name="AltaPedidoOut" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedidoResponse"/>
+        <variable name="AltaPedidoIn" xmlns:tns="http://wsmusicapedidos/" messageType="tns:altaPedido"/>
+        <variable name="IntegradorWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="gestionaPedido" operation="IntegradorWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" portType="tns:IntegradorWSDLPortType" variable="IntegradorWSDLOperationIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from>$IntegradorWSDLOperationIn.part1/ns0:id_clte</from>
+                <to>$AltaPedidoIn.parameters/id_clte</to>
+            </copy>
+            <copy>
+                <from>$IntegradorWSDLOperationIn.part1/ns0:listaIt/ns0:id_prod</from>
+                <to>$AltaPedidoIn.parameters/lista_it/id_prod</to>
+            </copy>
+            <copy>
+                <from>$IntegradorWSDLOperationIn.part1/ns0:listaIt/ns0:cantidad</from>
+                <to>$AltaPedidoIn.parameters/lista_it/cantidad</to>
+            </copy>
+        </assign>
+        <invoke name="Invoke1" partnerLink="WS_Pedidos" operation="altaPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="AltaPedidoIn" outputVariable="AltaPedidoOut"/>
+        <if name="If1">
+            <condition>0 != $AltaPedidoOut.parameters/return</condition>
+            <sequence name="Sequence3">
+                <assign name="Assign4">
+                    <copy>
+                        <from>$AltaPedidoOut.parameters/return</from>
+                        <to>$MontoPedidoIn.parameters/num_pedido</to>
+                    </copy>
+                </assign>
+                <invoke name="monto" partnerLink="WS_Pedidos" operation="montoPedido" xmlns:tns="http://wsmusicapedidos/" portType="tns:WSMusicaPedidos" inputVariable="MontoPedidoIn" outputVariable="MontoPedidoOut"/>
+                <assign name="Assign5">
+                    <copy>
+                        <from>$IntegradorWSDLOperationIn.part1/ns0:id_clte</from>
+                        <to>$AutorizaIn1.parameters/id_clte</to>
+                    </copy>
+                    <copy>
+                        <from>$MontoPedidoOut.parameters/return</from>
+                        <to>$AutorizaIn1.parameters/monto</to>
+                    </copy>
+                </assign>
+                <scope name="Scope1">
+                    <variables>
+                        <variable name="Fault1FaultVar2" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationFault"/>
+                        <variable name="Fault1FaultVar1" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" messageType="tns:IntegradorWSDLOperationFault"/>
+                    </variables>
+                    <faultHandlers>
+                        <catch faultName="ns1:ExcepNoExisteClte" faultVariable="noCliente" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" faultMessageType="ns1:ExcepNoExisteClte">
+                            <sequence name="Sequence4">
+                                <assign name="Assign6">
+                                    <copy>
+                                        <from>$noCliente.fault/message</from>
+                                        <to>$Fault1FaultVar1.part1/ns0:return</to>
+                                    </copy>
+                                </assign>
+                                <reply name="NoClte" partnerLink="gestionaPedido" operation="IntegradorWSDLOperation" portType="tns:IntegradorWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar1"/>
+                            </sequence>
+                        </catch>
+                        <catch faultName="ns1:ExcepNoCredito" faultVariable="noCredito" faultMessageType="ns1:ExcepNoCredito">
+                            <sequence name="Sequence5">
+                                <assign name="Assign7">
+                                    <copy>
+                                        <from>$noCredito.fault/message</from>
+                                        <to>$Fault1FaultVar2.part1/ns0:return</to>
+                                    </copy>
+                                </assign>
+                                <reply name="noCred" partnerLink="gestionaPedido" operation="IntegradorWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" portType="tns:IntegradorWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar2"/>
+                            </sequence>
+                        </catch>
+                    </faultHandlers>
+                    <invoke name="Autoriza" partnerLink="WS_Credito" operation="autoriza" xmlns:tns="http://wsmusicacredito/" portType="tns:WSMusicaCredito" inputVariable="AutorizaIn1" outputVariable="AutorizaOut1"/>
+                </scope>
+                <assign name="Assign8">
+                    <copy>
+                        <from>'todo OK'</from>
+                        <to>$IntegradorWSDLOperationOut1.part1/ns0:return</to>
+                    </copy>
+                </assign>
+                <reply name="todoOK" partnerLink="gestionaPedido" operation="IntegradorWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" portType="tns:IntegradorWSDLPortType" variable="IntegradorWSDLOperationOut1"/>
+            </sequence>
+            <else>
+                <sequence name="Sequence1">
+                    <assign name="Assign3">
+                        <copy>
+                            <from>'Producto sin existencias. No se puede generar el pedido.'</from>
+                            <to>$Fault1FaultVar.part1/ns0:return</to>
+                        </copy>
+                    </assign>
+                    <reply name="NohaydePiña" partnerLink="gestionaPedido" operation="IntegradorWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" portType="tns:IntegradorWSDLPortType" faultName="tns:fault1" variable="Fault1FaultVar"/>
+                </sequence>
+            </else>
+        </if>
+    </sequence>
+</process>

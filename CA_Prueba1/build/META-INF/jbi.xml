@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/Integrador_BPEL/integrador_BPEL" xmlns:ns2="http://wsmusicacredito/" xmlns:ns3="CA_Prueba1" xmlns:ns4="http://wsmusicapedidos/" xmlns:ns5="http://j2ee.netbeans.org/wsdl/Integrador_BPEL/src/IntegradorWSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/jbi ./jbi.xsd">
+    <service-assembly>
+        <identification>
+            <name>CA_Prueba1</name>
+            <description>Represents the Service Assembly of CA_Prueba1</description>
+        </identification>
+        <service-unit>
+            <identification>
+                <name>CA_Prueba1-Integrador_BPEL</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>Integrador_BPEL.jar</artifacts-zip>
+                <component-name>sun-bpel-engine</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>CA_Prueba1-sun-http-binding</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>sun-http-binding.jar</artifacts-zip>
+                <component-name>sun-http-binding</component-name>
+            </target>
+        </service-unit>
+        <connections>
+            <connection>
+                <consumer endpoint-name="WSMusicaCreditoRole_partnerRole" service-name="ns1:WS_Credito"/>
+                <provider endpoint-name="WSMusicaCreditoPort" service-name="ns2:WSMusicaCredito"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="casaPort1" service-name="ns3:CA_Prueba1Service1"/>
+                <provider endpoint-name="IntegradorWSDLPortTypeRole_myRole" service-name="ns1:gestionaPedido"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="WSMusicaPedidosRole_partnerRole" service-name="ns1:WS_Pedidos"/>
+                <provider endpoint-name="WSMusicaPedidosPort" service-name="ns4:WSMusicaPedidos"/>
+            </connection>
+        </connections>
+        <route-types xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <source endpoint-name="WSMusicaCreditoRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:WS_Credito">direct</source>
+            <source endpoint-name="casaPort1" mode="local" routing-rule="default" service-name="ns3:CA_Prueba1Service1">direct</source>
+            <source endpoint-name="WSMusicaPedidosRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:WS_Pedidos">direct</source>
+        </route-types>
+        <interface-mapping xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <implementation>
+                <by-provider endpoint-name="IntegradorWSDLPortTypeRole_myRole" service-name="ns1:gestionaPedido"/>
+                <interface name="ns5:IntegradorWSDLPortType"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSMusicaCreditoPort" service-name="ns2:WSMusicaCredito"/>
+                <interface name="ns2:WSMusicaCredito"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="WSMusicaPedidosPort" service-name="ns4:WSMusicaPedidos"/>
+                <interface name="ns4:WSMusicaPedidos"/>
+            </implementation>
+        </interface-mapping>
+    </service-assembly>
+</jbi>

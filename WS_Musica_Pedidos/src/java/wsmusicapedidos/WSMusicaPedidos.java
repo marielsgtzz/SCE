@@ -114,11 +114,17 @@ public class WSMusicaPedidos {
         }
         if( lista_orderedProducts.size() > 0 ) // hay items en el pedido
         {
+            
+            
           entidades.Customer clte = customerFacade.find(new Integer(id_clte));
           // se obtiene el cliente
+          
+          
+          /*
           Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,
                 "Pedido del cliente:" + clte.getId() + ", "
                 + clte.getName() + " por " + bd_monto_pedido);
+          */
           //
           // Se genera el customer order
           //

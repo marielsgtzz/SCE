@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://xml.netbeans.org/schema/IntegradorSchema"
+    xmlns:tns="http://xml.netbeans.org/schema/IntegradorSchema"
+    elementFormDefault="qualified">
+    <xsd:complexType name="Clte">
+        <xsd:sequence>
+            <xsd:element name="id_prod" type="xsd:int"></xsd:element>
+            <xsd:element name="cantidad" type="xsd:int"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="gestionaPedido">
+        <xsd:sequence>
+            <xsd:element name="id_clte" type="xsd:int"></xsd:element>
+            <xsd:element name="listaIt" type="tns:Clte" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="gestionaPedidoOut">
+        <xsd:sequence>
+            <xsd:element name="return" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="gestionaPedidoFault">
+        <xsd:sequence>
+            <xsd:element name="fault" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="eltoGestionaIn" type="tns:gestionaPedido"></xsd:element>
+    <xsd:element name="eltoGestionaOut" type="tns:gestionaPedidoOut"></xsd:element>
+    <xsd:element name="eltoGestionaFault" type="tns:gestionaPedidoFault"></xsd:element>
+</xsd:schema>

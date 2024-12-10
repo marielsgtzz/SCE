@@ -78,8 +78,8 @@ INSERT INTO genre (name) VALUES
 ('Rock'),
 ('Pop'),
 ('Jazz'),
-('Clásica'),
-('Electrónica'),
+('Clasica'),
+('Electronica'),
 ('Folk');
 
 ------------------------------- 
@@ -126,14 +126,14 @@ CREATE TABLE product
 );
 
 INSERT INTO product (name, price, description, last_update, category_id, genre_id, artist_id, existencia) VALUES
-('Abbey Road', 12.99, 'Álbum icónico', TIMESTAMP('2020-10-06 09:00:00'), 2, 1, 1, 1000),
-('A Night at the Opera', 10.99, 'Álbum clásico', TIMESTAMP('2020-10-06 09:00:00'), 1, 1, 2, 1000),
-('Kind of Blue', 15.99, 'Álbum de jazz', TIMESTAMP('2020-10-06 09:00:00'), 3, 3, 3, 1000),
+('Abbey Road', 12.99, 'Album icóonico', TIMESTAMP('2020-10-06 09:00:00'), 2, 1, 1, 1000),
+('A Night at the Opera', 10.99, 'Album clasico', TIMESTAMP('2020-10-06 09:00:00'), 1, 1, 2, 1000),
+('Kind of Blue', 15.99, 'Album de jazz', TIMESTAMP('2020-10-06 09:00:00'), 3, 3, 3, 1000),
 ('Symphony No.9', 9.99, 'Obra maestra', TIMESTAMP('2020-10-06 09:00:00'), 1, 4, 4, 1000),
-('True', 14.99, 'Álbum pop moderno',TIMESTAMP('2020-10-06 09:00:00'), 1, 2, 5, 1000),
-('Random Access Memories', 18.99, 'Álbum electrónico', TIMESTAMP('2020-10-06 09:00:00'), 1, 5, 6, 1000),
-('Brandenburg Concertos', 12.99, 'Obra clásica', TIMESTAMP('2020-10-06 09:00:00'), 2, 4, 7, 1000),
-('25', 11.99, 'Álbum pop contemporáneo', TIMESTAMP('2020-10-06 09:00:00'), 1, 2, 8, 1000);
+('True', 14.99, 'Album pop moderno',TIMESTAMP('2020-10-06 09:00:00'), 1, 2, 5, 1000),
+('Random Access Memories', 18.99, 'Album electronico', TIMESTAMP('2020-10-06 09:00:00'), 1, 5, 6, 1000),
+('Brandenburg Concertos', 12.99, 'Obra clasica', TIMESTAMP('2020-10-06 09:00:00'), 2, 4, 7, 1000),
+('25', 11.99, 'Album pop contemporaneo', TIMESTAMP('2020-10-06 09:00:00'), 1, 2, 8, 1000);
 
 
 -- Tabla ordered_product con FK a la tabla status
