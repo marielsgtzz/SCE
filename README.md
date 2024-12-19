@@ -1,4 +1,5 @@
 # SCE
+Proyecto final de Sistemas de Comercio Electrónico, cursada en Otoño 2024.
 
 Elaborado por:
 
